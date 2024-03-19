@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Sportsman.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Sportsman_AdvancedServices_AdvancedService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://schoolsport.org.il:8080/ISF/SportServices/AdvancedService.asmx</Value>
+    </Setting>
+    <Setting Name="Sportsman_ChampionshipServices_ChampionshipService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://schoolsport.org.il:8080/ISF/SportServices/ChampionshipService.asmx</Value>
+    </Setting>
+    <Setting Name="Sportsman_PermissionServices_PermissionService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://schoolsport.org.il:8080/ISF/SportServices/PermissionService.asmx</Value>
+    </Setting>
+    <Setting Name="Sportsman_SessionServices_SessionService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://schoolsport.org.il:8080/ISF/SportServices/SessionService.asmx</Value>
+    </Setting>
+    <Setting Name="Sport_Championships_DataServices_DataService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://schoolsport.org.il:8080/ISF/SportServices/DataService.asmx</Value>
+    </Setting>
+    <Setting Name="Sport_Championships_SportServices_ChampionshipService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://schoolsport.org.il:8080/ISF/SportServices/ChampionshipService.asmx</Value>
+    </Setting>
+    <Setting Name="Sportsman_DataServices_DataService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://schoolsport.org.il:8080/ISF/SportServices/DataService.asmx</Value>
+    </Setting>
+    <Setting Name="Sportsman_PlayerCardServices_PlayerCardService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://schoolsport.org.il:8080/ISF/SportServices/PlayerCardService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

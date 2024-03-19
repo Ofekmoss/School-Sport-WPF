@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetPendingTeams">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="school_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingTeamsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPendingTeamsResult" type="tns:ArrayOfTeamData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTeamData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TeamData" nillable="true" type="tns:TeamData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TeamData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="user_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="school_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="championship_category_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="team_index" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPendingPlayers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="school_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="team_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingPlayersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPendingPlayersResult" type="tns:ArrayOfPlayerData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPlayerData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlayerData" nillable="true" type="tns:PlayerData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlayerData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="user_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="team_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="student_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="player_number" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegisterTeam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="user_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="school_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="championship_category_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="team_index" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterTeamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegisterTeamResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterPlayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="user_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="team_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="student_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="player_number" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterPlayerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegisterPlayerResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterPlayers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="user_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="players" type="tns:ArrayOfPlayerData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterPlayersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterPlayersResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RemovePendingTeam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pending_team_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePendingTeamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemovePendingTeamResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePendingPlayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pending_player_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePendingPlayerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemovePendingPlayerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePendingTeam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pending_team_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="team_index" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePendingTeamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePendingTeamResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePendingPlayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pending_player_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="player_number" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePendingPlayerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePendingPlayerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitPendingTeams">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="school_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitPendingTeamsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CommitPendingTeamsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitPendingPlayers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="school_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="team_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitPendingPlayersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CommitPendingPlayersResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MarkMessageRead">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="message_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MarkMessageReadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MarkMessageReadResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentsCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="school" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentsCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetStudentsCountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPendingTeamsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPendingTeams" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingTeamsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPendingTeamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingPlayersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPendingPlayers" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingPlayersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPendingPlayersResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterTeamSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterTeam" />
+  </wsdl:message>
+  <wsdl:message name="RegisterTeamSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterPlayerSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterPlayer" />
+  </wsdl:message>
+  <wsdl:message name="RegisterPlayerSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterPlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterPlayersSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterPlayers" />
+  </wsdl:message>
+  <wsdl:message name="RegisterPlayersSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterPlayersResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemovePendingTeamSoapIn">
+    <wsdl:part name="parameters" element="tns:RemovePendingTeam" />
+  </wsdl:message>
+  <wsdl:message name="RemovePendingTeamSoapOut">
+    <wsdl:part name="parameters" element="tns:RemovePendingTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemovePendingPlayerSoapIn">
+    <wsdl:part name="parameters" element="tns:RemovePendingPlayer" />
+  </wsdl:message>
+  <wsdl:message name="RemovePendingPlayerSoapOut">
+    <wsdl:part name="parameters" element="tns:RemovePendingPlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePendingTeamSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePendingTeam" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePendingTeamSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePendingTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePendingPlayerSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePendingPlayer" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePendingPlayerSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePendingPlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitPendingTeamsSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitPendingTeams" />
+  </wsdl:message>
+  <wsdl:message name="CommitPendingTeamsSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitPendingTeamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitPendingPlayersSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitPendingPlayers" />
+  </wsdl:message>
+  <wsdl:message name="CommitPendingPlayersSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitPendingPlayersResponse" />
+  </wsdl:message>
+  <wsdl:message name="MarkMessageReadSoapIn">
+    <wsdl:part name="parameters" element="tns:MarkMessageRead" />
+  </wsdl:message>
+  <wsdl:message name="MarkMessageReadSoapOut">
+    <wsdl:part name="parameters" element="tns:MarkMessageReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentsCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentsCount" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentsCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentsCountResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RegistrationServiceSoap">
+    <wsdl:operation name="GetPendingTeams">
+      <wsdl:input message="tns:GetPendingTeamsSoapIn" />
+      <wsdl:output message="tns:GetPendingTeamsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingPlayers">
+      <wsdl:input message="tns:GetPendingPlayersSoapIn" />
+      <wsdl:output message="tns:GetPendingPlayersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterTeam">
+      <wsdl:input message="tns:RegisterTeamSoapIn" />
+      <wsdl:output message="tns:RegisterTeamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPlayer">
+      <wsdl:input message="tns:RegisterPlayerSoapIn" />
+      <wsdl:output message="tns:RegisterPlayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPlayers">
+      <wsdl:input message="tns:RegisterPlayersSoapIn" />
+      <wsdl:output message="tns:RegisterPlayersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePendingTeam">
+      <wsdl:input message="tns:RemovePendingTeamSoapIn" />
+      <wsdl:output message="tns:RemovePendingTeamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePendingPlayer">
+      <wsdl:input message="tns:RemovePendingPlayerSoapIn" />
+      <wsdl:output message="tns:RemovePendingPlayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePendingTeam">
+      <wsdl:input message="tns:UpdatePendingTeamSoapIn" />
+      <wsdl:output message="tns:UpdatePendingTeamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePendingPlayer">
+      <wsdl:input message="tns:UpdatePendingPlayerSoapIn" />
+      <wsdl:output message="tns:UpdatePendingPlayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitPendingTeams">
+      <wsdl:input message="tns:CommitPendingTeamsSoapIn" />
+      <wsdl:output message="tns:CommitPendingTeamsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitPendingPlayers">
+      <wsdl:input message="tns:CommitPendingPlayersSoapIn" />
+      <wsdl:output message="tns:CommitPendingPlayersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkMessageRead">
+      <wsdl:input message="tns:MarkMessageReadSoapIn" />
+      <wsdl:output message="tns:MarkMessageReadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsCount">
+      <wsdl:input message="tns:GetStudentsCountSoapIn" />
+      <wsdl:output message="tns:GetStudentsCountSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RegistrationServiceSoap" type="tns:RegistrationServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPendingTeams">
+      <soap:operation soapAction="http://tempuri.org/GetPendingTeams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingPlayers">
+      <soap:operation soapAction="http://tempuri.org/GetPendingPlayers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterTeam">
+      <soap:operation soapAction="http://tempuri.org/RegisterTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPlayer">
+      <soap:operation soapAction="http://tempuri.org/RegisterPlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPlayers">
+      <soap:operation soapAction="http://tempuri.org/RegisterPlayers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePendingTeam">
+      <soap:operation soapAction="http://tempuri.org/RemovePendingTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePendingPlayer">
+      <soap:operation soapAction="http://tempuri.org/RemovePendingPlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePendingTeam">
+      <soap:operation soapAction="http://tempuri.org/UpdatePendingTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePendingPlayer">
+      <soap:operation soapAction="http://tempuri.org/UpdatePendingPlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitPendingTeams">
+      <soap:operation soapAction="http://tempuri.org/CommitPendingTeams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitPendingPlayers">
+      <soap:operation soapAction="http://tempuri.org/CommitPendingPlayers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkMessageRead">
+      <soap:operation soapAction="http://tempuri.org/MarkMessageRead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsCount">
+      <soap:operation soapAction="http://tempuri.org/GetStudentsCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RegistrationServiceSoap12" type="tns:RegistrationServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPendingTeams">
+      <soap12:operation soapAction="http://tempuri.org/GetPendingTeams" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingPlayers">
+      <soap12:operation soapAction="http://tempuri.org/GetPendingPlayers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterTeam">
+      <soap12:operation soapAction="http://tempuri.org/RegisterTeam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPlayer">
+      <soap12:operation soapAction="http://tempuri.org/RegisterPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPlayers">
+      <soap12:operation soapAction="http://tempuri.org/RegisterPlayers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePendingTeam">
+      <soap12:operation soapAction="http://tempuri.org/RemovePendingTeam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePendingPlayer">
+      <soap12:operation soapAction="http://tempuri.org/RemovePendingPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePendingTeam">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePendingTeam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePendingPlayer">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePendingPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitPendingTeams">
+      <soap12:operation soapAction="http://tempuri.org/CommitPendingTeams" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitPendingPlayers">
+      <soap12:operation soapAction="http://tempuri.org/CommitPendingPlayers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkMessageRead">
+      <soap12:operation soapAction="http://tempuri.org/MarkMessageRead" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsCount">
+      <soap12:operation soapAction="http://tempuri.org/GetStudentsCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RegistrationService">
+    <wsdl:port name="RegistrationServiceSoap" binding="tns:RegistrationServiceSoap">
+      <soap:address location="http://213.8.193.150/ISF/SportServices/RegistrationService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RegistrationServiceSoap12" binding="tns:RegistrationServiceSoap12">
+      <soap12:address location="http://213.8.193.150/ISF/SportServices/RegistrationService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,3 @@
+phrase1=Hello
+&phrase2=And Welcome<br>To the English page
+&bannerType=1

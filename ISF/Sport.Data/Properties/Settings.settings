@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Sport.Data.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Sport_Data_AdvancedServices_AdvancedService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://schoolsport.org.il:8080/ISF/SportServices/AdvancedService.asmx</Value>
+    </Setting>
+    <Setting Name="Sport_Data_SportServices_DataService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://schoolsport.org.il:8080/ISF/SportServices/DataService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

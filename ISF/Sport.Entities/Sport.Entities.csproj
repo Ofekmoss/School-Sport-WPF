@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BD6A1B0E-EDDD-4CC1-B97B-DB5BEB63FF37}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Sport.Entities</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Sport.Entities</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <WebReference_EnableProperties>true</WebReference_EnableProperties>
+    <WebReference_EnableSQLTypes>false</WebReference_EnableSQLTypes>
+    <WebReference_EnableLegacyEventingModel>true</WebReference_EnableLegacyEventingModel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\..\Mir\Mir.Common.csproj">
+      <Project>{40a5ff1c-6c41-4650-a736-8245ecf66a04}</Project>
+      <Name>Mir.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Common\Sport.Common.csproj">
+      <Name>Sport.Common</Name>
+      <Project>{3154D160-E176-4C5A-A37D-B7700AC5ED48}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Core\Sport.Core.csproj">
+      <Name>Sport.Core</Name>
+      <Project>{CBEF2D44-E51E-4388-B0C5-D95490D9EE35}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Data\Sport.Data.csproj">
+      <Name>Sport.Data</Name>
+      <Project>{9E5716D4-7EE1-402B-9B17-A63DA336FB2F}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Rulesets\Sport.Rulesets.csproj">
+      <Name>Sport.Rulesets</Name>
+      <Project>{ED50D5E5-2F21-429A-A352-B6EE7475BA12}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Types\Sport.Types.csproj">
+      <Name>Sport.Types</Name>
+      <Project>{052417D1-9263-494E-975E-71DD92C96C9C}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AccountEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Bug.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Championship.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChampionshipCategory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChampionshipRegion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Charge.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="City.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Court.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CourtType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CourtTypeSport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Credit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Equipment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipmentCategory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipmentChampionship.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipmentRegion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipmentSport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipmentType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Facility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FunctionarySport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GameBoard.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InstantMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IsfPayment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Log.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PhasePattern.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Player.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PracticeCamp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PracticeCampParticipant.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Product.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProductArea.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Referee.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Region.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Ruleset.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="School.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Season.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SportField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SportFieldType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StandardChampionship.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StandardChampionshipCategory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Student.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TeacherCourse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Team.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="User.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web References\DataServices\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Web References\RegistrationServices\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Web References\SessionServices\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\DataServices\CategoryData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\ChampionshipData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\Competition.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\CompetitionData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\DataService.disco" />
+    <None Include="Web References\DataServices\DataService.wsdl" />
+    <None Include="Web References\DataServices\Entity.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\FilterField.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\FunctionaryMatchData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\MatchData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\PlayerCardData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\PlayerCountData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\ReceiptData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\ReceiptData_Basic.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\DataServices\RegionData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\RuleData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\SchoolData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\SeasonData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\SimpleData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\SimplePlayerData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\StudentData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\TeamPlayerNumbers.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\WebsitePermanentChampionship.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\RegistrationServices\PlayerData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\RegistrationServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\RegistrationServices\RegistrationService.disco" />
+    <None Include="Web References\RegistrationServices\RegistrationService.wsdl" />
+    <None Include="Web References\RegistrationServices\TeamData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SessionServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SessionServices\SessionService.disco" />
+    <None Include="Web References\SessionServices\SessionService.wsdl" />
+    <None Include="Web References\SessionServices\TeamData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SessionServices\UserData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SessionServices\VersionInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <WebReferenceUrl Include="http://www.schoolsport.co.il:8080/ISF/SportServices/RegistrationService.asmx">
+      <RelPath>Web References\RegistrationServices\</RelPath>
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <UpdateFromURL>http://www.schoolsport.co.il:8080/ISF/SportServices/RegistrationService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Sport_Entities_RegistrationServices_RegistrationService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.schoolsport.co.il:8080/ISF/SportServices/SessionService.asmx">
+      <RelPath>Web References\SessionServices\</RelPath>
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <UpdateFromURL>http://www.schoolsport.co.il:8080/ISF/SportServices/SessionService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Sport_Entities_SessionServices_SessionService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.schoolsport.co.il:8080/ISF/SportServices/DataService.asmx">
+      <RelPath>Web References\DataServices\</RelPath>
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <UpdateFromURL>http://www.schoolsport.co.il:8080/ISF/SportServices/DataService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Sport_Entities_DataServices_DataService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

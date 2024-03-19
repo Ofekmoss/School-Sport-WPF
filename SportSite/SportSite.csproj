@@ -1,0 +1,2239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CAB1CF46-7FF0-4B4E-9E06-A8A63BAE1DE1}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>SportSite</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SportSite</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <WebReference_EnableProperties>true</WebReference_EnableProperties>
+    <WebReference_EnableSQLTypes>false</WebReference_EnableSQLTypes>
+    <WebReference_EnableLegacyEventingModel>true</WebReference_EnableLegacyEventingModel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <Name>Accessibility</Name>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Mir.Common">
+      <HintPath>..\ISF\Mir.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
+      <Name>System.Runtime.Serialization.Formatters.Soap</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="balls.aspx.cs">
+      <DependentUpon>balls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="balls.aspx.designer.cs">
+      <DependentUpon>balls.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CacheStore.cs" />
+    <Compile Include="Core\ArticleManager.cs" />
+    <Compile Include="Core\CookieManager.cs" />
+    <Compile Include="Core\ZooZooManager.cs" />
+    <Compile Include="GetData.aspx.cs">
+      <DependentUpon>GetData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Handlers.cs" />
+    <Compile Include="PageNotFound.aspx.cs">
+      <DependentUpon>PageNotFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageNotFound.aspx.designer.cs">
+      <DependentUpon>PageNotFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register\Articles.aspx.cs">
+      <DependentUpon>Articles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register\Articles.aspx.designer.cs">
+      <DependentUpon>Articles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register\HomepageArticlesPreview.aspx.cs">
+      <DependentUpon>HomepageArticlesPreview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register\HomepageArticlesPreview.aspx.designer.cs">
+      <DependentUpon>HomepageArticlesPreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register\InfoTooltip.ascx.cs">
+      <DependentUpon>InfoTooltip.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register\InfoTooltip.ascx.designer.cs">
+      <DependentUpon>InfoTooltip.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Register\PagedTable.ascx.cs">
+      <DependentUpon>PagedTable.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register\PagedTable.ascx.designer.cs">
+      <DependentUpon>PagedTable.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Register\Register.Master.cs">
+      <DependentUpon>Register.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register\Register.Master.designer.cs">
+      <DependentUpon>Register.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Register\TestZone.aspx.cs">
+      <DependentUpon>TestZone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register\TestZone.aspx.designer.cs">
+      <DependentUpon>TestZone.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register\Time.aspx.cs">
+      <DependentUpon>Time.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register\Time.aspx.designer.cs">
+      <DependentUpon>Time.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register\UploadFile.aspx.cs">
+      <DependentUpon>UploadFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register\UploadFile.aspx.designer.cs">
+      <DependentUpon>UploadFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register\UploadManager.cs" />
+    <Compile Include="SwimCup\Results.aspx.cs">
+      <DependentUpon>Results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SwimCup\Results.aspx.designer.cs">
+      <DependentUpon>Results.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SwimCup\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SwimCup\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\DataServices1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="ZooZoo\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ZooZoo\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Content Include="AC_RunActiveContent.js" />
+    <Content Include="AddComment.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="Article.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="balls.aspx" />
+    <Content Include="BrowseChampionship.js" />
+    <Content Include="CacheStore.aspx" />
+    <Content Include="ClubRegister.html" />
+    <Content Include="Common\AddLight.js" />
+    <Content Include="Common\Common.js" />
+    <Content Include="Common\fancyzoom.js" />
+    <Content Include="Common\InstantMessage.html" />
+    <Content Include="Common\orbit\jquery.orbit.min.js" />
+    <Content Include="Common\orbit\orbit.css" />
+    <Content Include="Common\PKZIP25.EXE" />
+    <Content Include="Common\Results.js" />
+    <Content Include="Common\s3Slider.js" />
+    <Content Include="Common\Shadow_AJAX.js" />
+    <Content Include="Common\swfobject.js" />
+    <Content Include="Common\TabControl.js" />
+    <Content Include="Common\tiny_mce\Init.js" />
+    <Content Include="Common\tiny_mce\langs\en.js" />
+    <Content Include="Common\tiny_mce\license.txt" />
+    <Content Include="Common\tiny_mce\plugins\advhr\css\advhr.css" />
+    <Content Include="Common\tiny_mce\plugins\advhr\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\advhr\js\rule.js" />
+    <Content Include="Common\tiny_mce\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="Common\tiny_mce\plugins\advhr\rule.htm" />
+    <Content Include="Common\tiny_mce\plugins\advimage\css\advimage.css" />
+    <Content Include="Common\tiny_mce\plugins\advimage\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\advimage\image.htm" />
+    <Content Include="Common\tiny_mce\plugins\advimage\img\sample.gif" />
+    <Content Include="Common\tiny_mce\plugins\advimage\js\image.js" />
+    <Content Include="Common\tiny_mce\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="Common\tiny_mce\plugins\advlink\css\advlink.css" />
+    <Content Include="Common\tiny_mce\plugins\advlink\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\advlink\js\advlink.js" />
+    <Content Include="Common\tiny_mce\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="Common\tiny_mce\plugins\advlink\link.htm" />
+    <Content Include="Common\tiny_mce\plugins\advlist\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\advlist\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\autoresize\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\autosave\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\autosave\langs\en.js" />
+    <Content Include="Common\tiny_mce\plugins\bbcode\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\directionality\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\emotions\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\emotions\emotions.htm" />
+    <Content Include="Common\tiny_mce\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="Common\tiny_mce\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="Common\tiny_mce\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="Common\tiny_mce\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Common\tiny_mce\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="Common\tiny_mce\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="Common\tiny_mce\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="Common\tiny_mce\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="Common\tiny_mce\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="Common\tiny_mce\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="Common\tiny_mce\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="Common\tiny_mce\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="Common\tiny_mce\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="Common\tiny_mce\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="Common\tiny_mce\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="Common\tiny_mce\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="Common\tiny_mce\plugins\emotions\js\emotions.js" />
+    <Content Include="Common\tiny_mce\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="Common\tiny_mce\plugins\example\dialog.htm" />
+    <Content Include="Common\tiny_mce\plugins\example\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\example\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\example\img\example.gif" />
+    <Content Include="Common\tiny_mce\plugins\example\js\dialog.js" />
+    <Content Include="Common\tiny_mce\plugins\example\langs\en.js" />
+    <Content Include="Common\tiny_mce\plugins\example\langs\en_dlg.js" />
+    <Content Include="Common\tiny_mce\plugins\fullpage\css\fullpage.css" />
+    <Content Include="Common\tiny_mce\plugins\fullpage\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\fullpage\fullpage.htm" />
+    <Content Include="Common\tiny_mce\plugins\fullpage\js\fullpage.js" />
+    <Content Include="Common\tiny_mce\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="Common\tiny_mce\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="Common\tiny_mce\plugins\iespell\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="Common\tiny_mce\plugins\inlinepopups\template.htm" />
+    <Content Include="Common\tiny_mce\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\layer\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\layer\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\legacyoutput\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\legacyoutput\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\media\css\content.css" />
+    <Content Include="Common\tiny_mce\plugins\media\css\media.css" />
+    <Content Include="Common\tiny_mce\plugins\media\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\media\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\media\img\flash.gif" />
+    <Content Include="Common\tiny_mce\plugins\media\img\flv_player.swf" />
+    <Content Include="Common\tiny_mce\plugins\media\img\quicktime.gif" />
+    <Content Include="Common\tiny_mce\plugins\media\img\realmedia.gif" />
+    <Content Include="Common\tiny_mce\plugins\media\img\shockwave.gif" />
+    <Content Include="Common\tiny_mce\plugins\media\img\trans.gif" />
+    <Content Include="Common\tiny_mce\plugins\media\img\windowsmedia.gif" />
+    <Content Include="Common\tiny_mce\plugins\media\js\embed.js" />
+    <Content Include="Common\tiny_mce\plugins\media\js\media.js" />
+    <Content Include="Common\tiny_mce\plugins\media\langs\en_dlg.js" />
+    <Content Include="Common\tiny_mce\plugins\media\media.htm" />
+    <Content Include="Common\tiny_mce\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\noneditable\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\pagebreak\css\content.css" />
+    <Content Include="Common\tiny_mce\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\pagebreak\img\pagebreak.gif" />
+    <Content Include="Common\tiny_mce\plugins\pagebreak\img\trans.gif" />
+    <Content Include="Common\tiny_mce\plugins\paste\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\paste\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\paste\js\pastetext.js" />
+    <Content Include="Common\tiny_mce\plugins\paste\js\pasteword.js" />
+    <Content Include="Common\tiny_mce\plugins\paste\langs\en_dlg.js" />
+    <Content Include="Common\tiny_mce\plugins\paste\pastetext.htm" />
+    <Content Include="Common\tiny_mce\plugins\paste\pasteword.htm" />
+    <Content Include="Common\tiny_mce\plugins\preview\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\preview\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\preview\example.html" />
+    <Content Include="Common\tiny_mce\plugins\preview\jscripts\embed.js" />
+    <Content Include="Common\tiny_mce\plugins\preview\preview.html" />
+    <Content Include="Common\tiny_mce\plugins\print\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\print\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\save\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\save\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="Common\tiny_mce\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="Common\tiny_mce\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="Common\tiny_mce\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="Common\tiny_mce\plugins\spellchecker\css\content.css" />
+    <Content Include="Common\tiny_mce\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\spellchecker\img\wline.gif" />
+    <Content Include="Common\tiny_mce\plugins\style\css\props.css" />
+    <Content Include="Common\tiny_mce\plugins\style\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\style\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\style\js\props.js" />
+    <Content Include="Common\tiny_mce\plugins\style\langs\en_dlg.js" />
+    <Content Include="Common\tiny_mce\plugins\style\props.htm" />
+    <Content Include="Common\tiny_mce\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\table\cell.htm" />
+    <Content Include="Common\tiny_mce\plugins\table\css\cell.css" />
+    <Content Include="Common\tiny_mce\plugins\table\css\row.css" />
+    <Content Include="Common\tiny_mce\plugins\table\css\table.css" />
+    <Content Include="Common\tiny_mce\plugins\table\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\table\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\table\js\cell.js" />
+    <Content Include="Common\tiny_mce\plugins\table\js\merge_cells.js" />
+    <Content Include="Common\tiny_mce\plugins\table\js\row.js" />
+    <Content Include="Common\tiny_mce\plugins\table\js\table.js" />
+    <Content Include="Common\tiny_mce\plugins\table\langs\en_dlg.js" />
+    <Content Include="Common\tiny_mce\plugins\table\merge_cells.htm" />
+    <Content Include="Common\tiny_mce\plugins\table\row.htm" />
+    <Content Include="Common\tiny_mce\plugins\table\table.htm" />
+    <Content Include="Common\tiny_mce\plugins\template\blank.htm" />
+    <Content Include="Common\tiny_mce\plugins\template\css\template.css" />
+    <Content Include="Common\tiny_mce\plugins\template\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\template\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\template\js\template.js" />
+    <Content Include="Common\tiny_mce\plugins\template\langs\en_dlg.js" />
+    <Content Include="Common\tiny_mce\plugins\template\template.htm" />
+    <Content Include="Common\tiny_mce\plugins\visualchars\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\wordcount\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\del.htm" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="Common\tiny_mce\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="Common\tiny_mce\themes\advanced\about.htm" />
+    <Content Include="Common\tiny_mce\themes\advanced\anchor.htm" />
+    <Content Include="Common\tiny_mce\themes\advanced\charmap.htm" />
+    <Content Include="Common\tiny_mce\themes\advanced\color_picker.htm" />
+    <Content Include="Common\tiny_mce\themes\advanced\editor_template.js" />
+    <Content Include="Common\tiny_mce\themes\advanced\editor_template_src.js" />
+    <Content Include="Common\tiny_mce\themes\advanced\image.htm" />
+    <Content Include="Common\tiny_mce\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="Common\tiny_mce\themes\advanced\img\icons.gif" />
+    <Content Include="Common\tiny_mce\themes\advanced\js\about.js" />
+    <Content Include="Common\tiny_mce\themes\advanced\js\anchor.js" />
+    <Content Include="Common\tiny_mce\themes\advanced\js\charmap.js" />
+    <Content Include="Common\tiny_mce\themes\advanced\js\color_picker.js" />
+    <Content Include="Common\tiny_mce\themes\advanced\js\image.js" />
+    <Content Include="Common\tiny_mce\themes\advanced\js\link.js" />
+    <Content Include="Common\tiny_mce\themes\advanced\js\source_editor.js" />
+    <Content Include="Common\tiny_mce\themes\advanced\langs\en.js" />
+    <Content Include="Common\tiny_mce\themes\advanced\langs\en_dlg.js" />
+    <Content Include="Common\tiny_mce\themes\advanced\link.htm" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\default\content.css" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\default\dialog.css" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\default\ui.css" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="Common\tiny_mce\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="Common\tiny_mce\themes\advanced\source_editor.htm" />
+    <Content Include="Common\tiny_mce\themes\simple\editor_template.js" />
+    <Content Include="Common\tiny_mce\themes\simple\editor_template_src.js" />
+    <Content Include="Common\tiny_mce\themes\simple\img\icons.gif" />
+    <Content Include="Common\tiny_mce\themes\simple\langs\en.js" />
+    <Content Include="Common\tiny_mce\themes\simple\skins\default\content.css" />
+    <Content Include="Common\tiny_mce\themes\simple\skins\default\ui.css" />
+    <Content Include="Common\tiny_mce\themes\simple\skins\o2k7\content.css" />
+    <Content Include="Common\tiny_mce\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="Common\tiny_mce\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="Common\tiny_mce\tiny_mce.js" />
+    <Content Include="Common\tiny_mce\tiny_mce_popup.js" />
+    <Content Include="Common\tiny_mce\tiny_mce_src.js" />
+    <Content Include="Common\tiny_mce\utils\editable_selects.js" />
+    <Content Include="Common\tiny_mce\utils\form_utils.js" />
+    <Content Include="Common\tiny_mce\utils\mctabs.js" />
+    <Content Include="Common\tiny_mce\utils\validate.js" />
+    <Content Include="Common\ToolTip_V1.js" />
+    <Content Include="Common\VisitorActions.js" />
+    <Content Include="Controls\Advertisement.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="Controls\Article.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="Controls\Banner.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="Controls\EventCalendar.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="Controls\FlashNews.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="Controls\Footer.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="Controls\HebDateTime.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="Controls\HorizontalLinkBox.ascx" />
+    <Content Include="Controls\LinkBox.ascx" />
+    <Content Include="Controls\MainView.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="Controls\OnlinePoll.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="Controls\ProgressBar.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="Controls\SideNavBar.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="Controls\Sponsors.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="Controls\TabControl.ascx" />
+    <Content Include="Controls\TableView.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="ExtraClub.js" />
+    <Content Include="FacilityHostDays.sql" />
+    <Content Include="GetData.aspx" />
+    <Content Include="Images\logo_sport_flowers.png" />
+    <Content Include="player_register.js" />
+    <Content Include="Dialogs\PlayerSelection.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="Dialogs\PlayerSelection.js" />
+    <Content Include="Dialogs\SchoolSelection.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="Download.aspx" />
+    <Content Include="Download.txt" />
+    <Content Include="English\banner_english.swf" />
+    <Content Include="English\puredata.txt" />
+    <Content Include="ExtraClubText.html" />
+    <Content Include="flash.css" />
+    <Content Include="Flash\437x74_basket13.swf" />
+    <Content Include="Flash\437x74_gavia8.swf" />
+    <Content Include="Flash\437x74_kaduraf2.swf" />
+    <Content Include="Flash\437x74_kaduraf4.swf" />
+    <Content Include="Flash\437x74_kahal5.swf" />
+    <Content Include="Flash\banner.swf" />
+    <Content Include="Flash\bigPicNew.swf" />
+    <Content Include="Flash\blue_title_v3.swf" />
+    <Content Include="Flash\box.swf" />
+    <Content Include="Flash\go_active_banner_new.swf" />
+    <Content Include="Flash\red_title_v3.swf" />
+    <Content Include="Flash\shtrauss_banner_v2.swf" />
+    <Content Include="Flash\small_pic_blue_new.swf" />
+    <Content Include="Flash\small_pic_red_new.swf" />
+    <Content Include="Flash\yediot_banner.swf" />
+    <Content Include="Gallery.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="Global.asax">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="Images\AddPlayers.gif" />
+    <Content Include="Images\AddTeam.gif" />
+    <Content Include="Images\amitbb_logo.gif" />
+    <Content Include="Images\amitbb_logo.jpg" />
+    <Content Include="Images\arrow_left.gif" />
+    <Content Include="Images\arrow_right.gif" />
+    <Content Include="Images\back-yellow.gif" />
+    <Content Include="Images\background_champ_logo.JPG" />
+    <Content Include="Images\Banners\cola_banner.JPG" />
+    <Content Include="Images\Banners\default_150_150.gif" />
+    <Content Include="Images\Banners\default_760_80.gif" />
+    <Content Include="Images\Banners\isf_banner.JPG" />
+    <Content Include="Images\Banners\pelephone_banner.JPG" />
+    <Content Include="Images\Banners\small_banner.gif" />
+    <Content Include="Images\Banners\top_banner.gif" />
+    <Content Include="Images\banner_english.PNG" />
+    <Content Include="Images\bg_left.gif" />
+    <Content Include="Images\bg_right.gif" />
+    <Content Include="Images\bg_send_to.JPG" />
+    <Content Include="Images\big_send_button.jpg" />
+    <Content Include="Images\black-adt.gif" />
+    <Content Include="Images\blank.gif" />
+    <Content Include="Images\blue_indicator.gif" />
+    <Content Include="Images\BtnCancel.gif" />
+    <Content Include="Images\BtnConfirm.gif" />
+    <Content Include="Images\btn_bg.jpg" />
+    <Content Include="Images\btn_bg_marked.jpg" />
+    <Content Include="Images\btn_bg_over.jpg" />
+    <Content Include="Images\btn_print.jpg" />
+    <Content Include="Images\btn_send.gif" />
+    <Content Include="Images\btn_send_blue.GIF" />
+    <Content Include="Images\btn_send_freind.jpg" />
+    <Content Include="Images\btn_small_choose.gif" />
+    <Content Include="Images\btn_small_del.gif" />
+    <Content Include="Images\btn_talkback.jpg" />
+    <Content Include="Images\buttom_inner.gif" />
+    <Content Include="Images\combo_arrow.gif" />
+    <Content Include="Images\combo_arrow_2.gif" />
+    <Content Include="Images\default_article_image_new.JPG" />
+    <Content Include="Images\fancyzoom\bl.gif" />
+    <Content Include="Images\fancyzoom\bl.png" />
+    <Content Include="Images\fancyzoom\bm.gif" />
+    <Content Include="Images\fancyzoom\bm.png" />
+    <Content Include="Images\fancyzoom\br.gif" />
+    <Content Include="Images\fancyzoom\br.png" />
+    <Content Include="Images\fancyzoom\closebox.gif" />
+    <Content Include="Images\fancyzoom\closebox.png" />
+    <Content Include="Images\fancyzoom\ml.gif" />
+    <Content Include="Images\fancyzoom\ml.png" />
+    <Content Include="Images\fancyzoom\mr.gif" />
+    <Content Include="Images\fancyzoom\mr.png" />
+    <Content Include="Images\fancyzoom\tl.gif" />
+    <Content Include="Images\fancyzoom\tl.png" />
+    <Content Include="Images\fancyzoom\tm.gif" />
+    <Content Include="Images\fancyzoom\tm.png" />
+    <Content Include="Images\fancyzoom\tr.gif" />
+    <Content Include="Images\fancyzoom\tr.png" />
+    <Content Include="Images\footer_bg.gif" />
+    <Content Include="Images\gallery_pic_bg.gif" />
+    <Content Include="Images\green_vi_accept.JPG" />
+    <Content Include="Images\green_vi_small.gif" />
+    <Content Include="Images\grey_indicator.gif" />
+    <Content Include="Images\hp_first_article_bg.gif" />
+    <Content Include="Images\hp_second_article_bg.gif" />
+    <Content Include="Images\hp_sub_bg.gif" />
+    <Content Include="Images\hp_sub_header.gif" />
+    <Content Include="Images\inner_bg.gif" />
+    <Content Include="Images\ISF2Gray.gif" />
+    <Content Include="Images\ISF2Gray_small.gif" />
+    <Content Include="Images\isf_logo.gif" />
+    <Content Include="Images\JHWC.PNG" />
+    <Content Include="Images\JHWC_P1.PNG" />
+    <Content Include="Images\JHWC_P2.PNG" />
+    <Content Include="Images\JHWC_P3.PNG" />
+    <Content Include="Images\link_icon_placeholder.bmp" />
+    <Content Include="Images\logo one.png" />
+    <Content Include="Images\logo.gif" />
+    <Content Include="Images\logo_big_light.gif" />
+    <Content Include="Images\logo_big_light.jpg" />
+    <Content Include="Images\logo_club.PNG" />
+    <Content Include="Images\logo_plain.gif" />
+    <Content Include="Images\magnifier.gif" />
+    <Content Include="Images\main_article.gif" />
+    <Content Include="Images\main_bg.gif" />
+    <Content Include="Images\MIRlogo.jpg" />
+    <Content Include="Images\mir_logo.gif" />
+    <Content Include="Images\more_articles.gif" />
+    <Content Include="Images\more_links.gif" />
+    <Content Include="Images\next_month.bmp" />
+    <Content Include="Images\orbit\bullets.png" />
+    <Content Include="Images\orbit\left-arrow.png" />
+    <Content Include="Images\orbit\loading.gif" />
+    <Content Include="Images\orbit\mask-black222.png" />
+    <Content Include="Images\orbit\pause-black.png" />
+    <Content Include="Images\orbit\right-arrow.png" />
+    <Content Include="Images\orbit\rotator-black.png" />
+    <Content Include="Images\orbit\timer-black.png" />
+    <Content Include="Images\PixYellow.bmp" />
+    <Content Include="Images\pix_black.gif" />
+    <Content Include="Images\practice_camp_header.PNG" />
+    <Content Include="Images\prev_month.bmp" />
+    <Content Include="Images\print.gif" />
+    <Content Include="Images\red_indicator.gif" />
+    <Content Include="Images\red_strong_indicator.gif" />
+    <Content Include="Images\RegisterPlayers_a.bmp" />
+    <Content Include="Images\RegisterPlayers_b.bmp" />
+    <Content Include="Images\RegisterTeams_a.bmp" />
+    <Content Include="Images\RegisterTeams_b.bmp" />
+    <Content Include="Images\seker_blue.gif" />
+    <Content Include="Images\seker_green.gif" />
+    <Content Include="Images\seker_orange.gif" />
+    <Content Include="Images\seker_red.gif" />
+    <Content Include="Images\seker_yellow.gif" />
+    <Content Include="Images\small_seperator.jpg" />
+    <Content Include="Images\spinner.gif" />
+    <Content Include="Images\spinner_big.gif" />
+    <Content Include="Images\SubmitButton.bmp" />
+    <Content Include="Images\SubmitButton.gif" />
+    <Content Include="Images\SubmitButton.jpg" />
+    <Content Include="Images\SubmitButton_a.bmp" />
+    <Content Include="Images\SubmitButton_b.bmp" />
+    <Content Include="Images\SubmitButton_b.jpg" />
+    <Content Include="Images\sub_btn_bg.jpg" />
+    <Content Include="Images\sub_btn_bg_over.JPG" />
+    <Content Include="Images\table_title_bg.jpg" />
+    <Content Include="Images\table_title_left.jpg" />
+    <Content Include="Images\table_title_right.jpg" />
+    <Content Include="Images\top_bg.gif" />
+    <Content Include="Images\top_inner.gif" />
+    <Content Include="Images\top_inner2.gif" />
+    <Content Include="Images\white-adt.gif" />
+    <Content Include="Images\World_Basketball_Championships.JPG" />
+    <Content Include="Images\yellow_indicator.gif" />
+    <Content Include="JHWC.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="jquery-1.10.2.min.js" />
+    <Content Include="jquery-1.11.1.min.js" />
+    <Content Include="jquery-1.4.3.min.js" />
+    <Content Include="jquery-ui-1.10.3.js" />
+    <Content Include="jquery-ui-timepicker-addon-1.3.js" />
+    <Content Include="Main.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="PageNotFound.aspx" />
+    <Content Include="PlayersRegisterForm.html" />
+    <Content Include="plivo.aspx" />
+    <Content Include="PracticeCampForm.txt" />
+    <Content Include="puredata.txt" />
+    <Content Include="puredataBox.txt" />
+    <Content Include="Register.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="Register.js" />
+    <Content Include="Register\Articles.aspx" />
+    <Content Include="Register\Articles.css" />
+    <Content Include="Register\Articles.js" />
+    <Content Include="Register\char-limit.js" />
+    <Content Include="Register\css\frame.css" />
+    <Content Include="Register\css\style.css" />
+    <Content Include="Register\Default.aspx" />
+    <Content Include="Register\file-upload-progress.js" />
+    <Content Include="Register\HomepageArticlesPreview.aspx" />
+    <Content Include="Register\InfoTooltip.ascx" />
+    <Content Include="Register\js\bootstrap-switch.js" />
+    <Content Include="Register\js\bootstrap-switch.min.js" />
+    <Content Include="Register\js\bootstrap.min.js" />
+    <Content Include="Register\js\jquery-ui.js" />
+    <Content Include="Register\js\jquery-ui.min.js" />
+    <Content Include="Register\js\jquery.min.js" />
+    <Content Include="Register\js\json3.min.js" />
+    <Content Include="Register\js\morris.min.js" />
+    <Content Include="Register\js\navbar.js" />
+    <Content Include="Register\js\raphael-min.js" />
+    <Content Include="Register\PagedTable.ascx" />
+    <Content Include="Register\PagedTable.js" />
+    <Content Include="Register\Register.css" />
+    <Content Include="Register\TestZone.aspx" />
+    <Content Include="Register\Time.aspx" />
+    <Content Include="Register\UploadFile.aspx" />
+    <Content Include="Results.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="SendToFriend.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="smtp2go.aspx" />
+    <Content Include="sportschool.xml" />
+    <Content Include="SportSite.css" />
+    <Content Include="SportSite.js" />
+    <Content Include="SwimCup\ContentPage.aspx" />
+    <Content Include="SwimCup\Articles.aspx" />
+    <Content Include="SwimCup\Results.aspx" />
+    <Content Include="SwimCup\default.aspx" />
+    <Content Include="SwimCup\jquery-1.4.3.min.js" />
+    <Content Include="SwimCup\jquery-1.7.1.min.js" />
+    <Content Include="SwimCup\SwimCupLogo.png" />
+    <Content Include="TeacherCourseForm.txt" />
+    <Content Include="TestFlash.aspx" />
+    <Content Include="TestFlash\437x74_basket13.swf" />
+    <Content Include="TestFlash\437x74_kaduraf2.swf" />
+    <Content Include="TestFlash\437x74_kaduraf4.swf" />
+    <Content Include="TestFlash\JS\Common.js" />
+    <Content Include="TestFlash\JS\swfobject.js" />
+    <Content Include="TestFlash\sportschool.xml" />
+    <Content Include="TestFlash\TestFlash.aspx" />
+    <Content Include="Register\Register.Master" />
+    <None Include="packages.config" />
+    <None Include="SchoolSport.RDP" />
+    <None Include="Web References\DataServices1\CategoryData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\ChampionshipData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\Competition.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\CompetitionData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\DataService.disco" />
+    <Content Include="ui-bootstrap-tpls-0.12.0.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebForm1.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Compile Include="AddComment.aspx.cs">
+      <DependentUpon>AddComment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Article.aspx.cs">
+      <DependentUpon>Article.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\ClientSide.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Data.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\FastControls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Style.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Tools.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Transformer\BitmapWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Transformer\Matrix3x3.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Transformer\Vector3.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\ZipFiles.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\Advertisement.ascx.cs">
+      <DependentUpon>Advertisement.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Article.ascx.cs">
+      <DependentUpon>Article.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Banner.ascx.cs">
+      <DependentUpon>Banner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\EventCalendar.ascx.cs">
+      <DependentUpon>EventCalendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\FlashNews.ascx.cs">
+      <DependentUpon>FlashNews.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\HebDateTime.ascx.cs">
+      <DependentUpon>HebDateTime.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\HorizontalLinkBox.ascx.cs">
+      <DependentUpon>HorizontalLinkBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LinkBox.ascx.cs">
+      <DependentUpon>LinkBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\MainView.ascx.cs">
+      <DependentUpon>MainView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\OnlinePoll.ascx.cs">
+      <DependentUpon>OnlinePoll.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ProgressBar.ascx.cs">
+      <DependentUpon>ProgressBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\SideNavBar.ascx.cs">
+      <DependentUpon>SideNavBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Sponsors.ascx.cs">
+      <DependentUpon>Sponsors.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\TabControl.ascx.cs">
+      <DependentUpon>TabControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\TabControl.ascx.designer.cs">
+      <DependentUpon>TabControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TableView.ascx.cs">
+      <DependentUpon>TableView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\AttachmentManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Banners.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\DownloadManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\FAQ.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\HebrewDates.cs" />
+    <Compile Include="Core\LinkManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PageManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PracticeCamp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SponsorManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\TeacherCourse.cs" />
+    <Compile Include="Core\UserManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PlayerSelection.aspx.cs">
+      <DependentUpon>PlayerSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SchoolSelection.aspx.cs">
+      <DependentUpon>SchoolSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery.aspx.cs">
+      <DependentUpon>Gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JHWC.aspx.cs">
+      <DependentUpon>JHWC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Results.aspx.cs">
+      <DependentUpon>Results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SendToFriend.aspx.cs">
+      <DependentUpon>SendToFriend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestFlash.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>TestFlash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestFlash.aspx.designer.cs">
+      <DependentUpon>TestFlash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PlayerCardService\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Web References\RegistrationService\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Web References\SessionService\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Web References\WebSiteServices\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="ZooZoo\ContactUsTemplate.txt" />
+    <Content Include="ZooZoo\jquery.color.js" />
+    <Content Include="ZooZoo\ZooZooEventsFormTemplate.txt" />
+    <Content Include="ZooZoo\default.aspx" />
+    <Content Include="ZooZoo\Images\Logo_Main.gif" />
+    <Content Include="ZooZoo\Images\Logo_Main.png" />
+    <Content Include="ZooZoo\Images\main_bg_5.png" />
+    <Content Include="ZooZoo\Images\pixel.gif" />
+    <Content Include="ZooZoo\jquery-1.4.3.min.js" />
+    <Content Include="ZooZoo\jquery.animation-fix.js" />
+    <Content Include="ZooZoo\ZooZoo.css" />
+    <Content Include="ZooZoo\ZooZoo.js" />
+    <Content Include="ZooZoo\ZooZooPollFormTemplate.txt" />
+    <EmbeddedResource Include="AddComment.aspx.resx">
+      <DependentUpon>AddComment.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Article.aspx.resx">
+      <DependentUpon>Article.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Advertisement.ascx.resx">
+      <DependentUpon>Advertisement.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Article.ascx.resx">
+      <DependentUpon>Article.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Banner.ascx.resx">
+      <DependentUpon>Banner.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\EventCalendar.ascx.resx">
+      <DependentUpon>EventCalendar.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FlashNews.ascx.resx">
+      <DependentUpon>FlashNews.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Footer.ascx.resx">
+      <DependentUpon>Footer.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HebDateTime.ascx.resx">
+      <DependentUpon>HebDateTime.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HorizontalLinkBox.ascx.resx">
+      <DependentUpon>HorizontalLinkBox.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LinkBox.ascx.resx">
+      <DependentUpon>LinkBox.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MainView.ascx.resx">
+      <DependentUpon>MainView.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OnlinePoll.ascx.resx">
+      <DependentUpon>OnlinePoll.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ProgressBar.ascx.resx">
+      <DependentUpon>ProgressBar.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SideNavBar.ascx.resx">
+      <DependentUpon>SideNavBar.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Sponsors.ascx.resx">
+      <DependentUpon>Sponsors.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TableView.ascx.resx">
+      <DependentUpon>TableView.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PlayerSelection.aspx.resx">
+      <DependentUpon>PlayerSelection.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SchoolSelection.aspx.resx">
+      <DependentUpon>SchoolSelection.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gallery.aspx.resx">
+      <DependentUpon>Gallery.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global.asax.resx">
+      <DependentUpon>Global.asax.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JHWC.aspx.resx">
+      <DependentUpon>JHWC.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.aspx.resx">
+      <DependentUpon>Main.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register.aspx.resx">
+      <DependentUpon>Register.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Results.aspx.resx">
+      <DependentUpon>Results.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendToFriend.aspx.resx">
+      <DependentUpon>SendToFriend.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebForm1.aspx.resx">
+      <DependentUpon>WebForm1.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Common\tiny_mce\.svn\entries" />
+    <None Include="Common\tiny_mce\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\advhr\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\advhr\css\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\advhr\js\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\advhr\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\advimage\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\advimage\css\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\advimage\img\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\advimage\img\.svn\props\sample.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\advimage\js\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\advimage\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\advlink\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\advlink\css\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\advlink\js\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\advlink\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\advlist\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\autoresize\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\autosave\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\autosave\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\bbcode\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\contextmenu\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\directionality\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\emotions\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\props\smiley-cool.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\props\smiley-cry.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\props\smiley-embarassed.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\props\smiley-foot-in-mouth.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\props\smiley-frown.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\props\smiley-innocent.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\props\smiley-kiss.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\props\smiley-laughing.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\props\smiley-money-mouth.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\props\smiley-sealed.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\props\smiley-smile.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\props\smiley-surprised.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\props\smiley-tongue-out.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\props\smiley-undecided.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\props\smiley-wink.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\emotions\img\.svn\props\smiley-yell.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\emotions\js\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\emotions\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\example\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\example\img\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\example\img\.svn\props\example.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\example\js\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\example\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\fullpage\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\fullpage\css\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\fullpage\js\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\fullpage\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\fullscreen\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\iespell\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\inlinepopups\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\inlinepopups\skins\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\.svn\props\alert.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\.svn\props\button.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\.svn\props\buttons.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\.svn\props\confirm.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\.svn\props\corners.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\.svn\props\horizontal.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\.svn\props\vertical.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\insertdatetime\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\layer\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\legacyoutput\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\media\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\media\css\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\media\img\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\media\img\.svn\props\flash.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\media\img\.svn\props\flv_player.swf.svn-work" />
+    <None Include="Common\tiny_mce\plugins\media\img\.svn\props\quicktime.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\media\img\.svn\props\realmedia.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\media\img\.svn\props\shockwave.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\media\img\.svn\props\trans.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\media\img\.svn\props\windowsmedia.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\media\js\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\media\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\nonbreaking\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\noneditable\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\pagebreak\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\pagebreak\css\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\pagebreak\img\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\pagebreak\img\.svn\props\pagebreak.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\pagebreak\img\.svn\props\trans.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\paste\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\paste\js\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\paste\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\preview\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\preview\jscripts\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\print\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\save\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\searchreplace\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\searchreplace\css\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\searchreplace\js\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\searchreplace\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\spellchecker\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\spellchecker\css\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\spellchecker\img\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\spellchecker\img\.svn\props\wline.gif.svn-work" />
+    <None Include="Common\tiny_mce\plugins\style\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\style\css\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\style\js\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\style\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\tabfocus\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\table\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\table\css\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\table\js\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\table\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\template\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\template\css\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\template\js\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\template\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\visualchars\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\wordcount\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\xhtmlxtras\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\xhtmlxtras\css\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\xhtmlxtras\js\.svn\entries" />
+    <None Include="Common\tiny_mce\plugins\xhtmlxtras\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\advanced\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\advanced\img\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\advanced\img\.svn\props\colorpicker.jpg.svn-work" />
+    <None Include="Common\tiny_mce\themes\advanced\img\.svn\props\icons.gif.svn-work" />
+    <None Include="Common\tiny_mce\themes\advanced\js\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\advanced\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\advanced\skins\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\advanced\skins\default\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\advanced\skins\default\img\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\advanced\skins\default\img\.svn\props\buttons.png.svn-work" />
+    <None Include="Common\tiny_mce\themes\advanced\skins\default\img\.svn\props\items.gif.svn-work" />
+    <None Include="Common\tiny_mce\themes\advanced\skins\default\img\.svn\props\menu_arrow.gif.svn-work" />
+    <None Include="Common\tiny_mce\themes\advanced\skins\default\img\.svn\props\menu_check.gif.svn-work" />
+    <None Include="Common\tiny_mce\themes\advanced\skins\default\img\.svn\props\progress.gif.svn-work" />
+    <None Include="Common\tiny_mce\themes\advanced\skins\default\img\.svn\props\tabs.gif.svn-work" />
+    <None Include="Common\tiny_mce\themes\advanced\skins\o2k7\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\advanced\skins\o2k7\img\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\advanced\skins\o2k7\img\.svn\props\button_bg.png.svn-work" />
+    <None Include="Common\tiny_mce\themes\advanced\skins\o2k7\img\.svn\props\button_bg_black.png.svn-work" />
+    <None Include="Common\tiny_mce\themes\advanced\skins\o2k7\img\.svn\props\button_bg_silver.png.svn-work" />
+    <None Include="Common\tiny_mce\themes\simple\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\simple\img\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\simple\img\.svn\props\icons.gif.svn-work" />
+    <None Include="Common\tiny_mce\themes\simple\langs\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\simple\skins\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\simple\skins\default\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\simple\skins\o2k7\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\simple\skins\o2k7\img\.svn\entries" />
+    <None Include="Common\tiny_mce\themes\simple\skins\o2k7\img\.svn\props\button_bg.png.svn-work" />
+    <None Include="Common\tiny_mce\utils\.svn\entries" />
+    <None Include="Documents\infoActions.doc" />
+    <None Include="Documents\manpower-itachdut.doc" />
+    <None Include="Documents\manpower-minhalsport.doc" />
+    <None Include="Documents\manpower-pikuhgufani.doc" />
+    <None Include="Documents\takanonHITsport.doc" />
+    <None Include="Documents\tofes.doc" />
+    <None Include="Images\ButtonLayout1_b.psp" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TestFlash\RTL.as" />
+    <None Include="Web References\DataServices1\DataService.wsdl" />
+    <None Include="Web References\DataServices1\Entity.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\FilterField.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\FunctionaryMatchData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\MatchData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\PlayerCardData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\ReceiptData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\ReceiptData_Basic.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\DataServices1\RegionData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\RuleData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\SchoolData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\SeasonData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\SimpleData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\SimplePlayerData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\StudentData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\TeamPlayerNumbers.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices1\WebsitePermanentChampionship.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PlayerCardService\PlayerCardService.disco" />
+    <None Include="Web References\PlayerCardService\PlayerCardService.wsdl" />
+    <None Include="Web References\PlayerCardService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\RegistrationService\PlayerData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\RegistrationService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\RegistrationService\RegistrationService.disco" />
+    <None Include="Web References\RegistrationService\RegistrationService.wsdl" />
+    <None Include="Web References\RegistrationService\TeamData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SessionService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SessionService\SessionService.disco" />
+    <None Include="Web References\SessionService\SessionService.wsdl" />
+    <None Include="Web References\SessionService\TeamData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SessionService\UserData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SessionService\VersionInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\ArticleCommentData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\ArticleData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\AttachmentData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\BannerData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\ChampionshipData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\EventData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\FacilityHostDay.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\FlashNewsData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\FullStudentData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\FullTeamData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\ImageData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\MatchData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\PageData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\PendingCompetitorData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\PollData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebSiteServices\RegionData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\SportDailyGames.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\UserData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebSiteServices\WebsiteService.disco" />
+    <None Include="Web References\WebSiteServices\WebsiteService.wsdl" />
+    <WebReferenceUrl Include="http://213.8.193.150/ISF/SportServices/DataService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\DataServices1\</RelPath>
+      <UpdateFromURL>http://213.8.193.150/ISF/SportServices/DataService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SportSite_DataServices1_DataService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://213.8.193.150/ISF/SportServices/PlayerCardService.asmx">
+      <RelPath>Web References\PlayerCardService\</RelPath>
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <UpdateFromURL>http://213.8.193.150/ISF/SportServices/PlayerCardService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SportSite_PlayerCardService_PlayerCardService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://213.8.193.150/ISF/SportServices/RegistrationService.asmx">
+      <RelPath>Web References\RegistrationService\</RelPath>
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <UpdateFromURL>http://213.8.193.150/ISF/SportServices/RegistrationService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SportSite_RegistrationService_RegistrationService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://213.8.193.150/ISF/SportServices/SessionService.asmx">
+      <RelPath>Web References\SessionService\</RelPath>
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <UpdateFromURL>http://213.8.193.150/ISF/SportServices/SessionService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SportSite_SessionService_SessionService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://213.8.193.150/ISF/SportServices/WebsiteService.asmx">
+      <RelPath>Web References\WebSiteServices\</RelPath>
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <UpdateFromURL>http://213.8.193.150/ISF/SportServices/WebsiteService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SportSite_WebSiteServices_WebsiteService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Component Include="DLLs\Sport.Championships.dll" />
+    <Component Include="DLLs\Sport.Common.dll" />
+    <Component Include="DLLs\Sport.Core.dll" />
+    <Component Include="DLLs\Sport.Data.dll" />
+    <Component Include="DLLs\Sport.Documents.dll" />
+    <Component Include="DLLs\Sport.Entities.dll" />
+    <Component Include="DLLs\Sport.Producer.dll" />
+    <Component Include="DLLs\Sport.Rulesets.dll" />
+    <Component Include="DLLs\Sport.Types.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\tiny_mce\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\.svn\props\" />
+    <Folder Include="Common\tiny_mce\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\css\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\css\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\css\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\css\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\css\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\css\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\js\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\js\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\js\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\js\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\js\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\js\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advhr\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\css\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\css\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\css\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\css\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\css\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\css\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\img\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\img\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\img\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\img\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\img\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\js\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\js\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\js\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\js\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\js\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\js\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advimage\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\css\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\css\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\css\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\css\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\css\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\css\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\js\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\js\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\js\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\js\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\js\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\js\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advlink\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlist\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlist\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advlist\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlist\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\advlist\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\advlist\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\autoresize\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\autoresize\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\autoresize\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\autoresize\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\autoresize\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\autoresize\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\autosave\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\autosave\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\autosave\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\autosave\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\autosave\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\autosave\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\autosave\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\autosave\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\autosave\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\autosave\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\autosave\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\autosave\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\bbcode\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\bbcode\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\bbcode\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\bbcode\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\bbcode\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\bbcode\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\contextmenu\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\contextmenu\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\contextmenu\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\contextmenu\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\contextmenu\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\contextmenu\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\directionality\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\directionality\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\directionality\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\directionality\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\directionality\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\directionality\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\img\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\img\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\img\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\img\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\img\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\js\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\js\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\js\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\js\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\js\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\js\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\emotions\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\example\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\example\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\example\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\example\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\example\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\example\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\example\img\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\example\img\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\example\img\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\example\img\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\example\img\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\example\js\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\example\js\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\example\js\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\example\js\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\example\js\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\example\js\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\example\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\example\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\example\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\example\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\example\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\example\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\css\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\css\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\css\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\css\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\css\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\css\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\js\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\js\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\js\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\js\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\js\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\js\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\fullpage\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullscreen\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullscreen\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\fullscreen\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullscreen\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\fullscreen\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\fullscreen\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\iespell\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\iespell\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\iespell\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\iespell\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\iespell\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\iespell\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\insertdatetime\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\insertdatetime\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\insertdatetime\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\insertdatetime\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\insertdatetime\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\insertdatetime\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\layer\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\layer\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\layer\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\layer\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\layer\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\layer\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\legacyoutput\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\legacyoutput\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\legacyoutput\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\legacyoutput\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\legacyoutput\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\legacyoutput\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\media\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\media\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\css\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\css\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\media\css\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\css\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\css\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\media\css\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\img\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\img\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\img\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\img\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\media\img\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\js\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\js\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\media\js\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\js\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\js\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\media\js\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\media\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\media\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\media\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\nonbreaking\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\nonbreaking\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\nonbreaking\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\nonbreaking\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\nonbreaking\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\nonbreaking\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\noneditable\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\noneditable\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\noneditable\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\noneditable\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\noneditable\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\noneditable\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\css\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\css\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\css\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\css\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\css\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\css\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\img\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\img\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\img\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\img\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\pagebreak\img\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\js\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\js\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\js\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\js\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\js\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\js\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\paste\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\preview\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\preview\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\preview\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\preview\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\preview\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\preview\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\preview\jscripts\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\preview\jscripts\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\preview\jscripts\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\preview\jscripts\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\preview\jscripts\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\preview\jscripts\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\print\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\print\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\print\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\print\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\print\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\print\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\save\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\save\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\save\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\save\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\save\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\save\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\css\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\css\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\css\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\css\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\css\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\css\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\js\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\js\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\js\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\js\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\js\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\js\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\searchreplace\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\css\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\css\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\css\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\css\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\css\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\css\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\img\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\img\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\img\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\img\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\spellchecker\img\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\style\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\style\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\style\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\style\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\style\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\style\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\style\css\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\style\css\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\style\css\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\style\css\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\style\css\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\style\css\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\style\js\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\style\js\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\style\js\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\style\js\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\style\js\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\style\js\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\style\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\style\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\style\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\style\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\style\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\style\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\tabfocus\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\tabfocus\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\tabfocus\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\tabfocus\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\tabfocus\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\tabfocus\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\table\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\table\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\table\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\table\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\table\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\table\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\table\css\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\table\css\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\table\css\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\table\css\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\table\css\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\table\css\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\table\js\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\table\js\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\table\js\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\table\js\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\table\js\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\table\js\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\table\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\table\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\table\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\table\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\table\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\table\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\template\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\template\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\template\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\template\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\template\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\template\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\template\css\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\template\css\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\template\css\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\template\css\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\template\css\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\template\css\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\template\js\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\template\js\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\template\js\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\template\js\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\template\js\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\template\js\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\template\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\template\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\template\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\template\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\template\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\template\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\visualchars\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\visualchars\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\visualchars\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\visualchars\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\visualchars\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\visualchars\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\wordcount\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\wordcount\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\wordcount\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\wordcount\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\wordcount\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\wordcount\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\css\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\css\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\css\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\css\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\css\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\css\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\js\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\js\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\js\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\js\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\js\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\js\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\plugins\xhtmlxtras\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\.svn\props\" />
+    <Folder Include="Common\tiny_mce\themes\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\.svn\props\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\img\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\img\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\img\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\img\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\img\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\js\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\js\.svn\props\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\js\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\js\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\js\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\js\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\.svn\props\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\default\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\default\.svn\props\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\default\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\default\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\default\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\default\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\default\img\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\default\img\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\default\img\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\default\img\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\default\img\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\o2k7\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\o2k7\.svn\props\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\o2k7\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\o2k7\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\o2k7\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\o2k7\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\o2k7\img\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\o2k7\img\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\o2k7\img\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\o2k7\img\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\advanced\skins\o2k7\img\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\.svn\props\" />
+    <Folder Include="Common\tiny_mce\themes\simple\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\simple\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\img\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\img\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\img\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\img\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\simple\img\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\langs\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\langs\.svn\props\" />
+    <Folder Include="Common\tiny_mce\themes\simple\langs\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\langs\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\langs\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\simple\langs\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\.svn\props\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\default\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\default\.svn\props\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\default\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\default\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\default\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\default\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\o2k7\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\o2k7\.svn\props\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\o2k7\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\o2k7\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\o2k7\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\o2k7\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\o2k7\img\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\o2k7\img\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\o2k7\img\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\o2k7\img\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\themes\simple\skins\o2k7\img\.svn\tmp\text-base\" />
+    <Folder Include="Common\tiny_mce\utils\.svn\prop-base\" />
+    <Folder Include="Common\tiny_mce\utils\.svn\props\" />
+    <Folder Include="Common\tiny_mce\utils\.svn\text-base\" />
+    <Folder Include="Common\tiny_mce\utils\.svn\tmp\prop-base\" />
+    <Folder Include="Common\tiny_mce\utils\.svn\tmp\props\" />
+    <Folder Include="Common\tiny_mce\utils\.svn\tmp\text-base\" />
+    <Folder Include="Images\Gallery\TestCategory\Thunbnails\" />
+    <Folder Include="Register\css\bootstrap\" />
+    <Folder Include="Register\css\flaticon\" />
+    <Folder Include="Register\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ISF.DataLayer\ISF.DataLayer.csproj">
+      <Project>{928574FC-053F-4DDE-A362-1DF94AFA6B9C}</Project>
+      <Name>ISF.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISF\Sport.Championships\Sport.Championships.csproj">
+      <Project>{573D453C-1066-4645-9454-EB85D4E13341}</Project>
+      <Name>Sport.Championships</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISF\Sport.Common\Sport.Common.csproj">
+      <Project>{3154D160-E176-4C5A-A37D-B7700AC5ED48}</Project>
+      <Name>Sport.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISF\Sport.Core\Sport.Core.csproj">
+      <Project>{CBEF2D44-E51E-4388-B0C5-D95490D9EE35}</Project>
+      <Name>Sport.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISF\Sport.Data\Sport.Data.csproj">
+      <Project>{9E5716D4-7EE1-402B-9B17-A63DA336FB2F}</Project>
+      <Name>Sport.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISF\Sport.Documents\Sport.Documents.csproj">
+      <Project>{35009617-4AD3-4E46-94AF-8DD12B5812C5}</Project>
+      <Name>Sport.Documents</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISF\Sport.Entities\Sport.Entities.csproj">
+      <Project>{BD6A1B0E-EDDD-4CC1-B97B-DB5BEB63FF37}</Project>
+      <Name>Sport.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISF\Sport.Producer\Sport.Producer.csproj">
+      <Project>{D9C0685D-4D0D-47BB-8C92-43B5FC9D1041}</Project>
+      <Name>Sport.Producer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISF\Sport.Rulesets\Sport.Rulesets.csproj">
+      <Project>{ED50D5E5-2F21-429A-A352-B6EE7475BA12}</Project>
+      <Name>Sport.Rulesets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISF\Sport.Types\Sport.Types.csproj">
+      <Project>{052417D1-9263-494E-975E-71DD92C96C9C}</Project>
+      <Name>Sport.Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISF\Sport.UI\Sport.UI.csproj">
+      <Project>{9CB03EAE-FEF5-4F9B-B8D7-E3EC0B9CC487}</Project>
+      <Name>Sport.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52318</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

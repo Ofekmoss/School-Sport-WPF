@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ReportUnhandledError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strExceptionDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStackTrace" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="time" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAppPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReportUnhandledErrorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetOpenConnections">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetOpenConnectionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOpenConnectionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToSecurityLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToSecurityLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddToSecurityLogResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlterSQL">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAlterSQLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAlterSQLResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExecuteAlterSQL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="index" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteAlterSQLResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetGradesInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetGradesInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGradesInfoResult" type="tns:ArrayOfGradeData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGradeData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GradeData" type="tns:GradeData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GradeData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="grade" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="studentsCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDifferentSeasonCharges">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="charges" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="season" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDifferentSeasonChargesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDifferentSeasonChargesResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChargesChampionships">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="charges" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="season" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChargesChampionshipsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChargesChampionshipsResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ReportUnhandledErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:ReportUnhandledError" />
+  </wsdl:message>
+  <wsdl:message name="ReportUnhandledErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:ReportUnhandledErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOpenConnectionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOpenConnections" />
+  </wsdl:message>
+  <wsdl:message name="GetOpenConnectionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOpenConnectionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddToSecurityLogSoapIn">
+    <wsdl:part name="parameters" element="tns:AddToSecurityLog" />
+  </wsdl:message>
+  <wsdl:message name="AddToSecurityLogSoapOut">
+    <wsdl:part name="parameters" element="tns:AddToSecurityLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlterSQLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAlterSQL" />
+  </wsdl:message>
+  <wsdl:message name="GetAlterSQLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAlterSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteAlterSQLSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteAlterSQL" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteAlterSQLSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteAlterSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGradesInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGradesInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetGradesInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGradesInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDifferentSeasonChargesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDifferentSeasonCharges" />
+  </wsdl:message>
+  <wsdl:message name="GetDifferentSeasonChargesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDifferentSeasonChargesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChargesChampionshipsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChargesChampionships" />
+  </wsdl:message>
+  <wsdl:message name="GetChargesChampionshipsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChargesChampionshipsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AdvancedServiceSoap">
+    <wsdl:operation name="ReportUnhandledError">
+      <wsdl:input message="tns:ReportUnhandledErrorSoapIn" />
+      <wsdl:output message="tns:ReportUnhandledErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenConnections">
+      <wsdl:input message="tns:GetOpenConnectionsSoapIn" />
+      <wsdl:output message="tns:GetOpenConnectionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToSecurityLog">
+      <wsdl:input message="tns:AddToSecurityLogSoapIn" />
+      <wsdl:output message="tns:AddToSecurityLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlterSQL">
+      <wsdl:input message="tns:GetAlterSQLSoapIn" />
+      <wsdl:output message="tns:GetAlterSQLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAlterSQL">
+      <wsdl:input message="tns:ExecuteAlterSQLSoapIn" />
+      <wsdl:output message="tns:ExecuteAlterSQLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGradesInfo">
+      <wsdl:input message="tns:GetGradesInfoSoapIn" />
+      <wsdl:output message="tns:GetGradesInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDifferentSeasonCharges">
+      <wsdl:input message="tns:GetDifferentSeasonChargesSoapIn" />
+      <wsdl:output message="tns:GetDifferentSeasonChargesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChargesChampionships">
+      <wsdl:input message="tns:GetChargesChampionshipsSoapIn" />
+      <wsdl:output message="tns:GetChargesChampionshipsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AdvancedServiceSoap" type="tns:AdvancedServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReportUnhandledError">
+      <soap:operation soapAction="http://tempuri.org/ReportUnhandledError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenConnections">
+      <soap:operation soapAction="http://tempuri.org/GetOpenConnections" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToSecurityLog">
+      <soap:operation soapAction="http://tempuri.org/AddToSecurityLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlterSQL">
+      <soap:operation soapAction="http://tempuri.org/GetAlterSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAlterSQL">
+      <soap:operation soapAction="http://tempuri.org/ExecuteAlterSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGradesInfo">
+      <soap:operation soapAction="http://tempuri.org/GetGradesInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDifferentSeasonCharges">
+      <soap:operation soapAction="http://tempuri.org/GetDifferentSeasonCharges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChargesChampionships">
+      <soap:operation soapAction="http://tempuri.org/GetChargesChampionships" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AdvancedServiceSoap12" type="tns:AdvancedServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReportUnhandledError">
+      <soap12:operation soapAction="http://tempuri.org/ReportUnhandledError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenConnections">
+      <soap12:operation soapAction="http://tempuri.org/GetOpenConnections" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToSecurityLog">
+      <soap12:operation soapAction="http://tempuri.org/AddToSecurityLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlterSQL">
+      <soap12:operation soapAction="http://tempuri.org/GetAlterSQL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAlterSQL">
+      <soap12:operation soapAction="http://tempuri.org/ExecuteAlterSQL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGradesInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetGradesInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDifferentSeasonCharges">
+      <soap12:operation soapAction="http://tempuri.org/GetDifferentSeasonCharges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChargesChampionships">
+      <soap12:operation soapAction="http://tempuri.org/GetChargesChampionships" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AdvancedService">
+    <wsdl:port name="AdvancedServiceSoap" binding="tns:AdvancedServiceSoap">
+      <soap:address location="https://schoolsport.org.il:8080/ISF/SportServices/AdvancedService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AdvancedServiceSoap12" binding="tns:AdvancedServiceSoap12">
+      <soap12:address location="https://schoolsport.org.il:8080/ISF/SportServices/AdvancedService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

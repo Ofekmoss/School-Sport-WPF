@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E5FB2D9-DC17-4DF5-A9B9-AF7FDD2BA12A}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Sport.Producer.UI</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Sport.Producer.UI</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\Resource\Resource.csproj">
+      <Name>Resource</Name>
+      <Project>{B4996132-2AFA-4D76-9036-0826F56AF584}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Common\Sport.Common.csproj">
+      <Name>Sport.Common</Name>
+      <Project>{3154D160-E176-4C5A-A37D-B7700AC5ED48}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Core\Sport.Core.csproj">
+      <Name>Sport.Core</Name>
+      <Project>{CBEF2D44-E51E-4388-B0C5-D95490D9EE35}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Data\Sport.Data.csproj">
+      <Name>Sport.Data</Name>
+      <Project>{9E5716D4-7EE1-402B-9B17-A63DA336FB2F}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Entities\Sport.Entities.csproj">
+      <Name>Sport.Entities</Name>
+      <Project>{BD6A1B0E-EDDD-4CC1-B97B-DB5BEB63FF37}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Producer\Sport.Producer.csproj">
+      <Name>Sport.Producer</Name>
+      <Project>{D9C0685D-4D0D-47BB-8C92-43B5FC9D1041}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Rulesets\Sport.Rulesets.csproj">
+      <Name>Sport.Rulesets</Name>
+      <Project>{ED50D5E5-2F21-429A-A352-B6EE7475BA12}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Types\Sport.Types.csproj">
+      <Name>Sport.Types</Name>
+      <Project>{052417D1-9263-494E-975E-71DD92C96C9C}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.UI\Sport.UI.csproj">
+      <Name>Sport.UI</Name>
+      <Project>{9CB03EAE-FEF5-4F9B-B8D7-E3EC0B9CC487}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\CompetitionTeamCompetitorsRuleEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\CompetitorCompetitionsRuleEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\Dialogs\FunctionariesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rules\Dialogs\RankFieldsHelpDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rules\Dialogs\RankingTablesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rules\Dialogs\ResultFormatDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rules\Dialogs\ScoreByPartDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rules\Dialogs\ScoreTableDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rules\Dialogs\TeamPhaseScoringDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rules\Dialogs\TeamScoreCountersDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rules\Dialogs\ValueFormatterDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rules\FunctionariesRuleEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\GameScoreRuleEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\GameStructureRuleEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\GeneralSportTypeDataRuleEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\PartScoreRuleEditor.cs" />
+    <Compile Include="Rules\PlayersAgeRuleEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\PlayersAmountRuleEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\RankingTablesRuleEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\ResultTypeRuleEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\ScoreByPartRuleEditor.cs" />
+    <Compile Include="Rules\ScoreTableRuleEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\TeamPhaseScoringRuleEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\TeamRankingRuleEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rules\TeamScoreCountersRuleEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\TeamScoreResultAmountRuleEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rules\TechnicalResultRuleEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RuleTypeEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Rules\Dialogs\FunctionariesDialog.resx">
+      <DependentUpon>FunctionariesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rules\Dialogs\RankFieldsHelpDialog.resx">
+      <DependentUpon>RankFieldsHelpDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rules\Dialogs\ResultFormatDialog.resx">
+      <DependentUpon>ResultFormatDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rules\Dialogs\ScoreTableDialog.resx">
+      <DependentUpon>ScoreTableDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rules\Dialogs\TeamScoreCountersDialog.resx">
+      <DependentUpon>TeamScoreCountersDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rules\Dialogs\ValueFormatterDialog.resx">
+      <DependentUpon>ValueFormatterDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rules\GameStructureRuleEditor.resx">
+      <DependentUpon>GameStructureRuleEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rules\TeamRankingRuleEditor.resx">
+      <DependentUpon>TeamRankingRuleEditor.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

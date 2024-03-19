@@ -1,0 +1,20 @@
+ -- =============================================
+ --Creation Order:
+ --SportTables.sql
+ --GeneralTables.sql
+ --PaymentTables.sql
+ --SystemTables.sql
+ --PatternTables.sql
+ --ChampionshipTables.sql  
+ --RegistrationTables.sql   
+ --CardTables.sql
+ --EntityTypes.sql
+ --Triggers/ChampionshipTriggers.sql
+ --Triggers/GeneralTriggers.sql
+ --Triggers/MessagesTriggers.sql
+ --Triggers/PlayersAdded.sql
+ --Triggers/PlayerStatusChanged.sql
+ --Triggers/RegistrationTriggers.sql
+ --Triggers/TeamAdded.sql
+ --Triggers/TeamStatusChanged.sql
+ -- =============================================

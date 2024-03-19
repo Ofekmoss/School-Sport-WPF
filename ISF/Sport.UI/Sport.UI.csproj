@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9CB03EAE-FEF5-4F9B-B8D7-E3EC0B9CC487}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Sport.UI</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Sport.UI</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <WebReference_EnableProperties>true</WebReference_EnableProperties>
+    <WebReference_EnableSQLTypes>false</WebReference_EnableSQLTypes>
+    <WebReference_EnableLegacyEventingModel>true</WebReference_EnableLegacyEventingModel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>Bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>Bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\Resource\Resource.csproj">
+      <Name>Resource</Name>
+      <Project>{B4996132-2AFA-4D76-9036-0826F56AF584}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Common\Sport.Common.csproj">
+      <Name>Sport.Common</Name>
+      <Project>{3154D160-E176-4C5A-A37D-B7700AC5ED48}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Core\Sport.Core.csproj">
+      <Name>Sport.Core</Name>
+      <Project>{CBEF2D44-E51E-4388-B0C5-D95490D9EE35}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Data\Sport.Data.csproj">
+      <Name>Sport.Data</Name>
+      <Project>{9E5716D4-7EE1-402B-9B17-A63DA336FB2F}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Documents\Sport.Documents.csproj">
+      <Name>Sport.Documents</Name>
+      <Project>{35009617-4AD3-4E46-94AF-8DD12B5812C5}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Entities\Sport.Entities.csproj">
+      <Name>Sport.Entities</Name>
+      <Project>{BD6A1B0E-EDDD-4CC1-B97B-DB5BEB63FF37}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Synchronization\Sport.Synchronization.csproj">
+      <Project>{1C23302D-99B6-4399-91FE-338287B73A0B}</Project>
+      <Name>Sport.Synchronization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Types\Sport.Types.csproj">
+      <Name>Sport.Types</Name>
+      <Project>{052417D1-9263-494E-975E-71DD92C96C9C}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SessionServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SessionServices\SessionService.disco" />
+    <None Include="Web References\SessionServices\SessionService.wsdl" />
+    <None Include="Web References\SessionServices\TeamData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SessionServices\UserData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SessionServices\VersionInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Command.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\BlockTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BoxGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ButtonBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CalendarControl.cs" />
+    <Compile Include="Controls\CaptionBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GenericItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\GenericPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Grid.cs" />
+    <Compile Include="Controls\LayoutPanel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\LegendControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NullComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PrintPreview.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RichTextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RightContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RightEnabledControls.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RightTabControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TextControl.cs" />
+    <Compile Include="Controls\TextItemsControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ThemeButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DetailsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ChooseItemsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ChoosePrintPages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CustomizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CustomizeForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EntitySelectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ExportReceiptsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ExportReceiptsDialog.Designer.cs">
+      <DependentUpon>ExportReceiptsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\GenericEditDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\InputTextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PrintSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\RangeSelectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SortForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TextEditDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Display\RestateCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Display\StateManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityListView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityListView2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GeneralTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helpers.cs" />
+    <Compile Include="KeyListener.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MessageBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpenDialogCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OpenViewCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageForm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParameterList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="TableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableView2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Visualizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web References\SessionServices\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <EmbeddedResource Include="Controls\BlockTree.resx">
+      <DependentUpon>BlockTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BoxGrid.resx">
+      <DependentUpon>BoxGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CaptionBar.resx">
+      <DependentUpon>CaptionBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ControlWrapper.resx">
+      <DependentUpon>ControlWrapper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PrintPreview.resx">
+      <DependentUpon>PrintPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RightContextMenu.resx">
+      <DependentUpon>RightContextMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ThemeButton.resx">
+      <DependentUpon>ThemeButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailsView.resx">
+      <DependentUpon>DetailsView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForm.resx">
+      <DependentUpon>DialogForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ChooseItemsForm.resx">
+      <DependentUpon>ChooseItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ChoosePrintPages.resx">
+      <DependentUpon>ChoosePrintPages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CustomizeForm.resx">
+      <DependentUpon>CustomizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CustomizeForm2.resx">
+      <DependentUpon>CustomizeForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EntitySelectionDialog.resx">
+      <DependentUpon>EntitySelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ExportReceiptsDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ExportReceiptsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\GenericEditDialog.resx">
+      <DependentUpon>GenericEditDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\InputTextForm.resx">
+      <DependentUpon>InputTextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PrintForm.resx">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PrintSettingsForm.resx">
+      <DependentUpon>PrintSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\RangeSelectionDialog.resx">
+      <DependentUpon>RangeSelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SortForm.resx">
+      <DependentUpon>SortForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TextEditDialog.resx">
+      <DependentUpon>TextEditDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageForm.resx">
+      <DependentUpon>PageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableView.resx">
+      <DependentUpon>TableView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableView2.resx">
+      <DependentUpon>TableView2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View.resx">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <WebReferenceUrl Include="http://www.schoolsport.co.il:8080/ISF/SportServices/SessionService.asmx">
+      <RelPath>Web References\SessionServices\</RelPath>
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <UpdateFromURL>http://www.schoolsport.co.il:8080/ISF/SportServices/SessionService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Sport_UI_SessionServices_SessionService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\isf_logo_new.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

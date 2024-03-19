@@ -1,0 +1,97 @@
+﻿#ArticleSubmittedMessage
+{
+	display: none;
+}
+		
+.article-pictures-placeholder .article-picture, .invalid-picture
+{
+    width: 258px;
+    height: 172px;
+    display: none;
+}
+       	
+.file-too-big, .invalid-attachment, #pnlConfirmDelete
+{
+    display: none;
+}
+       	
+.required-field
+{
+    color: Red;
+    font-weight: bold;
+    display: none;
+}
+       	
+.article-pictures-placeholder .article-picture
+{
+	border: 0;
+}
+       	
+.invalid-picture
+{
+    font-weight: bold;
+    text-align: center;
+}
+       	
+.article-pictures-placeholder .remove-picture 
+{
+    display: none;
+}
+       	
+.link-url
+{
+    direction: ltr;
+}
+       	
+.article-link, .article-attachment
+{
+    margin-top: 10px;
+}
+       	
+.article-link:hover .table-actions, .article-attachment:hover .table-actions
+{
+	display: block;
+}
+		
+.row-actions
+{
+	visibility: hidden;
+}
+		
+.article-link:hover .row-actions, .article-attachment:hover .row-actions, .article-link-template:hover .row-actions, .article-attachment-template:hover .row-actions
+{
+	visibility: visible;
+}
+		
+.attachment-preview
+{
+	display: none;
+}
+		
+.cancel-upload
+{
+	margin-right: 10px;
+}
+		
+#FileUploadStatus
+{
+	display: none;
+}
+		
+#FileUploadStatus .row
+{
+	margin-top: 10px;
+}
+
+#ArticlesPreviewFrame
+{
+	position: absolute;
+	display: none;
+	left: 300px;
+	top: 100px;
+	border: 3px solid black;
+	margin: 0;
+	width: 550px;
+	height: 435px;
+	background-color: White;
+}

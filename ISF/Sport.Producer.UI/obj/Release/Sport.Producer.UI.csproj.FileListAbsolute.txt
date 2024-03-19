@@ -1,0 +1,11 @@
+D:\BitBucket\schoolsport\ISF\Sport.Producer.UI\obj\Release\Sport.Producer.UI.csproj.AssemblyReference.cache
+D:\BitBucket\schoolsport\ISF\Sport.Producer.UI\obj\Release\Sport.Producer.UI.Rules.Dialogs.FunctionariesDialog.resources
+D:\BitBucket\schoolsport\ISF\Sport.Producer.UI\obj\Release\Sport.Producer.UI.Rules.Dialogs.RankFieldsHelpDialog.resources
+D:\BitBucket\schoolsport\ISF\Sport.Producer.UI\obj\Release\Sport.Producer.UI.Rules.Dialogs.ResultFormatDialog.resources
+D:\BitBucket\schoolsport\ISF\Sport.Producer.UI\obj\Release\Sport.Producer.UI.Rules.Dialogs.ScoreTableDialog.resources
+D:\BitBucket\schoolsport\ISF\Sport.Producer.UI\obj\Release\Sport.Producer.UI.Rules.Dialogs.TeamScoreCountersDialog.resources
+D:\BitBucket\schoolsport\ISF\Sport.Producer.UI\obj\Release\Sport.Producer.UI.Rules.Dialogs.ValueFormatterDialog.resources
+D:\BitBucket\schoolsport\ISF\Sport.Producer.UI\obj\Release\Sport.Producer.UI.Rules.GameStructureRuleEditor.resources
+D:\BitBucket\schoolsport\ISF\Sport.Producer.UI\obj\Release\Sport.Producer.UI.Rules.TeamRankingDialog.resources
+D:\BitBucket\schoolsport\ISF\Sport.Producer.UI\obj\Release\Sport.Producer.UI.csproj.GenerateResource.cache
+D:\BitBucket\schoolsport\ISF\Sport.Producer.UI\obj\Release\Sport.Producer.UI.csproj.CoreCompileInputs.cache

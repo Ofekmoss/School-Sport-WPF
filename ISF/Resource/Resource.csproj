@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B4996132-2AFA-4D76-9036-0826F56AF584}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Resource</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Sport.Resources</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Content Include="App.ico" />
+    <Content Include="Images\abort.gif" />
+    <Content Include="Images\Arrows.bmp" />
+    <Content Include="Images\Arrow_Left.gif" />
+    <Content Include="Images\background.gif" />
+    <Content Include="Images\bcheck.bmp" />
+    <Content Include="Images\bclear.bmp" />
+    <Content Include="Images\bcustom.bmp" />
+    <Content Include="Images\bdivide.bmp" />
+    <Content Include="Images\bdleft.bmp" />
+    <Content Include="Images\bdown.bmp" />
+    <Content Include="Images\bdright.bmp" />
+    <Content Include="Images\bleft.bmp" />
+    <Content Include="Images\bload.bmp" />
+    <Content Include="Images\bminus.bmp" />
+    <Content Include="Images\bnew.bmp" />
+    <Content Include="Images\bplus.bmp" />
+    <Content Include="Images\bresult.bmp" />
+    <Content Include="Images\bright.bmp" />
+    <Content Include="Images\bsave.bmp" />
+    <Content Include="Images\bswitch.bmp" />
+    <Content Include="Images\bulb_off.ico" />
+    <Content Include="Images\bulb_on.ico" />
+    <Content Include="Images\bundo.bmp" />
+    <Content Include="Images\bup.bmp" />
+    <Content Include="Images\bx.bmp" />
+    <Content Include="Images\calculator.gif" />
+    <Content Include="Images\CalendarType.bmp" />
+    <Content Include="Images\check_green.gif" />
+    <Content Include="Images\Clock.gif" />
+    <Content Include="Images\Custom.bmp" />
+    <Content Include="Images\Cut.bmp" />
+    <Content Include="Images\Delete.bmp" />
+    <Content Include="Images\Digits\0.gif" />
+    <Content Include="Images\Digits\1.gif" />
+    <Content Include="Images\Digits\2.gif" />
+    <Content Include="Images\Digits\3.gif" />
+    <Content Include="Images\Digits\4.gif" />
+    <Content Include="Images\Digits\5.gif" />
+    <Content Include="Images\Digits\6.gif" />
+    <Content Include="Images\Digits\7.gif" />
+    <Content Include="Images\Digits\8.gif" />
+    <Content Include="Images\Digits\9.gif" />
+    <Content Include="Images\DoubleLeft.bmp" />
+    <Content Include="Images\drag.cur" />
+    <Content Include="Images\exit.bmp" />
+    <Content Include="Images\Export.gif" />
+    <Content Include="Images\eye.gif" />
+    <Content Include="Images\file_save.gif" />
+    <Content Include="Images\GreenPlus.bmp" />
+    <Content Include="Images\hashavshevet.bmp" />
+    <Content Include="Images\Hashavshevet.ico" />
+    <Content Include="Images\hashavshevet_big.bmp" />
+    <Content Include="Images\Import.gif" />
+    <Content Include="Images\ISF2Gray.gif" />
+    <Content Include="Images\ISF2Gray_small.gif" />
+    <Content Include="Images\isf_logo.GIF" />
+    <Content Include="Images\Key.gif" />
+    <Content Include="Images\logo_big_light_2.gif" />
+    <Content Include="Images\Menus.ico" />
+    <Content Include="Images\mir.bmp" />
+    <Content Include="Images\New.bmp" />
+    <Content Include="Images\plus.gif" />
+    <Content Include="Images\Print.bmp" />
+    <Content Include="Images\Results.gif" />
+    <Content Include="Images\Search.bmp" />
+    <Content Include="Images\Status_Offline.ico" />
+    <Content Include="Images\Status_Online.ico" />
+    <Content Include="Images\trash_can.gif" />
+    <Content Include="Images\watch.gif" />
+    <Content Include="Images\watch_anim.gif" />
+    <Content Include="Images\wcheck.bmp" />
+    <Content Include="Images\wclear.bmp" />
+    <Content Include="Images\wcustom.bmp" />
+    <Content Include="Images\wdivide.bmp" />
+    <Content Include="Images\wdleft.bmp" />
+    <Content Include="Images\wdown.bmp" />
+    <Content Include="Images\wdright.bmp" />
+    <Content Include="Images\wleft.bmp" />
+    <Content Include="Images\wload.bmp" />
+    <Content Include="Images\wminus.bmp" />
+    <Content Include="Images\wnew.bmp" />
+    <Content Include="Images\wplus.bmp" />
+    <Content Include="Images\wresult.bmp" />
+    <Content Include="Images\wright.bmp" />
+    <Content Include="Images\wsave.bmp" />
+    <Content Include="Images\wswitch.bmp" />
+    <Content Include="Images\wundo.bmp" />
+    <Content Include="Images\wup.bmp" />
+    <Content Include="Images\wx.bmp" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImageLists.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="ImageLists.resx">
+      <DependentUpon>ImageLists.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Images\ISF.emf" />
+    <None Include="Images\ISF2.emf" />
+    <None Include="Images\ISF2Gray.emf" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

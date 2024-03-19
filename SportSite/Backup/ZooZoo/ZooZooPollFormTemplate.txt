@@ -1,0 +1,11 @@
+﻿<p>שאלת סקר:<br />
+<input type="text" name="ZooZooPoll_$id_Question" size="70" maxlength="256" value="$ZooZooPoll_$id_Question" /></p>
+<p>תשובות אפשריות:<br />
+<ol>
+	<li><input type="text" name="ZooZooPoll_$id_Answer1" size="50" maxlength="256" value="$ZooZooPoll_$id_Answer1" /> <span $HideWhenNew>מספר הצבעות: $ZooZooPoll_$id_Votes1</span></li>
+	<li><input type="text" name="ZooZooPoll_$id_Answer2" size="50" maxlength="256" value="$ZooZooPoll_$id_Answer2" /> <span $HideWhenNew>מספר הצבעות: $ZooZooPoll_$id_Votes2</span></li>
+	<li><input type="text" name="ZooZooPoll_$id_Answer3" size="50" maxlength="256" value="$ZooZooPoll_$id_Answer3" /> <span $HideWhenNew>מספר הצבעות: $ZooZooPoll_$id_Votes3</span></li>
+	<li><input type="text" name="ZooZooPoll_$id_Answer4" size="50" maxlength="256" value="$ZooZooPoll_$id_Answer4" /> <span $HideWhenNew>מספר הצבעות: $ZooZooPoll_$id_Votes4</span></li>
+	<li><input type="text" name="ZooZooPoll_$id_Answer5" size="50" maxlength="256" value="$ZooZooPoll_$id_Answer5" /> <span $HideWhenNew>מספר הצבעות: $ZooZooPoll_$id_Votes5</span></li>
+</ol></p>
+<p $HideWhenNew><input type="checkbox" name="ZooZooPoll_$id_Delete" value="1" $ZooZooPoll_$id_Deleted />הסתר סקר זה</p>

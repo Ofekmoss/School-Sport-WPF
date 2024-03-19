@@ -1,0 +1,3007 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.mir.co.il/DataService" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.mir.co.il/DataService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.mir.co.il/DataService">
+      <s:element name="GetEntities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filterFields" type="tns:ArrayOfFilterField" />
+            <s:element minOccurs="1" maxOccurs="1" name="timestamp" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFilterField">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FilterField" type="tns:FilterField" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FilterField">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Field" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" />
+          <s:element minOccurs="1" maxOccurs="1" name="Not" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Entity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Fields" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Entity" type="tns:Entity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEntitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntitiesResult" type="tns:ArrayOfEntity" />
+            <s:element minOccurs="1" maxOccurs="1" name="timestamp" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="deleted" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MarkMessageRead">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="messageID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MarkMessageReadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MarkMessageReadResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="values" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertEntityResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="values" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="values" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateEntityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteEntityResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTeacherCourseProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTeacherCourseProductResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTeacherCourseProduct">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTeacherCourseProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTeacherCourseProductResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTeacherCourseSports">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sports" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTeacherCourseSportsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTeacherCourseSports">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTeacherCourseSportsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTeacherCourseSportsResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityTypeClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityTypeClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityTypeClassResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LookupEntityFilter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="entityId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LookupEntityFilterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LookupEntityFilterResult" type="tns:ArrayOfFilterField" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="regionID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRegionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegionsData">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="SimpleData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSimpleData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SimpleData" type="tns:SimpleData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRegionsDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRegionsDataResult" type="tns:ArrayOfSimpleData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSportsData">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSportsDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSportsDataResult" type="tns:ArrayOfSimpleData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSportFieldsHavingPlayers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="season" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSportFieldsHavingPlayersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSportFieldsHavingPlayersResult" type="tns:ArrayOfSimpleData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSportFieldCompetitions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sportFieldID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Competition">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SportField" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Facility" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Court" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Competitors" type="tns:ArrayOfCompetitor" />
+          <s:element minOccurs="0" maxOccurs="1" name="Heats" type="tns:ArrayOfHeat" />
+          <s:element minOccurs="1" maxOccurs="1" name="championshipCategory" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LaneCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCompetitor">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Competitor" nillable="true" type="tns:Competitor" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Competitor">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Heat" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Position" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultPosition" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Score" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CustomPosition" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfHeat">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Heat" nillable="true" type="tns:Heat" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Heat">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Facility" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Court" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCompetition">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Competition" nillable="true" type="tns:Competition" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSportFieldCompetitionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSportFieldCompetitionsResult" type="tns:ArrayOfCompetition" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCourtCompetitions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="courtID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCourtCompetitionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCourtCompetitionsResult" type="tns:ArrayOfCompetition" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFacilityCompetitions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="facilityID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFacilityCompetitionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFacilityCompetitionsResult" type="tns:ArrayOfCompetition" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRawMatchesByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="start" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="region" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sport" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="championship" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="category" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="facility" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MatchData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Championship" type="tns:ChampionshipData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Round" type="tns:RoundData" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cycle" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MatchIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TeamA" type="tns:TeamData" />
+          <s:element minOccurs="0" maxOccurs="1" name="TeamB" type="tns:TeamData" />
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Facility" type="tns:FacilityData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Court" type="tns:CourtData" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamA_Score" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamB_Score" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartsResult" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PhaseIndex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GroupIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Supervisor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Referee" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ChampionshipData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Season" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="tns:RegionData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sport" type="tns:SportData" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsClubs" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastRegistrationDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="AltStartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="AltEndDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FinalsDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="AltFinalsDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ruleset" type="tns:RulesetData" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsOpen" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Supervisor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StandardChampionship" type="tns:SimpleData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Categories" type="tns:ArrayOfCategoryData" />
+          <s:element minOccurs="0" maxOccurs="1" name="GameStructureRule" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RegionData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SportData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ruleset" type="tns:RulesetData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RulesetData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sport" type="tns:SportData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="tns:RegionData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCategoryData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CategoryData" nillable="true" type="tns:CategoryData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CategoryData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Championship" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Category" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phases" type="tns:ArrayOfPhaseData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPhaseData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PhaseData" nillable="true" type="tns:PhaseData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PhaseData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PhaseIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhaseName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Groups" type="tns:ArrayOfGroupData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfGroupData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GroupData" nillable="true" type="tns:GroupData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GroupData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Phase" type="tns:PhaseData" />
+          <s:element minOccurs="1" maxOccurs="1" name="GroupIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rounds" type="tns:ArrayOfRoundData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Competitions" type="tns:ArrayOfCompetitionData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRoundData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RoundData" nillable="true" type="tns:RoundData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RoundData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Group" type="tns:GroupData" />
+          <s:element minOccurs="1" maxOccurs="1" name="RoundIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RoundName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Matches" type="tns:ArrayOfMatchData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMatchData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MatchData" nillable="true" type="tns:MatchData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCompetitionData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CompetitionData" nillable="true" type="tns:CompetitionData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CompetitionData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Group" type="tns:GroupData" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompetitionIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SportField" type="tns:SportFieldData" />
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Facility" type="tns:FacilityData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Court" type="tns:CourtData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Heats" type="tns:ArrayOfHeatData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Competitors" type="tns:ArrayOfCompetitorData" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PhaseIndex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GroupIndex" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SportFieldData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SportFieldType" type="tns:SportFieldTypeData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SportFieldTypeData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sport" type="tns:SportData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FacilityData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="tns:RegionData" />
+          <s:element minOccurs="0" maxOccurs="1" name="School" type="tns:SchoolData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SchoolData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Symbol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FromGrade" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ToGrade" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="tns:RegionData" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsClub" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CourtData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Facility" type="tns:FacilityData" />
+          <s:element minOccurs="1" maxOccurs="1" name="CourtType" type="tns:SimpleData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfHeatData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HeatData" nillable="true" type="tns:HeatData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HeatData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Competition" type="tns:CompetitionData" />
+          <s:element minOccurs="1" maxOccurs="1" name="HeatIndex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Facility" type="tns:FacilityData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Court" type="tns:CourtData" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCompetitorData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CompetitorData" nillable="true" type="tns:CompetitorData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CompetitorData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Competition" type="tns:CompetitionData" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompetitorIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Player" type="tns:PlayerData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Heat" type="tns:HeatData" />
+          <s:element minOccurs="1" maxOccurs="1" name="Position" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultPosition" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Score" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rule" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeasureType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlayerData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Student" type="tns:StudentData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Team" type="tns:TeamData" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShirtNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChipNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StudentData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Birthdate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="School" type="tns:SchoolData" />
+          <s:element minOccurs="1" maxOccurs="1" name="Grade" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SexType" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TeamData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="School" type="tns:SchoolData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Championship" type="tns:ChampionshipData" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChampionshipCategory" type="tns:CategoryData" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Supervisor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRawMatchesByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRawMatchesByDateResult" type="tns:ArrayOfMatchData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMatchesByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="start" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMatchesByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMatchesByDateResult" type="tns:ArrayOfMatchData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMatchesByFacility">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="facility" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMatchesByFacilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMatchesByFacilityResult" type="tns:ArrayOfMatchData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMatchesByCourt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="court" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMatchesByCourtResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMatchesByCourtResult" type="tns:ArrayOfMatchData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMatchesByTeam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="team" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMatchesByTeamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMatchesByTeamResult" type="tns:ArrayOfMatchData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompetitionsByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="start" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompetitionsByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCompetitionsByDateResult" type="tns:ArrayOfCompetitionData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRawCompetitionsByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="start" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="region" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sport" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="championship" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="facility" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="category" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRawCompetitionsByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRawCompetitionsByDateResult" type="tns:ArrayOfCompetitionData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContainingChampionships">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sportFieldID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="facilityID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="courtID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContainingChampionshipsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContainingChampionshipsResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChampionshipData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="champID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="regionID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfChampionshipData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ChampionshipData" nillable="true" type="tns:ChampionshipData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetChampionshipDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChampionshipDataResult" type="tns:ArrayOfChampionshipData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChampionshipsData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="region" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sport" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChampionshipsDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChampionshipsDataResult" type="tns:ArrayOfSimpleData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChampionshipsBySeason">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="region" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sport" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="season" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChampionshipsBySeasonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChampionshipsBySeasonResult" type="tns:ArrayOfSimpleData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerCardFullData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="playerId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PlayerCardData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StudentEntityId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StudentIdNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SchoolName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SchoolSymbol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SportName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Birthdate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Grade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RawPicture" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsOverAge" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GotValidPicture" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPlayerCardFullDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlayerCardFullDataResult" type="tns:PlayerCardData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayersCountBySeason">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="season" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayersCountBySeasonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlayersCountBySeasonResult" type="tns:ArrayOfSimpleData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTeamsByChampionshipCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="champCategoryId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTeamsByChampionshipCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTeamsByChampionshipCategoryResult" type="tns:ArrayOfSimpleData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChampionshipCategories">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="champID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChampionshipCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChampionshipCategoriesResult" type="tns:ArrayOfCategoryData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChampionshipCategoriesBySeason">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="season" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChampionshipCategoriesBySeasonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChampionshipCategoriesBySeasonResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSimplePlayerData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="championships" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SimplePlayerData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ChampionshipId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BirthDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsMale" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="TeamName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSimplePlayerData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SimplePlayerData" nillable="true" type="tns:SimplePlayerData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSimplePlayerDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSimplePlayerDataResult" type="tns:ArrayOfSimplePlayerData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlayerNumbers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="teamIDs" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TeamPlayerNumbers">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TeamId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayerNumbers" type="tns:ArrayOfInt" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTeamPlayerNumbers">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TeamPlayerNumbers" nillable="true" type="tns:TeamPlayerNumbers" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPlayerNumbersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlayerNumbersResult" type="tns:ArrayOfTeamPlayerNumbers" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFunctionaryGames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="functionaryID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFunctionaryGamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFunctionaryGamesResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFunctionaryGamesByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="functionaryID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtStart" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtEnd" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FunctionaryMatchData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FunctionaryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChampionshipCategoryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Phase" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Group" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Round" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cycle" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Match" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFunctionaryMatchData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FunctionaryMatchData" type="tns:FunctionaryMatchData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFunctionaryGamesByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFunctionaryGamesByDateResult" type="tns:ArrayOfFunctionaryMatchData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSeasonData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="season" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SeasonData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Season" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Start" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="End" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSeasonData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SeasonData" nillable="true" type="tns:SeasonData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSeasonDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSeasonDataResult" type="tns:ArrayOfSeasonData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRulesetRules">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rulesetID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RuleData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RuleID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ruleset" type="tns:RulesetData" />
+          <s:element minOccurs="1" maxOccurs="1" name="RuleType" type="tns:SimpleData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SportFieldType" type="tns:SportFieldTypeData" />
+          <s:element minOccurs="0" maxOccurs="1" name="SportField" type="tns:SportFieldData" />
+          <s:element minOccurs="1" maxOccurs="1" name="Category" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRuleData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RuleData" nillable="true" type="tns:RuleData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRulesetRulesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRulesetRulesResult" type="tns:ArrayOfRuleData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentsByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetStudentsByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentsByNameResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentByNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_number" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentByNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentByNumberResult" type="tns:StudentData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSchoolData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="school_ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSchoolDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSchoolDataResult" type="tns:SchoolData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegionData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="region_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegionDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRegionDataResult" type="tns:RegionData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSimpleData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="table_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_field" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name_field" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSimpleDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSimpleDataResult" type="tns:SimpleData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSchoolDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="schoolID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="schoolManager" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="schoolPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="schoolFax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="schoolEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="encryptedPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSchoolDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateSchoolDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReceiptData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="receiptID_start" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="receiptID_end" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReceiptData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Number" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Account" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReceiptData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReceiptData" type="tns:ReceiptData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetReceiptDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReceiptDataResult" type="tns:ArrayOfReceiptData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReceiptData_Basic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="receiptID_start" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="receiptID_end" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReceiptData_Basic">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Number" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReceiptData_Basic">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReceiptData_Basic" type="tns:ReceiptData_Basic" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetReceiptData_BasicResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReceiptData_BasicResult" type="tns:ArrayOfReceiptData_Basic" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebsitePermanentChampionships">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="WebsitePermanentChampionship">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Index" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChampionshipCategoryId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWebsitePermanentChampionship">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WebsitePermanentChampionship" nillable="true" type="tns:WebsitePermanentChampionship" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetWebsitePermanentChampionshipsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebsitePermanentChampionshipsResult" type="tns:ArrayOfWebsitePermanentChampionship" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddWebsitePermanentChampionship">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="championship" type="tns:WebsitePermanentChampionship" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddWebsitePermanentChampionshipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddWebsitePermanentChampionshipResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWebsitePermanentChampionship">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="championship" type="tns:WebsitePermanentChampionship" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWebsitePermanentChampionshipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateWebsitePermanentChampionshipResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteWebsitePermanentChampionship">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="championshipCategoryId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteWebsitePermanentChampionshipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteWebsitePermanentChampionshipResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClubCategoriesBySeason">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="school" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="season" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClubCategoriesBySeasonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClubCategoriesBySeasonResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HasPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HasPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HasPasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsersWithoutPassword">
+        <s:complexType />
+      </s:element>
+      <s:element name="UsersWithoutPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsersWithoutPasswordResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetClientVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clientVersion" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetClientVersionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChampionshipCurrentPhase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="champCategoryID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChampionshipCurrentPhaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetChampionshipCurrentPhaseResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatestSeason">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLatestSeasonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLatestSeasonResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetEntitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntities" />
+  </wsdl:message>
+  <wsdl:message name="GetEntitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="MarkMessageReadSoapIn">
+    <wsdl:part name="parameters" element="tns:MarkMessageRead" />
+  </wsdl:message>
+  <wsdl:message name="MarkMessageReadSoapOut">
+    <wsdl:part name="parameters" element="tns:MarkMessageReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertEntitySoapIn">
+    <wsdl:part name="parameters" element="tns:InsertEntity" />
+  </wsdl:message>
+  <wsdl:message name="InsertEntitySoapOut">
+    <wsdl:part name="parameters" element="tns:InsertEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEntitySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEntity" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEntitySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEntitySoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteEntity" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEntitySoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTeacherCourseProductSoapIn">
+    <wsdl:part name="parameters" element="tns:SetTeacherCourseProduct" />
+  </wsdl:message>
+  <wsdl:message name="SetTeacherCourseProductSoapOut">
+    <wsdl:part name="parameters" element="tns:SetTeacherCourseProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTeacherCourseProductSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTeacherCourseProduct" />
+  </wsdl:message>
+  <wsdl:message name="GetTeacherCourseProductSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTeacherCourseProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTeacherCourseSportsSoapIn">
+    <wsdl:part name="parameters" element="tns:SetTeacherCourseSports" />
+  </wsdl:message>
+  <wsdl:message name="SetTeacherCourseSportsSoapOut">
+    <wsdl:part name="parameters" element="tns:SetTeacherCourseSportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTeacherCourseSportsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTeacherCourseSports" />
+  </wsdl:message>
+  <wsdl:message name="GetTeacherCourseSportsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTeacherCourseSportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityTypeClassSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntityTypeClass" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityTypeClassSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntityTypeClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="LookupEntityFilterSoapIn">
+    <wsdl:part name="parameters" element="tns:LookupEntityFilter" />
+  </wsdl:message>
+  <wsdl:message name="LookupEntityFilterSoapOut">
+    <wsdl:part name="parameters" element="tns:LookupEntityFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRegionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRegion" />
+  </wsdl:message>
+  <wsdl:message name="GetRegionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRegionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRegionsDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRegionsData" />
+  </wsdl:message>
+  <wsdl:message name="GetRegionsDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRegionsDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSportsDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSportsData" />
+  </wsdl:message>
+  <wsdl:message name="GetSportsDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSportsDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSportFieldsHavingPlayersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSportFieldsHavingPlayers" />
+  </wsdl:message>
+  <wsdl:message name="GetSportFieldsHavingPlayersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSportFieldsHavingPlayersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSportFieldCompetitionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSportFieldCompetitions" />
+  </wsdl:message>
+  <wsdl:message name="GetSportFieldCompetitionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSportFieldCompetitionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCourtCompetitionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCourtCompetitions" />
+  </wsdl:message>
+  <wsdl:message name="GetCourtCompetitionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCourtCompetitionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFacilityCompetitionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFacilityCompetitions" />
+  </wsdl:message>
+  <wsdl:message name="GetFacilityCompetitionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFacilityCompetitionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRawMatchesByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRawMatchesByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetRawMatchesByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRawMatchesByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMatchesByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMatchesByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetMatchesByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMatchesByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMatchesByFacilitySoapIn">
+    <wsdl:part name="parameters" element="tns:GetMatchesByFacility" />
+  </wsdl:message>
+  <wsdl:message name="GetMatchesByFacilitySoapOut">
+    <wsdl:part name="parameters" element="tns:GetMatchesByFacilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMatchesByCourtSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMatchesByCourt" />
+  </wsdl:message>
+  <wsdl:message name="GetMatchesByCourtSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMatchesByCourtResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMatchesByTeamSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMatchesByTeam" />
+  </wsdl:message>
+  <wsdl:message name="GetMatchesByTeamSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMatchesByTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCompetitionsByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompetitionsByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetCompetitionsByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompetitionsByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRawCompetitionsByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRawCompetitionsByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetRawCompetitionsByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRawCompetitionsByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContainingChampionshipsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContainingChampionships" />
+  </wsdl:message>
+  <wsdl:message name="GetContainingChampionshipsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContainingChampionshipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChampionshipDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChampionshipData" />
+  </wsdl:message>
+  <wsdl:message name="GetChampionshipDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChampionshipDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChampionshipsDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChampionshipsData" />
+  </wsdl:message>
+  <wsdl:message name="GetChampionshipsDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChampionshipsDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChampionshipsBySeasonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChampionshipsBySeason" />
+  </wsdl:message>
+  <wsdl:message name="GetChampionshipsBySeasonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChampionshipsBySeasonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerCardFullDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayerCardFullData" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerCardFullDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayerCardFullDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayersCountBySeasonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayersCountBySeason" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayersCountBySeasonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayersCountBySeasonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTeamsByChampionshipCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetTeamsByChampionshipCategory" />
+  </wsdl:message>
+  <wsdl:message name="GetTeamsByChampionshipCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetTeamsByChampionshipCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChampionshipCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChampionshipCategories" />
+  </wsdl:message>
+  <wsdl:message name="GetChampionshipCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChampionshipCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChampionshipCategoriesBySeasonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChampionshipCategoriesBySeason" />
+  </wsdl:message>
+  <wsdl:message name="GetChampionshipCategoriesBySeasonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChampionshipCategoriesBySeasonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserName" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSimplePlayerDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSimplePlayerData" />
+  </wsdl:message>
+  <wsdl:message name="GetSimplePlayerDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSimplePlayerDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerNumbersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlayerNumbers" />
+  </wsdl:message>
+  <wsdl:message name="GetPlayerNumbersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlayerNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFunctionaryGamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFunctionaryGames" />
+  </wsdl:message>
+  <wsdl:message name="GetFunctionaryGamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFunctionaryGamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFunctionaryGamesByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFunctionaryGamesByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetFunctionaryGamesByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFunctionaryGamesByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSeasonDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSeasonData" />
+  </wsdl:message>
+  <wsdl:message name="GetSeasonDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSeasonDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRulesetRulesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRulesetRules" />
+  </wsdl:message>
+  <wsdl:message name="GetRulesetRulesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRulesetRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentsByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentsByName" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentsByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentsByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentByNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentByNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentByNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentByNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSchoolDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSchoolData" />
+  </wsdl:message>
+  <wsdl:message name="GetSchoolDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSchoolDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRegionDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRegionData" />
+  </wsdl:message>
+  <wsdl:message name="GetRegionDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRegionDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSimpleDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSimpleData" />
+  </wsdl:message>
+  <wsdl:message name="GetSimpleDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSimpleDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSchoolDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSchoolDetails" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSchoolDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSchoolDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReceiptDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReceiptData" />
+  </wsdl:message>
+  <wsdl:message name="GetReceiptDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReceiptDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReceiptData_BasicSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReceiptData_Basic" />
+  </wsdl:message>
+  <wsdl:message name="GetReceiptData_BasicSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReceiptData_BasicResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWebsitePermanentChampionshipsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebsitePermanentChampionships" />
+  </wsdl:message>
+  <wsdl:message name="GetWebsitePermanentChampionshipsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebsitePermanentChampionshipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddWebsitePermanentChampionshipSoapIn">
+    <wsdl:part name="parameters" element="tns:AddWebsitePermanentChampionship" />
+  </wsdl:message>
+  <wsdl:message name="AddWebsitePermanentChampionshipSoapOut">
+    <wsdl:part name="parameters" element="tns:AddWebsitePermanentChampionshipResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWebsitePermanentChampionshipSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateWebsitePermanentChampionship" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWebsitePermanentChampionshipSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateWebsitePermanentChampionshipResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteWebsitePermanentChampionshipSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteWebsitePermanentChampionship" />
+  </wsdl:message>
+  <wsdl:message name="DeleteWebsitePermanentChampionshipSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteWebsitePermanentChampionshipResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClubCategoriesBySeasonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClubCategoriesBySeason" />
+  </wsdl:message>
+  <wsdl:message name="GetClubCategoriesBySeasonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClubCategoriesBySeasonResponse" />
+  </wsdl:message>
+  <wsdl:message name="HasPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:HasPassword" />
+  </wsdl:message>
+  <wsdl:message name="HasPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:HasPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsersWithoutPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:UsersWithoutPassword" />
+  </wsdl:message>
+  <wsdl:message name="UsersWithoutPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:UsersWithoutPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetClientVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:SetClientVersion" />
+  </wsdl:message>
+  <wsdl:message name="SetClientVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:SetClientVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChampionshipCurrentPhaseSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChampionshipCurrentPhase" />
+  </wsdl:message>
+  <wsdl:message name="GetChampionshipCurrentPhaseSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChampionshipCurrentPhaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestSeasonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLatestSeason" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestSeasonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLatestSeasonResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DataServiceSoap">
+    <wsdl:operation name="GetEntities">
+      <wsdl:input message="tns:GetEntitiesSoapIn" />
+      <wsdl:output message="tns:GetEntitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkMessageRead">
+      <wsdl:input message="tns:MarkMessageReadSoapIn" />
+      <wsdl:output message="tns:MarkMessageReadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntity">
+      <wsdl:input message="tns:InsertEntitySoapIn" />
+      <wsdl:output message="tns:InsertEntitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntity">
+      <wsdl:input message="tns:UpdateEntitySoapIn" />
+      <wsdl:output message="tns:UpdateEntitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntity">
+      <wsdl:input message="tns:DeleteEntitySoapIn" />
+      <wsdl:output message="tns:DeleteEntitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTeacherCourseProduct">
+      <wsdl:input message="tns:SetTeacherCourseProductSoapIn" />
+      <wsdl:output message="tns:SetTeacherCourseProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherCourseProduct">
+      <wsdl:input message="tns:GetTeacherCourseProductSoapIn" />
+      <wsdl:output message="tns:GetTeacherCourseProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTeacherCourseSports">
+      <wsdl:input message="tns:SetTeacherCourseSportsSoapIn" />
+      <wsdl:output message="tns:SetTeacherCourseSportsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherCourseSports">
+      <wsdl:input message="tns:GetTeacherCourseSportsSoapIn" />
+      <wsdl:output message="tns:GetTeacherCourseSportsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityTypeClass">
+      <wsdl:input message="tns:GetEntityTypeClassSoapIn" />
+      <wsdl:output message="tns:GetEntityTypeClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LookupEntityFilter">
+      <wsdl:input message="tns:LookupEntityFilterSoapIn" />
+      <wsdl:output message="tns:LookupEntityFilterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegion">
+      <wsdl:input message="tns:GetRegionSoapIn" />
+      <wsdl:output message="tns:GetRegionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionsData">
+      <wsdl:input message="tns:GetRegionsDataSoapIn" />
+      <wsdl:output message="tns:GetRegionsDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSportsData">
+      <wsdl:input message="tns:GetSportsDataSoapIn" />
+      <wsdl:output message="tns:GetSportsDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSportFieldsHavingPlayers">
+      <wsdl:input message="tns:GetSportFieldsHavingPlayersSoapIn" />
+      <wsdl:output message="tns:GetSportFieldsHavingPlayersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSportFieldCompetitions">
+      <wsdl:input message="tns:GetSportFieldCompetitionsSoapIn" />
+      <wsdl:output message="tns:GetSportFieldCompetitionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCourtCompetitions">
+      <wsdl:input message="tns:GetCourtCompetitionsSoapIn" />
+      <wsdl:output message="tns:GetCourtCompetitionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFacilityCompetitions">
+      <wsdl:input message="tns:GetFacilityCompetitionsSoapIn" />
+      <wsdl:output message="tns:GetFacilityCompetitionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRawMatchesByDate">
+      <wsdl:input message="tns:GetRawMatchesByDateSoapIn" />
+      <wsdl:output message="tns:GetRawMatchesByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchesByDate">
+      <wsdl:input message="tns:GetMatchesByDateSoapIn" />
+      <wsdl:output message="tns:GetMatchesByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchesByFacility">
+      <wsdl:input message="tns:GetMatchesByFacilitySoapIn" />
+      <wsdl:output message="tns:GetMatchesByFacilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchesByCourt">
+      <wsdl:input message="tns:GetMatchesByCourtSoapIn" />
+      <wsdl:output message="tns:GetMatchesByCourtSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchesByTeam">
+      <wsdl:input message="tns:GetMatchesByTeamSoapIn" />
+      <wsdl:output message="tns:GetMatchesByTeamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompetitionsByDate">
+      <wsdl:input message="tns:GetCompetitionsByDateSoapIn" />
+      <wsdl:output message="tns:GetCompetitionsByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRawCompetitionsByDate">
+      <wsdl:input message="tns:GetRawCompetitionsByDateSoapIn" />
+      <wsdl:output message="tns:GetRawCompetitionsByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContainingChampionships">
+      <wsdl:input message="tns:GetContainingChampionshipsSoapIn" />
+      <wsdl:output message="tns:GetContainingChampionshipsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipData">
+      <wsdl:input message="tns:GetChampionshipDataSoapIn" />
+      <wsdl:output message="tns:GetChampionshipDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipsData">
+      <wsdl:input message="tns:GetChampionshipsDataSoapIn" />
+      <wsdl:output message="tns:GetChampionshipsDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipsBySeason">
+      <wsdl:input message="tns:GetChampionshipsBySeasonSoapIn" />
+      <wsdl:output message="tns:GetChampionshipsBySeasonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerCardFullData">
+      <wsdl:input message="tns:GetPlayerCardFullDataSoapIn" />
+      <wsdl:output message="tns:GetPlayerCardFullDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayersCountBySeason">
+      <wsdl:input message="tns:GetPlayersCountBySeasonSoapIn" />
+      <wsdl:output message="tns:GetPlayersCountBySeasonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamsByChampionshipCategory">
+      <wsdl:input message="tns:GetTeamsByChampionshipCategorySoapIn" />
+      <wsdl:output message="tns:GetTeamsByChampionshipCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipCategories">
+      <wsdl:input message="tns:GetChampionshipCategoriesSoapIn" />
+      <wsdl:output message="tns:GetChampionshipCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipCategoriesBySeason">
+      <wsdl:input message="tns:GetChampionshipCategoriesBySeasonSoapIn" />
+      <wsdl:output message="tns:GetChampionshipCategoriesBySeasonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserName">
+      <wsdl:input message="tns:GetUserNameSoapIn" />
+      <wsdl:output message="tns:GetUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSimplePlayerData">
+      <wsdl:input message="tns:GetSimplePlayerDataSoapIn" />
+      <wsdl:output message="tns:GetSimplePlayerDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerNumbers">
+      <wsdl:input message="tns:GetPlayerNumbersSoapIn" />
+      <wsdl:output message="tns:GetPlayerNumbersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionaryGames">
+      <wsdl:input message="tns:GetFunctionaryGamesSoapIn" />
+      <wsdl:output message="tns:GetFunctionaryGamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionaryGamesByDate">
+      <wsdl:input message="tns:GetFunctionaryGamesByDateSoapIn" />
+      <wsdl:output message="tns:GetFunctionaryGamesByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeasonData">
+      <wsdl:input message="tns:GetSeasonDataSoapIn" />
+      <wsdl:output message="tns:GetSeasonDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRulesetRules">
+      <wsdl:input message="tns:GetRulesetRulesSoapIn" />
+      <wsdl:output message="tns:GetRulesetRulesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsByName">
+      <wsdl:input message="tns:GetStudentsByNameSoapIn" />
+      <wsdl:output message="tns:GetStudentsByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentByNumber">
+      <wsdl:input message="tns:GetStudentByNumberSoapIn" />
+      <wsdl:output message="tns:GetStudentByNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolData">
+      <wsdl:input message="tns:GetSchoolDataSoapIn" />
+      <wsdl:output message="tns:GetSchoolDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionData">
+      <wsdl:input message="tns:GetRegionDataSoapIn" />
+      <wsdl:output message="tns:GetRegionDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSimpleData">
+      <wsdl:input message="tns:GetSimpleDataSoapIn" />
+      <wsdl:output message="tns:GetSimpleDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSchoolDetails">
+      <wsdl:input message="tns:UpdateSchoolDetailsSoapIn" />
+      <wsdl:output message="tns:UpdateSchoolDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptData">
+      <wsdl:input message="tns:GetReceiptDataSoapIn" />
+      <wsdl:output message="tns:GetReceiptDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptData_Basic">
+      <wsdl:input message="tns:GetReceiptData_BasicSoapIn" />
+      <wsdl:output message="tns:GetReceiptData_BasicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebsitePermanentChampionships">
+      <wsdl:input message="tns:GetWebsitePermanentChampionshipsSoapIn" />
+      <wsdl:output message="tns:GetWebsitePermanentChampionshipsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddWebsitePermanentChampionship">
+      <wsdl:input message="tns:AddWebsitePermanentChampionshipSoapIn" />
+      <wsdl:output message="tns:AddWebsitePermanentChampionshipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWebsitePermanentChampionship">
+      <wsdl:input message="tns:UpdateWebsitePermanentChampionshipSoapIn" />
+      <wsdl:output message="tns:UpdateWebsitePermanentChampionshipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWebsitePermanentChampionship">
+      <wsdl:input message="tns:DeleteWebsitePermanentChampionshipSoapIn" />
+      <wsdl:output message="tns:DeleteWebsitePermanentChampionshipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClubCategoriesBySeason">
+      <wsdl:input message="tns:GetClubCategoriesBySeasonSoapIn" />
+      <wsdl:output message="tns:GetClubCategoriesBySeasonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HasPassword">
+      <wsdl:input message="tns:HasPasswordSoapIn" />
+      <wsdl:output message="tns:HasPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsersWithoutPassword">
+      <wsdl:input message="tns:UsersWithoutPasswordSoapIn" />
+      <wsdl:output message="tns:UsersWithoutPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetClientVersion">
+      <wsdl:input message="tns:SetClientVersionSoapIn" />
+      <wsdl:output message="tns:SetClientVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipCurrentPhase">
+      <wsdl:input message="tns:GetChampionshipCurrentPhaseSoapIn" />
+      <wsdl:output message="tns:GetChampionshipCurrentPhaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestSeason">
+      <wsdl:input message="tns:GetLatestSeasonSoapIn" />
+      <wsdl:output message="tns:GetLatestSeasonSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DataServiceSoap" type="tns:DataServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEntities">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkMessageRead">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/MarkMessageRead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntity">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/InsertEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntity">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/UpdateEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntity">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/DeleteEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTeacherCourseProduct">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/SetTeacherCourseProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherCourseProduct">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetTeacherCourseProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTeacherCourseSports">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/SetTeacherCourseSports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherCourseSports">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetTeacherCourseSports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityTypeClass">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetEntityTypeClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LookupEntityFilter">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/LookupEntityFilter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegion">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetRegion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionsData">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetRegionsData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSportsData">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetSportsData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSportFieldsHavingPlayers">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetSportFieldsHavingPlayers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSportFieldCompetitions">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetSportFieldCompetitions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourtCompetitions">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetCourtCompetitions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFacilityCompetitions">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetFacilityCompetitions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRawMatchesByDate">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetRawMatchesByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchesByDate">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetMatchesByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchesByFacility">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetMatchesByFacility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchesByCourt">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetMatchesByCourt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchesByTeam">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetMatchesByTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompetitionsByDate">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetCompetitionsByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRawCompetitionsByDate">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetRawCompetitionsByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContainingChampionships">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetContainingChampionships" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipData">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetChampionshipData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipsData">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetChampionshipsData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipsBySeason">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetChampionshipsBySeason" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerCardFullData">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetPlayerCardFullData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayersCountBySeason">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetPlayersCountBySeason" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamsByChampionshipCategory">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetTeamsByChampionshipCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipCategories">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetChampionshipCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipCategoriesBySeason">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetChampionshipCategoriesBySeason" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserName">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSimplePlayerData">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetSimplePlayerData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerNumbers">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetPlayerNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionaryGames">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetFunctionaryGames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionaryGamesByDate">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetFunctionaryGamesByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeasonData">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetSeasonData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRulesetRules">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetRulesetRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsByName">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetStudentsByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentByNumber">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetStudentByNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolData">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetSchoolData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionData">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetRegionData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSimpleData">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetSimpleData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSchoolDetails">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/UpdateSchoolDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptData">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetReceiptData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptData_Basic">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetReceiptData_Basic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebsitePermanentChampionships">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetWebsitePermanentChampionships" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddWebsitePermanentChampionship">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/AddWebsitePermanentChampionship" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWebsitePermanentChampionship">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/UpdateWebsitePermanentChampionship" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWebsitePermanentChampionship">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/DeleteWebsitePermanentChampionship" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClubCategoriesBySeason">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetClubCategoriesBySeason" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasPassword">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/HasPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsersWithoutPassword">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/UsersWithoutPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetClientVersion">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/SetClientVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipCurrentPhase">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetChampionshipCurrentPhase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestSeason">
+      <soap:operation soapAction="http://www.mir.co.il/DataService/GetLatestSeason" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DataServiceSoap12" type="tns:DataServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEntities">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetEntities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkMessageRead">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/MarkMessageRead" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntity">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/InsertEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntity">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/UpdateEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntity">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/DeleteEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTeacherCourseProduct">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/SetTeacherCourseProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherCourseProduct">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetTeacherCourseProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTeacherCourseSports">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/SetTeacherCourseSports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherCourseSports">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetTeacherCourseSports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityTypeClass">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetEntityTypeClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LookupEntityFilter">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/LookupEntityFilter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegion">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetRegion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionsData">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetRegionsData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSportsData">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetSportsData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSportFieldsHavingPlayers">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetSportFieldsHavingPlayers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSportFieldCompetitions">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetSportFieldCompetitions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourtCompetitions">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetCourtCompetitions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFacilityCompetitions">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetFacilityCompetitions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRawMatchesByDate">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetRawMatchesByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchesByDate">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetMatchesByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchesByFacility">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetMatchesByFacility" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchesByCourt">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetMatchesByCourt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchesByTeam">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetMatchesByTeam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompetitionsByDate">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetCompetitionsByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRawCompetitionsByDate">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetRawCompetitionsByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContainingChampionships">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetContainingChampionships" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipData">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetChampionshipData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipsData">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetChampionshipsData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipsBySeason">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetChampionshipsBySeason" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerCardFullData">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetPlayerCardFullData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayersCountBySeason">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetPlayersCountBySeason" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamsByChampionshipCategory">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetTeamsByChampionshipCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipCategories">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetChampionshipCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipCategoriesBySeason">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetChampionshipCategoriesBySeason" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserName">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSimplePlayerData">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetSimplePlayerData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerNumbers">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetPlayerNumbers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionaryGames">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetFunctionaryGames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionaryGamesByDate">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetFunctionaryGamesByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeasonData">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetSeasonData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRulesetRules">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetRulesetRules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsByName">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetStudentsByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentByNumber">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetStudentByNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolData">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetSchoolData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionData">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetRegionData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSimpleData">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetSimpleData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSchoolDetails">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/UpdateSchoolDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptData">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetReceiptData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptData_Basic">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetReceiptData_Basic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebsitePermanentChampionships">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetWebsitePermanentChampionships" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddWebsitePermanentChampionship">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/AddWebsitePermanentChampionship" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWebsitePermanentChampionship">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/UpdateWebsitePermanentChampionship" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWebsitePermanentChampionship">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/DeleteWebsitePermanentChampionship" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClubCategoriesBySeason">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetClubCategoriesBySeason" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasPassword">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/HasPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsersWithoutPassword">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/UsersWithoutPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetClientVersion">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/SetClientVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipCurrentPhase">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetChampionshipCurrentPhase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestSeason">
+      <soap12:operation soapAction="http://www.mir.co.il/DataService/GetLatestSeason" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DataService">
+    <wsdl:port name="DataServiceSoap" binding="tns:DataServiceSoap">
+      <soap:address location="http://213.8.193.150/ISF/SportServices/DataService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DataServiceSoap12" binding="tns:DataServiceSoap12">
+      <soap12:address location="http://213.8.193.150/ISF/SportServices/DataService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

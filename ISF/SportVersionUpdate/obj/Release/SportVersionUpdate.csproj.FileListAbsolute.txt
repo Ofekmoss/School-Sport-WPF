@@ -1,0 +1,9 @@
+D:\BitBucket\schoolsport\Bin\Release\SportVersionUpdate.exe.config
+D:\BitBucket\schoolsport\Bin\Release\SportVersionUpdate.exe
+D:\BitBucket\schoolsport\Bin\Release\SportVersionUpdate.XmlSerializers.dll
+D:\BitBucket\schoolsport\ISF\SportVersionUpdate\obj\Release\SportVersionUpdate.csproj.AssemblyReference.cache
+D:\BitBucket\schoolsport\ISF\SportVersionUpdate\obj\Release\SportVersionUpdate.SportVersionUpdate.resources
+D:\BitBucket\schoolsport\ISF\SportVersionUpdate\obj\Release\SportVersionUpdate.csproj.GenerateResource.cache
+D:\BitBucket\schoolsport\ISF\SportVersionUpdate\obj\Release\SportVersionUpdate.csproj.CoreCompileInputs.cache
+D:\BitBucket\schoolsport\ISF\SportVersionUpdate\obj\Release\SportVersionUpdate.exe
+D:\BitBucket\schoolsport\ISF\SportVersionUpdate\obj\Release\SportVersionUpdate.XmlSerializers.dll

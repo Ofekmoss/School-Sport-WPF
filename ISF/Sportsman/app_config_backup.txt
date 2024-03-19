@@ -1,0 +1,203 @@
+﻿<?xml version="1.0"?>
+<configuration>
+	<configSections>
+		<sectionGroup name="Sportsman">
+			<section name="Menu" type="Sportsman.Config.MenuSectionHandler,Sportsman"/>
+		</sectionGroup>
+	 <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+   <section name="Sportsman.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false"/>
+  </sectionGroup>
+ </configSections>
+	
+	<appSettings>
+		<add key="local" value="1"/>
+		<add key="irs" value="58-024-222-0"/>
+		
+		<!--		
+		<add key="Sport.Rulesets.SportServices.RulesetService" value="https://schoolsport.org.il:8080/ISF/SportServices/RulesetService.asmx"/>
+		<add key="Sport.Producer.SportServices.ProducerService" value="https://schoolsport.org.il:8080/ISF/SportServices/ProducerService.asmx"/>
+		<add key="Sportsman.SessionServices.SessionService" value="https://schoolsport.org.il:8080/ISF/SportServices/SessionService.asmx"/>
+		<add key="Sport.Championships.SportServices.ChampionshipService" value="https://schoolsport.org.il:8080/ISF/SportServices/ChampionshipService.asmx"/>
+		<add key="Sportsman.ChampionshipServices.ChampionshipService" value="https://schoolsport.org.il:8080/ISF/SportServices/ChampionshipService.asmx"/>
+		<add key="Sportsman.PlayerCardServices.PlayerCardService" value="https://schoolsport.org.il:8080/ISF/SportServices/PlayerCardService.asmx"/>
+		<add key="Sportsman.RulesetServices.RulesetService" value="https://schoolsport.org.il:8080/ISF/SportServices/RulesetService.asmx"/>
+		<add key="Sportsman.AdvancedServices.AdvancedService" value="https://schoolsport.org.il:8080/ISF/SportServices/AdvancedService.asmx"/>
+		<add key="Sportsman.PermissionServices.PermissionService" value="https://schoolsport.org.il:8080/ISF/SportServices/PermissionService.asmx"/>
+		<add key="Sportsman.DataServices.DataService" value="https://schoolsport.org.il:8080/ISF/SportServices/DataService.asmx"/>
+		-->
+
+		<add key="Sport.Rulesets.SportServices.RulesetService" value="http://213.8.193.147/ISF/SportServices/RulesetService.asmx"/>
+		<add key="Sport.Producer.SportServices.ProducerService" value="http://213.8.193.147/ISF/SportServices/ProducerService.asmx"/>
+		<add key="Sportsman.SessionServices.SessionService" value="http://213.8.193.147/ISF/SportServices/SessionService.asmx"/>
+		<add key="Sport.Championships.SportServices.ChampionshipService" value="http://213.8.193.147/ISF/SportServices/ChampionshipService.asmx"/>
+		<add key="Sportsman.ChampionshipServices.ChampionshipService" value="http://213.8.193.147/ISF/SportServices/ChampionshipService.asmx"/>
+		<add key="Sportsman.PlayerCardServices.PlayerCardService" value="http://213.8.193.147/ISF/SportServices/PlayerCardService.asmx"/>
+		<add key="Sportsman.RulesetServices.RulesetService" value="http://213.8.193.147/ISF/SportServices/RulesetService.asmx"/>
+		<add key="Sportsman.AdvancedServices.AdvancedService" value="http://213.8.193.147/ISF/SportServices/AdvancedService.asmx"/>
+		<add key="Sportsman.PermissionServices.PermissionService" value="http://213.8.193.147/ISF/SportServices/PermissionService.asmx"/>
+		<add key="Sportsman.DataServices.DataService" value="http://213.8.193.147/ISF/SportServices/DataService.asmx"/>
+
+		<!--
+		<add key="Sport.Rulesets.SportServices.RulesetService" value="http://213.8.193.147:1058/ISF/SportServices/RulesetService.asmx"/>
+		<add key="Sport.Producer.SportServices.ProducerService" value="http://213.8.193.147:1058/ISF/SportServices/ProducerService.asmx"/>
+		<add key="Sportsman.SessionServices.SessionService" value="http://213.8.193.147:1058/ISF/SportServices/SessionService.asmx"/>
+		<add key="Sport.Championships.SportServices.ChampionshipService" value="http://213.8.193.147:1058/ISF/SportServices/ChampionshipService.asmx"/>
+		<add key="Sportsman.ChampionshipServices.ChampionshipService" value="http://213.8.193.147:1058/ISF/SportServices/ChampionshipService.asmx"/>
+		<add key="Sportsman.PlayerCardServices.PlayerCardService" value="http://213.8.193.147:1058/ISF/SportServices/PlayerCardService.asmx"/>
+		<add key="Sportsman.RulesetServices.RulesetService" value="http://213.8.193.147:1058/ISF/SportServices/RulesetService.asmx"/>
+		<add key="Sportsman.AdvancedServices.AdvancedService" value="http://213.8.193.147:1058/ISF/SportServices/AdvancedService.asmx"/>
+		<add key="Sportsman.PermissionServices.PermissionService" value="http://213.8.193.147:1058/ISF/SportServices/PermissionService.asmx"/>
+		<add key="Sportsman.DataServices.DataService" value="http://213.8.193.147:1058/ISF/SportServices/DataService.asmx"/>
+		-->
+	<!--
+		<add key="Sport.Data.SportServices.DataService" value="http://213.8.193.147/ISF/SportServices/DataService.asmx"/>
+		<add key="Sport.Rulesets.SportServices.RulesetService" value="http://213.8.193.147/ISF/SportServices/RulesetService.asmx"/>
+		<add key="Sport.Producer.SportServices.ProducerService" value="http://213.8.193.147/ISF/SportServices/ProducerService.asmx"/>
+		<add key="Sportsman.SessionServices.SessionService" value="http://213.8.193.147/ISF/SportServices/SessionService.asmx"/>
+		<add key="Sport.Championships.SportServices.ChampionshipService" value="http://213.8.193.147/ISF/SportServices/ChampionshipService.asmx"/>
+		<add key="Sportsman.ChampionshipServices.ChampionshipService" value="http://213.8.193.147/ISF/SportServices/ChampionshipService.asmx"/>
+		<add key="Sportsman.PlayerCardServices.PlayerCardService" value="http://213.8.193.147/ISF/SportServices/PlayerCardService.asmx"/>
+		<add key="Sportsman.RulesetServices.RulesetService" value="http://213.8.193.147/ISF/SportServices/RulesetService.asmx"/>
+		<add key="Sportsman.AdvancedServices.AdvancedService" value="http://213.8.193.147/ISF/SportServices/AdvancedService.asmx"/>
+		<add key="Sportsman.PermissionServices.PermissionService" value="http://213.8.193.147/ISF/SportServices/PermissionService.asmx"/>
+		<add key="Sportsman.DataServices.DataService" value="http://213.8.193.147/ISF/SportServices/DataService.asmx"/>
+	-->
+	</appSettings>
+	
+
+	<Sportsman>
+		<Menu>
+			<MenuItem caption="מערכת">
+				<MenuItem caption="הודעות" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.MessagesTableView,Sportsman"/>
+				<MenuItem caption="הערות" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.BugsTableView,Sportsman"/>
+				<MenuItem caption="ניהול עונות" command="Sport.UI.OpenDialogCommand,Sport.UI" param="Sportsman.Views.SeasonsTableView,Sportsman"/> <!-- Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.TestUI,Sportsman -->
+				<MenuItem caption="החלפת משתמש או עונה" command="Sportsman.Core.ChangeUserCommand,Sportsman" param=""/>
+				<MenuItem caption="יציאה" command="Sportsman.Commands.CloseCommand,Sportsman"/>
+			</MenuItem>
+			<MenuItem caption="כללי">
+				<MenuItem caption="בתי ספר" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.SchoolsTableView,Sportsman?region=@region"/>
+				<MenuItem caption="תלמידים" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.StudentsTableView,Sportsman?region=@region"/>
+				<MenuItem caption="מתקנים" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.FacilitiesTableView,Sportsman?region=@region"/>
+				<MenuItem caption="בעלי תפקידים" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.FunctionariesTableView,Sportsman?region=@region"/>
+				<MenuItem caption="מחנות אימון">
+					<MenuItem caption="הגדרת מחנות אימון" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.PracticeCampsView,Sportsman"/>
+					<MenuItem caption="רישום למחנות אימון" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.PracticeCampParticipantsView,Sportsman"/>
+				</MenuItem>
+				<MenuItem caption="משתתפי השתלמויות" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.TeacherCourseView,Sportsman"/>
+				<MenuItem caption="הודעות מיידיות">
+					<MenuItem caption="שליחת הודעה מיידית" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.InstantMessagesView,Sportsman"/>
+					<MenuItem caption="הודעות אשר התקבלו" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.InstantMessagesView,Sportsman?recipient=@user"/>
+				</MenuItem>
+				<MenuItem caption="חיפוש">
+					<MenuItem caption="בית ספר" command="Sport.UI.OpenDialogCommand,Sport.UI" param="Sportsman.Details.SchoolDetailsView,Sportsman"/>
+					<MenuItem caption="תלמיד" command="Sport.UI.OpenDialogCommand,Sport.UI" param="Sportsman.Details.StudentDetailsView,Sportsman"/>
+				</MenuItem>
+				<!-- <MenuItem caption="אנשי קשר" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.IntermediariesTableView,Sportsman"/> -->
+			</MenuItem>
+			<MenuItem caption="ציוד">
+				<MenuItem caption="ניהול מחירים והזמנות" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.EquipmentTableView,Sportsman"/>
+				<MenuItem caption="ניהול הוצאות" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.IsfPaymentsTableView,Sportsman"/>
+				<MenuItem caption="סוגי ציוד" command="Sport.UI.OpenDialogCommand,Sport.UI" param="Sportsman.Views.EquipmentTypesTableView,Sportsman"/>
+			</MenuItem>
+			<MenuItem caption="כספים">
+				<MenuItem caption="חיובים" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.ChargesTableView,Sportsman"/>
+				<MenuItem caption="קבלות" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.ReceiptsTableView,Sportsman"/>
+				<MenuItem caption="תנועות" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.AccountEntriesTableView,Sportsman"/>
+				<MenuItem caption="חשבונות" command="Sport.UI.OpenDialogCommand,Sport.UI" param="Sportsman.Views.AccountsTableView,Sportsman"/>
+				<MenuItem caption="סוגי חיוב" command="Sport.UI.OpenDialogCommand,Sport.UI" param="Sportsman.Views.ProductsTableView,Sportsman"/>
+			</MenuItem>
+			<MenuItem caption="אליפויות">
+				<MenuItem caption="אליפויות קבועות" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.StandardChampionshipsTableView,Sportsman"/>
+				<MenuItem caption="תכנית אליפות ארצית" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.ChampionshipsTableView,Sportsman?region=0"/>
+				<MenuItem caption="תכנית אליפות מחוזית" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.ChampionshipsTableView,Sportsman?region=@region"/>
+				<MenuItem caption="קבוצות" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.TeamsTableView,Sportsman"/>
+				<MenuItem caption="שחקנים" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.PlayersTableView,Sportsman"/>
+				<MenuItem caption="בניית אליפות וקביעת תוצאות" command="Sportsman.Producer.OpenChampionshipCommand,Sportsman" param="Sportsman.Producer.CompetitionChampionshipEditorView,Sportsman.Producer.MatchChampionshipEditorView"/>
+				<MenuItem caption="תבניות">
+					<MenuItem caption="לוחות משחקים" command="Sportsman.Producer.OpenGameBoardCommand,Sportsman" param="Sportsman.Views.GameBoardsTableView"/>
+					<MenuItem caption="תבניות שלבים" command="Sportsman.Producer.OpenPhasePatternCommand,Sportsman" param="Sportsman.Views.PhasePatternsTableView"/>
+					<MenuItem caption="תקנונים" command="Sportsman.Producer.OpenRulesetCommand,Sportsman" param="Sportsman.Views.RulesetsTableView"/>
+				</MenuItem>
+				<MenuItem caption="דו&quot;ח אירועים" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Producer.GamesReportView,Sportsman"/>				
+			</MenuItem>
+			<MenuItem caption="הגדרות">
+				<MenuItem caption="מחוזות" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.RegionsTableView,Sportsman"/>
+				<MenuItem caption="ישובים" command="Sport.UI.OpenDialogCommand,Sport.UI" param="Sportsman.Views.CitiesTableView,Sportsman"/>
+				<MenuItem caption="ענפי ספורט" command="Sport.UI.OpenDialogCommand,Sport.UI" param="Sportsman.Views.SportsTableView,Sportsman"/>
+				<MenuItem caption="מקצועות" command="Sport.UI.OpenDialogCommand,Sport.UI" param="Sportsman.Views.SportFieldsTableView,Sportsman"/>
+				<MenuItem caption="סוגי מגרשים" command="Sport.UI.OpenDialogCommand,Sport.UI" param="Sportsman.Views.CourtTypesTableView,Sportsman"/>
+				<MenuItem caption="משתמשים" command="Sport.UI.OpenViewCommand,Sport.UI" param="Sportsman.Views.UsersTableView,Sportsman"/>
+				<MenuItem caption="תחומי חיוב" command="Sport.UI.OpenDialogCommand,Sport.UI" param="Sportsman.Views.ProductAreasTableView,Sportsman"/>
+				<MenuItem caption="הגדרות כלליות" command="Sport.UI.OpenDialogCommand,Sport.UI" param="Sportsman.Forms.GeneralSettingsForm,Sportsman"/>
+			</MenuItem>
+			<MenuItem caption="אפשרויות">
+				<MenuItem caption="לוח מקשים..." command="Sport.UI.OpenDialogCommand,Sport.UI" param="Sportsman.Forms.KeyboardForm,Sportsman"/>
+			</MenuItem>
+			<MenuItem caption="תצוגה">
+				<MenuItem caption="סרגל כלים" command="Sport.UI.Display.RestateCommand,Sport.UI" param="toolbar" state="toolbar"/>
+				<MenuItem caption="לוח שנה" command="Sport.UI.Display.RestateCommand,Sport.UI" param="calendarbar" state="calendarbar"/>
+				<MenuItem caption="הודעות" command="Sport.UI.Display.RestateCommand,Sport.UI" param="messagebar" state="messagebar"/>
+				<MenuItem caption="פרטים" command="Sport.UI.Display.RestateCommand,Sport.UI" param="detailsbar" state="detailsbar"/>
+				<MenuItem caption="סרגל חיתוך" command="Sport.UI.Display.RestateCommand,Sport.UI" param="filterbar" state="filterbar"/>
+				<MenuItem caption="סרגל חיפוש" command="Sport.UI.Display.RestateCommand,Sport.UI" param="searchbar" state="searchbar"/>
+				<MenuItem caption="שורת מצב" command="Sport.UI.Display.RestateCommand,Sport.UI" param="statusbar" state="statusbar"/>
+			</MenuItem>
+			<MenuItem caption="עזרה">
+				<MenuItem caption="אודות" command="Sportsman.Commands.AboutCommand"/>
+			</MenuItem>
+			<MenuItem caption="מיוחד">
+				<MenuItem caption="שאילתות מתקדמות" command="Sport.UI.OpenDialogCommand,Sport.UI" param="Sportsman.Forms.AdvancedForm,Sportsman"/>
+				<MenuItem caption="ייבוא תלמידים" command="Sport.UI.OpenDialogCommand,Sport.UI" param="Sportsman.Forms.ImportStudentsDialog,Sportsman"/>
+			</MenuItem>
+		</Menu>
+	</Sportsman>
+ <applicationSettings>
+  <Sportsman.Properties.Settings>
+   <setting name="Sportsman_AdvancedServices_AdvancedService" serializeAs="String">
+    <value>http://213.8.193.147/ISF/SportServices/AdvancedService.asmx</value>
+   </setting>
+   <setting name="Sportsman_ChampionshipServices_ChampionshipService"
+    serializeAs="String">
+    <value>http://213.8.193.147/ISF/SportServices/ChampionshipService.asmx</value>
+   </setting>
+   <setting name="Sportsman_PermissionServices_PermissionService"
+    serializeAs="String">
+    <value>http://213.8.193.147/ISF/SportServices/PermissionService.asmx</value>
+   </setting>
+   <setting name="Sportsman_PlayerCardServices_PlayerCardService"
+    serializeAs="String">
+    <value>http://213.8.193.147/ISF/SportServices/PlayerCardService.asmx</value>
+   </setting>
+   <setting name="Sportsman_SessionServices_SessionService" serializeAs="String">
+    <value>http://213.8.193.147/ISF/SportServices/SessionService.asmx</value>
+   </setting>
+   <setting name="Sport_Championships_DataServices_DataService"
+    serializeAs="String">
+    <value>http://213.8.193.147/ISF/SportServices/DataService.asmx</value>
+   </setting>
+   <setting name="Sport_Championships_SportServices_ChampionshipService"
+    serializeAs="String">
+    <value>http://213.8.193.147/ISF/SportServices/ChampionshipService.asmx</value>
+   </setting>
+   <setting name="Sportsman_DataServices_DataService" serializeAs="String">
+    <value>http://213.8.193.147/ISF/SportServices/DataService.asmx</value>
+   </setting>
+  </Sportsman.Properties.Settings>
+ </applicationSettings>
+	<runtime>
+		<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+			<dependentAssembly>
+				<assemblyIdentity name="office" publicKeyToken="71E9BCE111E9429C" culture="neutral"/>
+				<bindingRedirect oldVersion="0.0.0.0-12.0.0.0" newVersion="12.0.0.0"/>
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="Microsoft.Office.Interop.Word" publicKeyToken="71E9BCE111E9429C" culture="neutral"/>
+				<bindingRedirect oldVersion="0.0.0.0-12.0.0.0" newVersion="12.0.0.0"/>
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="Microsoft.Vbe.Interop" publicKeyToken="71E9BCE111E9429C" culture="neutral"/>
+				<bindingRedirect oldVersion="0.0.0.0-12.0.0.0" newVersion="12.0.0.0"/>
+			</dependentAssembly>
+		</assemblyBinding>
+	</runtime>
+<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/></startup></configuration>

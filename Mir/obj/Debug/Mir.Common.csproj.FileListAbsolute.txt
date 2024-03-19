@@ -1,0 +1,6 @@
+C:\SchoolSport\schoolsport\Mir\bin\Debug\Mir.dll
+C:\SchoolSport\schoolsport\Mir\bin\Debug\Mir.pdb
+C:\SchoolSport\schoolsport\Mir\obj\Debug\Mir.Common.csproj.AssemblyReference.cache
+C:\SchoolSport\schoolsport\Mir\obj\Debug\Mir.Common.csproj.CoreCompileInputs.cache
+C:\SchoolSport\schoolsport\Mir\obj\Debug\Mir.dll
+C:\SchoolSport\schoolsport\Mir\obj\Debug\Mir.pdb

@@ -1,0 +1,25 @@
+-- Deleting existing triggers
+-- ============================================
+IF EXISTS(SELECT * FROM sysobjects WHERE name = 'T_CHARGE_CHANGED' AND type = 'TR')
+	DROP TRIGGER T_CHARGE_CHANGED
+GO
+
+CREATE TRIGGER T_CHARGE_CHANGED
+ON CHARGES
+AFTER INSERT, UPDATE AS
+BEGIN
+	DECLARE @charge int
+	DECLARE @number int
+	
+	SELECT @charge = CHARGE_ID, @number = CHARGE_NUMBER
+	FROM inserted
+	
+	IF (@number IS NULL)
+	BEGIN
+		UPDATE CHARGES
+		SET CHARGE_NUMBER = (SELECT MAX(CHARGE_NUMBER) + 1 FROM CHARGES WHERE DATE_DELETED IS NULL)
+		WHERE CHARGE_ID = @charge
+	END
+END
+GO
+

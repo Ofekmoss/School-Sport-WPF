@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SportVersionUpdate.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SportVersionUpdate_AutoUpdate_AutoUpdateService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://213.8.193.147/ISF/SportServices/AutoUpdateService.asmx</Value>
+    </Setting>
+    <Setting Name="SportVersionUpdate_SessionService_SessionService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://213.8.193.147/ISF/SportServices/SessionService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

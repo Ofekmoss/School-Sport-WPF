@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SportSite.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SportSite_PlayerCardService_PlayerCardService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://213.8.193.150/ISF/SportServices/PlayerCardService.asmx</Value>
+    </Setting>
+    <Setting Name="SportSite_SessionService_SessionService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://213.8.193.150/ISF/SportServices/SessionService.asmx</Value>
+    </Setting>
+    <Setting Name="SportSite_AdvancedServices_AdvancedService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://213.8.193.150/ISF/SportServices/AdvancedService.asmx</Value>
+    </Setting>
+    <Setting Name="SportSite_ChampionshipServices_ChampionshipService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://213.8.193.150/ISF/SportServices/ChampionshipService.asmx</Value>
+    </Setting>
+    <Setting Name="SportSite_PermissionServices_PermissionService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://213.8.193.150/ISF/SportServices/PermissionService.asmx</Value>
+    </Setting>
+    <Setting Name="SportSite_PlayerCardServices_PlayerCardService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://213.8.193.150/ISF/SportServices/PlayerCardService.asmx</Value>
+    </Setting>
+    <Setting Name="SportSite_SessionServices_SessionService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://213.8.193.150/ISF/SportServices/SessionService.asmx</Value>
+    </Setting>
+    <Setting Name="SportSite_WebSiteServices_WebsiteService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://213.8.193.150/ISF/SportServices/WebsiteService.asmx</Value>
+    </Setting>
+    <Setting Name="Sport_Championships_DataServices_DataService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://213.8.193.150/ISF/SportServices/DataService.asmx</Value>
+    </Setting>
+    <Setting Name="Sport_Championships_SportServices_ChampionshipService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://213.8.193.150/ISF/SportServices/ChampionshipService.asmx</Value>
+    </Setting>
+    <Setting Name="SportSite_DataServices1_DataService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://213.8.193.150/ISF/SportServices/DataService.asmx</Value>
+    </Setting>
+    <Setting Name="SportSite_RegistrationService_RegistrationService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://213.8.193.150/ISF/SportServices/RegistrationService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="season" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoginResult" type="tns:UserData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserFullName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserPermissions" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserRegion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserSchool" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddUserAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="action" type="tns:Action" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="version" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="Action">
+        <s:restriction base="s:string">
+          <s:enumeration value="Login_Client" />
+          <s:enumeration value="Login_Website" />
+          <s:enumeration value="Login_Field" />
+          <s:enumeration value="TableView_Opened" />
+          <s:enumeration value="Update_Downloaded" />
+          <s:enumeration value="Register_Page_Load" />
+          <s:enumeration value="Field_Export" />
+          <s:enumeration value="Field_Import" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="AddUserActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUserActionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserAction_2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="action" type="tns:Action" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="version" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserAction_2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUserAction_2Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KeepAlive">
+        <s:complexType />
+      </s:element>
+      <s:element name="KeepAliveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KeepAliveResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerifyUserResult" type="tns:UserData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserDataResult" type="tns:UserData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="askerLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="askerPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeUserPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeUserPasswordResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLatestVersion">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLatestVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLatestVersionResult" type="tns:VersionInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VersionInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="VersionNumber" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionDetails" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLatestFieldVersion">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLatestFieldVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLatestFieldVersionResult" type="tns:VersionInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentPicture">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Id_Number" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentPictureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentPictureResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTeamCharge">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTeamChargeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTeamChargeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSchoolTeams">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="schoolID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSchoolTeamsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSchoolTeamsResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSchoolTeamsBySeason">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="school" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="season" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSchoolTeamsBySeasonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSchoolTeamsBySeasonResult" type="tns:ArrayOfTeamData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTeamData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TeamData" nillable="true" type="tns:TeamData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TeamData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TeamId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Championship" type="tns:SimpleData" />
+          <s:element minOccurs="1" maxOccurs="1" name="Category" type="tns:SimpleData" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sport" type="tns:SimpleData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SimpleData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserActionSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserAction" />
+  </wsdl:message>
+  <wsdl:message name="AddUserActionSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserAction_2SoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserAction_2" />
+  </wsdl:message>
+  <wsdl:message name="AddUserAction_2SoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserAction_2Response" />
+  </wsdl:message>
+  <wsdl:message name="KeepAliveSoapIn">
+    <wsdl:part name="parameters" element="tns:KeepAlive" />
+  </wsdl:message>
+  <wsdl:message name="KeepAliveSoapOut">
+    <wsdl:part name="parameters" element="tns:KeepAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyUserSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyUser" />
+  </wsdl:message>
+  <wsdl:message name="VerifyUserSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserData" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeUserPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangeUserPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLatestVersion" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLatestVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestFieldVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLatestFieldVersion" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestFieldVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLatestFieldVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentPictureSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentPicture" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentPictureSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentPictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTeamChargeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTeamCharge" />
+  </wsdl:message>
+  <wsdl:message name="GetTeamChargeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTeamChargeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSchoolTeamsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSchoolTeams" />
+  </wsdl:message>
+  <wsdl:message name="GetSchoolTeamsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSchoolTeamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSchoolTeamsBySeasonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSchoolTeamsBySeason" />
+  </wsdl:message>
+  <wsdl:message name="GetSchoolTeamsBySeasonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSchoolTeamsBySeasonResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SessionServiceSoap">
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserAction">
+      <wsdl:input message="tns:AddUserActionSoapIn" />
+      <wsdl:output message="tns:AddUserActionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserAction_2">
+      <wsdl:input message="tns:AddUserAction_2SoapIn" />
+      <wsdl:output message="tns:AddUserAction_2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KeepAlive">
+      <wsdl:input message="tns:KeepAliveSoapIn" />
+      <wsdl:output message="tns:KeepAliveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyUser">
+      <wsdl:input message="tns:VerifyUserSoapIn" />
+      <wsdl:output message="tns:VerifyUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <wsdl:input message="tns:GetUserDataSoapIn" />
+      <wsdl:output message="tns:GetUserDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPassword">
+      <wsdl:input message="tns:GetUserPasswordSoapIn" />
+      <wsdl:output message="tns:GetUserPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <wsdl:input message="tns:ChangeUserPasswordSoapIn" />
+      <wsdl:output message="tns:ChangeUserPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestVersion">
+      <wsdl:input message="tns:GetLatestVersionSoapIn" />
+      <wsdl:output message="tns:GetLatestVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestFieldVersion">
+      <wsdl:input message="tns:GetLatestFieldVersionSoapIn" />
+      <wsdl:output message="tns:GetLatestFieldVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentPicture">
+      <wsdl:input message="tns:GetStudentPictureSoapIn" />
+      <wsdl:output message="tns:GetStudentPictureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamCharge">
+      <wsdl:input message="tns:GetTeamChargeSoapIn" />
+      <wsdl:output message="tns:GetTeamChargeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolTeams">
+      <wsdl:input message="tns:GetSchoolTeamsSoapIn" />
+      <wsdl:output message="tns:GetSchoolTeamsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolTeamsBySeason">
+      <wsdl:input message="tns:GetSchoolTeamsBySeasonSoapIn" />
+      <wsdl:output message="tns:GetSchoolTeamsBySeasonSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SessionServiceSoap" type="tns:SessionServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserAction">
+      <soap:operation soapAction="http://tempuri.org/AddUserAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserAction_2">
+      <soap:operation soapAction="http://tempuri.org/AddUserAction_2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KeepAlive">
+      <soap:operation soapAction="http://tempuri.org/KeepAlive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyUser">
+      <soap:operation soapAction="http://tempuri.org/VerifyUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <soap:operation soapAction="http://tempuri.org/GetUserData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPassword">
+      <soap:operation soapAction="http://tempuri.org/GetUserPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <soap:operation soapAction="http://tempuri.org/ChangeUserPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestVersion">
+      <soap:operation soapAction="http://tempuri.org/GetLatestVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestFieldVersion">
+      <soap:operation soapAction="http://tempuri.org/GetLatestFieldVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentPicture">
+      <soap:operation soapAction="http://tempuri.org/GetStudentPicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamCharge">
+      <soap:operation soapAction="http://tempuri.org/GetTeamCharge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolTeams">
+      <soap:operation soapAction="http://tempuri.org/GetSchoolTeams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolTeamsBySeason">
+      <soap:operation soapAction="http://tempuri.org/GetSchoolTeamsBySeason" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SessionServiceSoap12" type="tns:SessionServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserAction">
+      <soap12:operation soapAction="http://tempuri.org/AddUserAction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserAction_2">
+      <soap12:operation soapAction="http://tempuri.org/AddUserAction_2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KeepAlive">
+      <soap12:operation soapAction="http://tempuri.org/KeepAlive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyUser">
+      <soap12:operation soapAction="http://tempuri.org/VerifyUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <soap12:operation soapAction="http://tempuri.org/GetUserData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPassword">
+      <soap12:operation soapAction="http://tempuri.org/GetUserPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <soap12:operation soapAction="http://tempuri.org/ChangeUserPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestVersion">
+      <soap12:operation soapAction="http://tempuri.org/GetLatestVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestFieldVersion">
+      <soap12:operation soapAction="http://tempuri.org/GetLatestFieldVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentPicture">
+      <soap12:operation soapAction="http://tempuri.org/GetStudentPicture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamCharge">
+      <soap12:operation soapAction="http://tempuri.org/GetTeamCharge" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolTeams">
+      <soap12:operation soapAction="http://tempuri.org/GetSchoolTeams" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolTeamsBySeason">
+      <soap12:operation soapAction="http://tempuri.org/GetSchoolTeamsBySeason" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SessionService">
+    <wsdl:port name="SessionServiceSoap" binding="tns:SessionServiceSoap">
+      <soap:address location="http://213.8.193.150/ISF/SportServices/SessionService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SessionServiceSoap12" binding="tns:SessionServiceSoap12">
+      <soap12:address location="http://213.8.193.150/ISF/SportServices/SessionService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

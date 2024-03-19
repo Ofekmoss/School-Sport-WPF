@@ -1,0 +1,52 @@
+ -- ================================================================================
+--General Triggers - 
+--			SCHOOL_DELETED
+--			TEAM_UNCHARGE
+--			PLAYER_UNCHARGE
+-- ================================================================================
+
+-- Deleting existing triggers
+-- ============================================
+IF EXISTS(SELECT * FROM sysobjects WHERE name = 'T_SCHOOL_DELETED' AND type = 'TR')
+	DROP TRIGGER T_SCHOOL_DELETED
+GO
+IF EXISTS(SELECT * FROM sysobjects WHERE name = 'T_TEAM_UNCHARGE' AND type = 'TR')
+	DROP TRIGGER T_TEAM_UNCHARGE
+GO
+IF EXISTS(SELECT * FROM sysobjects WHERE name = 'T_PLAYER_UNCHARGE' AND type = 'TR')
+	DROP TRIGGER T_PLAYER_UNCHARGE
+GO
+
+-- =======    TEAM_UNCHARGE TRIGGER   ======
+CREATE TRIGGER T_TEAM_UNCHARGE
+ON TEAMS
+AFTER DELETE AS
+BEGIN
+  DELETE CHARGES
+  WHERE CHARGE_ID IN (SELECT CHARGE_ID FROM deleted)
+END
+GO
+
+-- =======    PLAYER_UNCHARGE TRIGGER   ====== 
+CREATE TRIGGER T_PLAYER_UNCHARGE
+ON PLAYERS
+AFTER DELETE AS
+BEGIN
+  DELETE CHARGES
+  WHERE CHARGE_ID IN (SELECT CHARGE_ID FROM deleted)
+END
+GO
+
+/*
+CREATE TRIGGER T_CHARGE_DELETED
+ON CHARGES
+INSTEAD OF DELETE AS
+BEGIN
+  UPDATE SCHOOLS SET CLUB_CHARGE_ID=NULL 
+  WHERE CLUB_CHARGE_ID IN (SELECT DISTINCT CHARGE_ID FROM deleted)
+
+  DELETE FROM CHARGES
+  WHERE CHARGE_ID IN (SELECT DISTINCT CHARGE_ID FROM deleted)
+END
+GO
+*/

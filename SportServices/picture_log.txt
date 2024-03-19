@@ -1,0 +1,10 @@
+[25/09/2019 17:00:12] Found content folder: C:\MIR\Testing\SchoolSportWeb\schools
+[25/09/2019 17:12:53] Found school of student 800200503: 1306
+[25/09/2019 17:16:55] Found student folder: C:\MIR\Testing\SchoolSportWeb\schools\1306\students\800200503
+[25/09/2019 17:30:31] Found season folder: C:\MIR\Testing\SchoolSportWeb\schools\1306\students\800200503\69
+[25/09/2019 17:40:19] Possible path: C:\MIR\Testing\SchoolSportWeb\schools\1306\students\800200503\69\picture\.jpg, exists? False
+[25/09/2019 17:40:19] Possible path: C:\MIR\Testing\SchoolSportWeb\schools\1306\students\800200503\69\picture\.gif, exists? False
+[25/09/2019 17:40:19] Possible path: C:\MIR\Testing\SchoolSportWeb\schools\1306\students\800200503\69\picture\.bmp, exists? False
+[25/09/2019 17:40:19] Possible path: C:\MIR\Testing\SchoolSportWeb\schools\1306\students\800200503\69\picture\.png, exists? False
+[25/09/2019 17:40:19] Possible path: C:\MIR\Testing\SchoolSportWeb\schools\1306\students\800200503\69\picture\.jpeg, exists? False
+[25/09/2019 17:47:28] Error reading picture from C:\MIR\Testing\SchoolSportWeb\schools\1306\students\800200503\69\picture.jpg: Access to the path 'C:\MIR\Testing\SchoolSportWeb\schools\1306\students\800200503\69\picture.jpg' is denied.

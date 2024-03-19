@@ -1,0 +1,7 @@
+D:\BitBucket\schoolsport\ISF\Resource\bin\Release\Resource.dll
+D:\BitBucket\schoolsport\ISF\Resource\obj\Release\Resource.csproj.AssemblyReference.cache
+D:\BitBucket\schoolsport\ISF\Resource\obj\Release\Sport.Resources.ImageLists.resources
+D:\BitBucket\schoolsport\ISF\Resource\obj\Release\Sport.Resources.Properties.Resources.resources
+D:\BitBucket\schoolsport\ISF\Resource\obj\Release\Resource.csproj.GenerateResource.cache
+D:\BitBucket\schoolsport\ISF\Resource\obj\Release\Resource.csproj.CoreCompileInputs.cache
+D:\BitBucket\schoolsport\ISF\Resource\obj\Release\Resource.dll

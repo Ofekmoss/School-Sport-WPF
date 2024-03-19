@@ -1,0 +1,23 @@
+[08/05/2014 11:16:05] [Debug] [ThreadManager] Thread started - 380 FOCAS R4
+[08/05/2014 11:16:05] [Debug] [Focas] (R4) System info: 16;  M; B0N1; 07  
+[08/05/2014 11:16:05] [Debug] [MachineBinder] (R4) Read binding added to parameter Memory Word as 10000 interval
+[08/05/2014 11:16:05] [Debug] [MachineBinder] (R4) Running evaluation operation as 0 interval
+[08/05/2014 11:16:05] [Debug] [ThreadManager] Thread started - 4760 Machine Controller R4
+[08/05/2014 11:16:05] [Debug] [MachineController] (R4) Machine controller thread started
+[08/05/2014 11:16:05] [Debug] [MachineBinder] (R4) Read binding added to parameter Memory Word as 10000 interval
+[08/05/2014 11:16:05] [Debug] [MachineBinder] (R4) Read binding added to parameter State as 10000 interval
+[08/05/2014 11:16:05] [Debug] [MachineBinder] (R4) Registration binding added to parameter ConnectionState
+[08/05/2014 11:16:05] [Debug] [MachineInterface] (R4) Availability - Available (O) FOCAS (O) DataCollection
+[08/05/2014 11:16:05] [Debug] [MachineInterface] (R4) Capabilities added: Upload, UploadManaged, Download, DownloadManaged, PLC Memory, Memory Byte, Memory Word, Memory DWord, R Parameter, State, Macro Variable, Program List, Current Sequence, Current Program, Operator Message, Data Event, ConnectionState, Identifier, removed: 
+[08/05/2014 11:16:05] [Debug] [MachineBinder] (R4) Expression reset ([MW9,0])
+[08/05/2014 11:16:05] [Debug] [MachineBinder] (R4) Expression reset ([MW9,228])
+[08/05/2014 11:16:05] [Debug] [MachineBinder] (R4) Expression reset ((([S4] == 1) && (warmup == 0)))
+[08/05/2014 11:16:05] [Debug] [MachineBinder] (R4) Expression reset ((([S4] == 1) && (warmup == 1)))
+[08/05/2014 11:16:05] [Debug] [MachineBinder] (R4) Expression reset (([S4] == 0))
+[08/05/2014 11:16:05] [Debug] [MachineBinder] (R4) Expression reset (([con] == False))
+[08/05/2014 11:16:05] [Debug] [MachineInterface] (R4) Data event: PARTCOUNT(COUNT=49738)
+[08/05/2014 11:16:05] [Debug] [DataCollectionManager] Store event: ID 3 on 5/8/2014 11:16:05 AM values 1=R4, 4=49738
+[08/05/2014 11:16:05] [Debug] [MachineInterface] (R4) Data event: MACSTATE(STATE=2)
+[08/05/2014 11:16:05] [Debug] [DataCollectionManager] Store event: ID 4 on 5/8/2014 11:16:05 AM values 1=R4, 2=2
+[08/05/2014 11:16:06] [Debug] [MachineController] (R4) Machine controller thread ended
+[08/05/2014 11:16:06] [Debug] [ThreadManager] Thread ended - 4760 Machine Controller R4

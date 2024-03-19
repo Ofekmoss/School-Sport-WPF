@@ -1,0 +1,1 @@
+D:\BitBucket\schoolsport\ISF\Sport.Entities\obj\Release\Sport.Entities.csproj.CoreCompileInputs.cache

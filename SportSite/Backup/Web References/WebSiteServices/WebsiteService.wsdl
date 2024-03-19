@@ -1,0 +1,3597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetCurrentNews">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrentNewsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCurrentNewsResult" type="tns:ArrayOfFlashNewsData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFlashNewsData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FlashNewsData" type="tns:FlashNewsData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FlashNewsData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contents" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Links" type="tns:ArrayOfLinkData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfLinkData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LinkData" type="tns:LinkData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LinkData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetNewsInRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="start" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewsInRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewsInRangeResult" type="tns:ArrayOfFlashNewsData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlashnewsData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlashnewsDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFlashnewsDataResult" type="tns:FlashNewsData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFlashNews">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="data" type="tns:FlashNewsData" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFlashNewsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateFlashNewsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFlashNews">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFlashNewsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteFlashNewsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPoll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPollResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPollResult" type="tns:PollData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PollData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="question" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="possibleAnswers" type="tns:ArrayOfPollAnswerData" />
+          <s:element minOccurs="1" maxOccurs="1" name="creationDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="experationDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="creator" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPollAnswerData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PollAnswerData" type="tns:PollAnswerData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PollAnswerData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="pollId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="answer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="results" type="tns:ArrayOfPollResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPollResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PollResult" type="tns:PollResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PollResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="visitorIp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sessionId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getPollsByFilter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="filter" type="tns:PollReturnFilter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="PollReturnFilter">
+        <s:restriction base="s:string">
+          <s:enumeration value="All" />
+          <s:enumeration value="Latest" />
+          <s:enumeration value="Oldest" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="getPollsByFilterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPollsByFilterResult" type="tns:ArrayOfPollData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPollData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PollData" nillable="true" type="tns:PollData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="editAnswer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="answerID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="newAnswer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editAnswerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editAnswerResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addPoll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pollQuestion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="expirationDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addPollResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addPollResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addAnswerToPoll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pollID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pollAnswer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addAnswerToPollResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addAnswerToPollResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAnswer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAnswerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteAnswerResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deletePoll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deletePollResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deletePollResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pollID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="answerID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="voteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="voteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isCurrentUserAuthorizedToUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="creatorId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isCurrentUserAuthorizedToUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isCurrentUserAuthorizedToUpdateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArticles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="articlesCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArticlesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetArticlesResult" type="tns:ArrayOfArticleData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArticleData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArticleData" nillable="true" type="tns:ArticleData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArticleData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contents" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Images" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="File" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Caption" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubCaption" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPrimary" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSub" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsHotLink" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Links" type="tns:ArrayOfLinkData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Attachments" type="tns:ArrayOfAttachmentData" />
+          <s:element minOccurs="1" maxOccurs="1" name="ArticleRegion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsClubsArticle" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthorName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImageDescriptions" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastModified" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAttachmentData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AttachmentData" type="tns:AttachmentData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AttachmentData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="SentBy" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPrimaryArticle">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPrimaryArticleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPrimaryArticleResult" type="tns:ArticleData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubArticles">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSubArticlesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubArticlesResult" type="tns:ArrayOfArticleData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArticlesCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="primary" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="sub" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArticlesCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetArticlesCountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatestNewsID">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLatestNewsIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLatestNewsIDResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatestArticleID">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLatestArticleIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLatestArticleIDResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArticleData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArticleDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetArticleDataResult" type="tns:ArticleData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHotArticle">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetHotArticleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHotArticleResult" type="tns:ArticleData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPrimaryAndSecondaryArticles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="primaryArticleId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="secondaryArticleIds" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetPrimaryAndSecondaryArticlesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetPrimaryAndSecondaryArticlesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateArticle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:ArticleData" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateArticleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateArticleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteArticle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteArticleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteArticleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Page_Hit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="tns:WebSitePage" />
+            <s:element minOccurs="0" maxOccurs="1" name="strIP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strQueryString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strForm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strReferer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="WebSitePage">
+        <s:restriction base="s:string">
+          <s:enumeration value="Unknown" />
+          <s:enumeration value="Main" />
+          <s:enumeration value="Register" />
+          <s:enumeration value="Results" />
+          <s:enumeration value="PlayerSelectionDialog" />
+          <s:enumeration value="SchoolSelectionDialog" />
+          <s:enumeration value="Gallery" />
+          <s:enumeration value="SendToFriend" />
+          <s:enumeration value="AddComment" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="Page_HitResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PurgeOldHitLogData">
+        <s:complexType />
+      </s:element>
+      <s:element name="PurgeOldHitLogDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PurgeOldHitLogDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindAttachment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindAttachmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FindAttachmentResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttachmentData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttachmentDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAttachmentDataResult" type="tns:AttachmentData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAttachment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="attachment" type="tns:AttachmentData" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAttachmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAttachmentResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAttachment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAttachmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteAttachmentResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindPageData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pageCaption" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageIndex" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindPageDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FindPageDataResult" type="tns:PageData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PageData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Caption" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contents" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthorName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthorTitle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Attachments" type="tns:ArrayOfAttachmentData" />
+          <s:element minOccurs="1" maxOccurs="1" name="Index" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Links" type="tns:ArrayOfLinkData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPageData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPageDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetPageDataResult" type="tns:PageData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="tns:PageData" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePageResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeletePageResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSendableRegions">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSendableRegionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSendableRegionsResult" type="tns:ArrayOfRegionData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRegionData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RegionData" type="tns:RegionData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RegionData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getRegionById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRegionByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getRegionByIdResult" type="tns:RegionData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBanners">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBannersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBannersResult" type="tns:ArrayOfBannerData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBannerData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BannerData" type="tns:BannerData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BannerData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="url_150_150" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="url_760_80" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetBannerData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBannerDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBannerDataResult" type="tns:BannerData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBannerData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="data" type="tns:BannerData" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBannerDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateBannerDataResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBannerData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBannerDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteBannerDataResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEvents">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="start" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEventsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEventsResult" type="tns:ArrayOfEventData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEventData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EventData" type="tns:EventData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EventData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEventData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEventDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetEventDataResult" type="tns:EventData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEventData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="data" type="tns:EventData" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEventDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateEventDataResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEventData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEventDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteEventDataResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChampionshipAttachments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="champCategoryID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChampionshipAttachmentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChampionshipAttachmentsResult" type="tns:ArrayOfAttachmentData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddChampionshipAttachment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="champCategoryID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="attachmentID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddChampionshipAttachmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddChampionshipAttachmentResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveChampionshipAttachment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="champCategoryID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="attachmentID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveChampionshipAttachmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveChampionshipAttachmentResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegionArticles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="regionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="blnClubs" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegionArticlesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRegionArticlesResult" type="tns:ArticleData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRegionArticle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="regionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="blnClubs" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="articleID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRegionArticleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateRegionArticleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveRegionArticle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="regionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="blnClubs" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveRegionArticleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveRegionArticleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllGalleryImages">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllGalleryImagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllGalleryImagesResult" type="tns:ArrayOfImageData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfImageData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ImageData" nillable="true" type="tns:ImageData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ImageData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PictureName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginalName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ViewCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubGroup" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetGalleryImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="imageID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGalleryImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGalleryImageResult" type="tns:ImageData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImagesByGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGroupName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubGroup" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImagesByGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetImagesByGroupResult" type="tns:ArrayOfImageData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGalleryGroups">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetGalleryGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGalleryGroupsResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateGalleryImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:ImageData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateGalleryImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateGalleryImageResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddImageView">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="imageID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddImageViewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddImageViewResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteGallreyImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="imageID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteGallreyImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteGallreyImageResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArticleComments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="articleID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArticleCommentData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Article" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Number" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisitorIP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisitorName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisitorEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Caption" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contents" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DatePosted" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Deleted" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfArticleCommentData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArticleCommentData" nillable="true" type="tns:ArticleCommentData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetArticleCommentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetArticleCommentsResult" type="tns:ArrayOfArticleCommentData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateArticleComment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:ArticleCommentData" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateArticleCommentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateArticleCommentResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingCompetitorsTeamsData">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="PendingCompetitorData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Player" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChampionshipCategory" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Competition" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Heat" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Team" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phase" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Group" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPendingCompetitorData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PendingCompetitorData" type="tns:PendingCompetitorData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPendingCompetitorsTeamsDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPendingCompetitorsTeamsDataResult" type="tns:ArrayOfPendingCompetitorData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingCompetitors">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPhase" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingCompetitorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPendingCompetitorsResult" type="tns:ArrayOfPendingCompetitorData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPendingCompetitors">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="competitors" type="tns:ArrayOfPendingCompetitorData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPendingCompetitorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddPendingCompetitorsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingMatchScores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MatchData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Category" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Phase" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Group" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Round" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cycle" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Match" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamA" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamB" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ScoreA" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ScoreB" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sender" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Outcome" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartsResult" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMatchData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MatchData" type="tns:MatchData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPendingMatchScoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPendingMatchScoresResult" type="tns:ArrayOfMatchData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePendingMatchScores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matches" type="tns:ArrayOfMatchData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePendingMatchScoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePendingMatchScoresResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitPendingMatchScores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matches" type="tns:ArrayOfMatchData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitPendingMatchScoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CommitPendingMatchScoresResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSchoolMatches">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="schoolID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSchoolMatchesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSchoolMatchesResult" type="tns:ArrayOfMatchData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSportDailyGames">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="SportDailyGames">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RegionId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SportId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Day" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSportDailyGames">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SportDailyGames" nillable="true" type="tns:SportDailyGames" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSportDailyGamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSportDailyGamesResult" type="tns:ArrayOfSportDailyGames" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFacilityHostDays">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="FacilityHostDay">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RegionId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Index" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Day" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFacilityHostDay">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FacilityHostDay" nillable="true" type="tns:FacilityHostDay" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFacilityHostDaysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFacilityHostDaysResult" type="tns:ArrayOfFacilityHostDay" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTeamStudents">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FullStudentData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="tns:FullStudentType" />
+          <s:element minOccurs="1" maxOccurs="1" name="Grade" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SchoolId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BirthDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="FullStudentType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Player" />
+          <s:enumeration value="Pending" />
+          <s:enumeration value="School" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfFullStudentData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FullStudentData" nillable="true" type="tns:FullStudentData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTeamStudentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTeamStudentsResult" type="tns:ArrayOfFullStudentData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFullTeamDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FullTeamData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamStatus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChampionshipStatus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Index" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="School" type="tns:SchoolData" />
+          <s:element minOccurs="1" maxOccurs="1" name="City" type="tns:SimpleData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Category" type="tns:ChampionshipCategoryData" />
+          <s:element minOccurs="1" maxOccurs="1" name="Championship" type="tns:SimpleData" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sport" type="tns:SimpleData" />
+          <s:element minOccurs="1" maxOccurs="1" name="Region" type="tns:SimpleData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Players" type="tns:ArrayOfPlayerData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SchoolData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Symbol" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SimpleData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ChampionshipCategoryData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Category" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPlayerData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlayerData" nillable="true" type="tns:PlayerData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlayerData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Student" type="tns:StudentData" />
+          <s:element minOccurs="1" maxOccurs="1" name="Grade" type="tns:SimpleData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StudentData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFullTeamDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFullTeamDetailsResult" type="tns:FullTeamData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChampionshipsBySeason">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="season" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="region" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ChampionshipData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SportId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SportName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChampionshipId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChampionshipName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegionId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Categories" type="tns:ArrayOfChampionshipCategoryData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfChampionshipCategoryData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ChampionshipCategoryData" nillable="true" type="tns:ChampionshipCategoryData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfChampionshipData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ChampionshipData" nillable="true" type="tns:ChampionshipData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetChampionshipsBySeasonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChampionshipsBySeasonResult" type="tns:ArrayOfChampionshipData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MapExternalStudent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="studentId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MapExternalStudentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MapExternalStudentResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsExternallyAddedStudent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsExternallyAddedStudentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsExternallyAddedStudentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserPassword" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Permissions" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserRegion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserSchool" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserDataResult" type="tns:UserData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCurrentNewsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentNews" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentNewsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewsInRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewsInRange" />
+  </wsdl:message>
+  <wsdl:message name="GetNewsInRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewsInRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFlashnewsDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFlashnewsData" />
+  </wsdl:message>
+  <wsdl:message name="GetFlashnewsDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFlashnewsDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFlashNewsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFlashNews" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFlashNewsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFlashNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFlashNewsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFlashNews" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFlashNewsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFlashNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPollSoapIn">
+    <wsdl:part name="parameters" element="tns:getPoll" />
+  </wsdl:message>
+  <wsdl:message name="getPollSoapOut">
+    <wsdl:part name="parameters" element="tns:getPollResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPollsByFilterSoapIn">
+    <wsdl:part name="parameters" element="tns:getPollsByFilter" />
+  </wsdl:message>
+  <wsdl:message name="getPollsByFilterSoapOut">
+    <wsdl:part name="parameters" element="tns:getPollsByFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="editAnswerSoapIn">
+    <wsdl:part name="parameters" element="tns:editAnswer" />
+  </wsdl:message>
+  <wsdl:message name="editAnswerSoapOut">
+    <wsdl:part name="parameters" element="tns:editAnswerResponse" />
+  </wsdl:message>
+  <wsdl:message name="addPollSoapIn">
+    <wsdl:part name="parameters" element="tns:addPoll" />
+  </wsdl:message>
+  <wsdl:message name="addPollSoapOut">
+    <wsdl:part name="parameters" element="tns:addPollResponse" />
+  </wsdl:message>
+  <wsdl:message name="addAnswerToPollSoapIn">
+    <wsdl:part name="parameters" element="tns:addAnswerToPoll" />
+  </wsdl:message>
+  <wsdl:message name="addAnswerToPollSoapOut">
+    <wsdl:part name="parameters" element="tns:addAnswerToPollResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAnswerSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAnswer" />
+  </wsdl:message>
+  <wsdl:message name="deleteAnswerSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteAnswerResponse" />
+  </wsdl:message>
+  <wsdl:message name="deletePollSoapIn">
+    <wsdl:part name="parameters" element="tns:deletePoll" />
+  </wsdl:message>
+  <wsdl:message name="deletePollSoapOut">
+    <wsdl:part name="parameters" element="tns:deletePollResponse" />
+  </wsdl:message>
+  <wsdl:message name="voteSoapIn">
+    <wsdl:part name="parameters" element="tns:vote" />
+  </wsdl:message>
+  <wsdl:message name="voteSoapOut">
+    <wsdl:part name="parameters" element="tns:voteResponse" />
+  </wsdl:message>
+  <wsdl:message name="isCurrentUserAuthorizedToUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:isCurrentUserAuthorizedToUpdate" />
+  </wsdl:message>
+  <wsdl:message name="isCurrentUserAuthorizedToUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:isCurrentUserAuthorizedToUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetArticlesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetArticles" />
+  </wsdl:message>
+  <wsdl:message name="GetArticlesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetArticlesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPrimaryArticleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPrimaryArticle" />
+  </wsdl:message>
+  <wsdl:message name="GetPrimaryArticleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPrimaryArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubArticlesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubArticles" />
+  </wsdl:message>
+  <wsdl:message name="GetSubArticlesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubArticlesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetArticlesCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetArticlesCount" />
+  </wsdl:message>
+  <wsdl:message name="GetArticlesCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetArticlesCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestNewsIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLatestNewsID" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestNewsIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLatestNewsIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestArticleIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLatestArticleID" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestArticleIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLatestArticleIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetArticleDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetArticleData" />
+  </wsdl:message>
+  <wsdl:message name="GetArticleDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetArticleDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHotArticleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHotArticle" />
+  </wsdl:message>
+  <wsdl:message name="GetHotArticleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHotArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPrimaryAndSecondaryArticlesSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPrimaryAndSecondaryArticles" />
+  </wsdl:message>
+  <wsdl:message name="SetPrimaryAndSecondaryArticlesSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPrimaryAndSecondaryArticlesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateArticleSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateArticle" />
+  </wsdl:message>
+  <wsdl:message name="UpdateArticleSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteArticleSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteArticle" />
+  </wsdl:message>
+  <wsdl:message name="DeleteArticleSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="Page_HitSoapIn">
+    <wsdl:part name="parameters" element="tns:Page_Hit" />
+  </wsdl:message>
+  <wsdl:message name="Page_HitSoapOut">
+    <wsdl:part name="parameters" element="tns:Page_HitResponse" />
+  </wsdl:message>
+  <wsdl:message name="PurgeOldHitLogDataSoapIn">
+    <wsdl:part name="parameters" element="tns:PurgeOldHitLogData" />
+  </wsdl:message>
+  <wsdl:message name="PurgeOldHitLogDataSoapOut">
+    <wsdl:part name="parameters" element="tns:PurgeOldHitLogDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindAttachmentSoapIn">
+    <wsdl:part name="parameters" element="tns:FindAttachment" />
+  </wsdl:message>
+  <wsdl:message name="FindAttachmentSoapOut">
+    <wsdl:part name="parameters" element="tns:FindAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttachmentDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttachmentData" />
+  </wsdl:message>
+  <wsdl:message name="GetAttachmentDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttachmentDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAttachmentSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAttachment" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAttachmentSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAttachmentSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAttachment" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAttachmentSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindPageDataSoapIn">
+    <wsdl:part name="parameters" element="tns:FindPageData" />
+  </wsdl:message>
+  <wsdl:message name="FindPageDataSoapOut">
+    <wsdl:part name="parameters" element="tns:FindPageDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPageDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPageData" />
+  </wsdl:message>
+  <wsdl:message name="GetPageDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPageDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePageSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePage" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePageSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePageResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePageSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePage" />
+  </wsdl:message>
+  <wsdl:message name="DeletePageSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePageResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSendableRegionsSoapIn">
+    <wsdl:part name="parameters" element="tns:getSendableRegions" />
+  </wsdl:message>
+  <wsdl:message name="getSendableRegionsSoapOut">
+    <wsdl:part name="parameters" element="tns:getSendableRegionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRegionByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getRegionById" />
+  </wsdl:message>
+  <wsdl:message name="getRegionByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getRegionByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBannersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBanners" />
+  </wsdl:message>
+  <wsdl:message name="GetBannersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBannersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBannerDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBannerData" />
+  </wsdl:message>
+  <wsdl:message name="GetBannerDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBannerDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBannerDataSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBannerData" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBannerDataSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBannerDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBannerDataSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteBannerData" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBannerDataSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteBannerDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEventsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEvents" />
+  </wsdl:message>
+  <wsdl:message name="GetEventsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEventDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEventData" />
+  </wsdl:message>
+  <wsdl:message name="GetEventDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEventDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEventDataSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEventData" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEventDataSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEventDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEventDataSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteEventData" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEventDataSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteEventDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChampionshipAttachmentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChampionshipAttachments" />
+  </wsdl:message>
+  <wsdl:message name="GetChampionshipAttachmentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChampionshipAttachmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddChampionshipAttachmentSoapIn">
+    <wsdl:part name="parameters" element="tns:AddChampionshipAttachment" />
+  </wsdl:message>
+  <wsdl:message name="AddChampionshipAttachmentSoapOut">
+    <wsdl:part name="parameters" element="tns:AddChampionshipAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveChampionshipAttachmentSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveChampionshipAttachment" />
+  </wsdl:message>
+  <wsdl:message name="RemoveChampionshipAttachmentSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveChampionshipAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRegionArticlesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRegionArticles" />
+  </wsdl:message>
+  <wsdl:message name="GetRegionArticlesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRegionArticlesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRegionArticleSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRegionArticle" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRegionArticleSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRegionArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveRegionArticleSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveRegionArticle" />
+  </wsdl:message>
+  <wsdl:message name="RemoveRegionArticleSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveRegionArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllGalleryImagesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllGalleryImages" />
+  </wsdl:message>
+  <wsdl:message name="GetAllGalleryImagesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllGalleryImagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGalleryImageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGalleryImage" />
+  </wsdl:message>
+  <wsdl:message name="GetGalleryImageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGalleryImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetImagesByGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetImagesByGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetImagesByGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetImagesByGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGalleryGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGalleryGroups" />
+  </wsdl:message>
+  <wsdl:message name="GetGalleryGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGalleryGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGalleryImageSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateGalleryImage" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGalleryImageSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateGalleryImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddImageViewSoapIn">
+    <wsdl:part name="parameters" element="tns:AddImageView" />
+  </wsdl:message>
+  <wsdl:message name="AddImageViewSoapOut">
+    <wsdl:part name="parameters" element="tns:AddImageViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteGallreyImageSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteGallreyImage" />
+  </wsdl:message>
+  <wsdl:message name="DeleteGallreyImageSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteGallreyImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetArticleCommentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetArticleComments" />
+  </wsdl:message>
+  <wsdl:message name="GetArticleCommentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetArticleCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateArticleCommentSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateArticleComment" />
+  </wsdl:message>
+  <wsdl:message name="UpdateArticleCommentSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateArticleCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingCompetitorsTeamsDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPendingCompetitorsTeamsData" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingCompetitorsTeamsDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPendingCompetitorsTeamsDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingCompetitorsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPendingCompetitors" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingCompetitorsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPendingCompetitorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPendingCompetitorsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPendingCompetitors" />
+  </wsdl:message>
+  <wsdl:message name="AddPendingCompetitorsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPendingCompetitorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingMatchScoresSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPendingMatchScores" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingMatchScoresSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPendingMatchScoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePendingMatchScoresSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePendingMatchScores" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePendingMatchScoresSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePendingMatchScoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitPendingMatchScoresSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitPendingMatchScores" />
+  </wsdl:message>
+  <wsdl:message name="CommitPendingMatchScoresSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitPendingMatchScoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSchoolMatchesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSchoolMatches" />
+  </wsdl:message>
+  <wsdl:message name="GetSchoolMatchesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSchoolMatchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSportDailyGamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSportDailyGames" />
+  </wsdl:message>
+  <wsdl:message name="GetSportDailyGamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSportDailyGamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFacilityHostDaysSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFacilityHostDays" />
+  </wsdl:message>
+  <wsdl:message name="GetFacilityHostDaysSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFacilityHostDaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTeamStudentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTeamStudents" />
+  </wsdl:message>
+  <wsdl:message name="GetTeamStudentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTeamStudentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFullTeamDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFullTeamDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetFullTeamDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFullTeamDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChampionshipsBySeasonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChampionshipsBySeason" />
+  </wsdl:message>
+  <wsdl:message name="GetChampionshipsBySeasonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChampionshipsBySeasonResponse" />
+  </wsdl:message>
+  <wsdl:message name="MapExternalStudentSoapIn">
+    <wsdl:part name="parameters" element="tns:MapExternalStudent" />
+  </wsdl:message>
+  <wsdl:message name="MapExternalStudentSoapOut">
+    <wsdl:part name="parameters" element="tns:MapExternalStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsExternallyAddedStudentSoapIn">
+    <wsdl:part name="parameters" element="tns:IsExternallyAddedStudent" />
+  </wsdl:message>
+  <wsdl:message name="IsExternallyAddedStudentSoapOut">
+    <wsdl:part name="parameters" element="tns:IsExternallyAddedStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserData" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebsiteServiceSoap">
+    <wsdl:operation name="GetCurrentNews">
+      <wsdl:input message="tns:GetCurrentNewsSoapIn" />
+      <wsdl:output message="tns:GetCurrentNewsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewsInRange">
+      <wsdl:input message="tns:GetNewsInRangeSoapIn" />
+      <wsdl:output message="tns:GetNewsInRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlashnewsData">
+      <wsdl:input message="tns:GetFlashnewsDataSoapIn" />
+      <wsdl:output message="tns:GetFlashnewsDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFlashNews">
+      <wsdl:input message="tns:UpdateFlashNewsSoapIn" />
+      <wsdl:output message="tns:UpdateFlashNewsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFlashNews">
+      <wsdl:input message="tns:DeleteFlashNewsSoapIn" />
+      <wsdl:output message="tns:DeleteFlashNewsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPoll">
+      <wsdl:input message="tns:getPollSoapIn" />
+      <wsdl:output message="tns:getPollSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPollsByFilter">
+      <wsdl:input message="tns:getPollsByFilterSoapIn" />
+      <wsdl:output message="tns:getPollsByFilterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editAnswer">
+      <wsdl:input message="tns:editAnswerSoapIn" />
+      <wsdl:output message="tns:editAnswerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addPoll">
+      <wsdl:input message="tns:addPollSoapIn" />
+      <wsdl:output message="tns:addPollSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addAnswerToPoll">
+      <wsdl:input message="tns:addAnswerToPollSoapIn" />
+      <wsdl:output message="tns:addAnswerToPollSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAnswer">
+      <wsdl:input message="tns:deleteAnswerSoapIn" />
+      <wsdl:output message="tns:deleteAnswerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deletePoll">
+      <wsdl:input message="tns:deletePollSoapIn" />
+      <wsdl:output message="tns:deletePollSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vote">
+      <wsdl:input message="tns:voteSoapIn" />
+      <wsdl:output message="tns:voteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isCurrentUserAuthorizedToUpdate">
+      <wsdl:input message="tns:isCurrentUserAuthorizedToUpdateSoapIn" />
+      <wsdl:output message="tns:isCurrentUserAuthorizedToUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArticles">
+      <wsdl:input message="tns:GetArticlesSoapIn" />
+      <wsdl:output message="tns:GetArticlesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrimaryArticle">
+      <wsdl:input message="tns:GetPrimaryArticleSoapIn" />
+      <wsdl:output message="tns:GetPrimaryArticleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubArticles">
+      <wsdl:input message="tns:GetSubArticlesSoapIn" />
+      <wsdl:output message="tns:GetSubArticlesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArticlesCount">
+      <wsdl:input message="tns:GetArticlesCountSoapIn" />
+      <wsdl:output message="tns:GetArticlesCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestNewsID">
+      <wsdl:input message="tns:GetLatestNewsIDSoapIn" />
+      <wsdl:output message="tns:GetLatestNewsIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestArticleID">
+      <wsdl:input message="tns:GetLatestArticleIDSoapIn" />
+      <wsdl:output message="tns:GetLatestArticleIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleData">
+      <wsdl:input message="tns:GetArticleDataSoapIn" />
+      <wsdl:output message="tns:GetArticleDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHotArticle">
+      <wsdl:input message="tns:GetHotArticleSoapIn" />
+      <wsdl:output message="tns:GetHotArticleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPrimaryAndSecondaryArticles">
+      <wsdl:input message="tns:SetPrimaryAndSecondaryArticlesSoapIn" />
+      <wsdl:output message="tns:SetPrimaryAndSecondaryArticlesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateArticle">
+      <wsdl:input message="tns:UpdateArticleSoapIn" />
+      <wsdl:output message="tns:UpdateArticleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteArticle">
+      <wsdl:input message="tns:DeleteArticleSoapIn" />
+      <wsdl:output message="tns:DeleteArticleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Page_Hit">
+      <wsdl:input message="tns:Page_HitSoapIn" />
+      <wsdl:output message="tns:Page_HitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PurgeOldHitLogData">
+      <wsdl:input message="tns:PurgeOldHitLogDataSoapIn" />
+      <wsdl:output message="tns:PurgeOldHitLogDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAttachment">
+      <wsdl:input message="tns:FindAttachmentSoapIn" />
+      <wsdl:output message="tns:FindAttachmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentData">
+      <wsdl:input message="tns:GetAttachmentDataSoapIn" />
+      <wsdl:output message="tns:GetAttachmentDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAttachment">
+      <wsdl:input message="tns:UpdateAttachmentSoapIn" />
+      <wsdl:output message="tns:UpdateAttachmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttachment">
+      <wsdl:input message="tns:DeleteAttachmentSoapIn" />
+      <wsdl:output message="tns:DeleteAttachmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindPageData">
+      <wsdl:input message="tns:FindPageDataSoapIn" />
+      <wsdl:output message="tns:FindPageDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPageData">
+      <wsdl:input message="tns:GetPageDataSoapIn" />
+      <wsdl:output message="tns:GetPageDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePage">
+      <wsdl:input message="tns:UpdatePageSoapIn" />
+      <wsdl:output message="tns:UpdatePageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePage">
+      <wsdl:input message="tns:DeletePageSoapIn" />
+      <wsdl:output message="tns:DeletePageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSendableRegions">
+      <wsdl:input message="tns:getSendableRegionsSoapIn" />
+      <wsdl:output message="tns:getSendableRegionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRegionById">
+      <wsdl:input message="tns:getRegionByIdSoapIn" />
+      <wsdl:output message="tns:getRegionByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBanners">
+      <wsdl:input message="tns:GetBannersSoapIn" />
+      <wsdl:output message="tns:GetBannersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBannerData">
+      <wsdl:input message="tns:GetBannerDataSoapIn" />
+      <wsdl:output message="tns:GetBannerDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBannerData">
+      <wsdl:input message="tns:UpdateBannerDataSoapIn" />
+      <wsdl:output message="tns:UpdateBannerDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBannerData">
+      <wsdl:input message="tns:DeleteBannerDataSoapIn" />
+      <wsdl:output message="tns:DeleteBannerDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEvents">
+      <wsdl:input message="tns:GetEventsSoapIn" />
+      <wsdl:output message="tns:GetEventsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventData">
+      <wsdl:input message="tns:GetEventDataSoapIn" />
+      <wsdl:output message="tns:GetEventDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEventData">
+      <wsdl:input message="tns:UpdateEventDataSoapIn" />
+      <wsdl:output message="tns:UpdateEventDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEventData">
+      <wsdl:input message="tns:DeleteEventDataSoapIn" />
+      <wsdl:output message="tns:DeleteEventDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipAttachments">
+      <wsdl:input message="tns:GetChampionshipAttachmentsSoapIn" />
+      <wsdl:output message="tns:GetChampionshipAttachmentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddChampionshipAttachment">
+      <wsdl:input message="tns:AddChampionshipAttachmentSoapIn" />
+      <wsdl:output message="tns:AddChampionshipAttachmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveChampionshipAttachment">
+      <wsdl:input message="tns:RemoveChampionshipAttachmentSoapIn" />
+      <wsdl:output message="tns:RemoveChampionshipAttachmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionArticles">
+      <wsdl:input message="tns:GetRegionArticlesSoapIn" />
+      <wsdl:output message="tns:GetRegionArticlesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRegionArticle">
+      <wsdl:input message="tns:UpdateRegionArticleSoapIn" />
+      <wsdl:output message="tns:UpdateRegionArticleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRegionArticle">
+      <wsdl:input message="tns:RemoveRegionArticleSoapIn" />
+      <wsdl:output message="tns:RemoveRegionArticleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGalleryImages">
+      <wsdl:input message="tns:GetAllGalleryImagesSoapIn" />
+      <wsdl:output message="tns:GetAllGalleryImagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGalleryImage">
+      <wsdl:input message="tns:GetGalleryImageSoapIn" />
+      <wsdl:output message="tns:GetGalleryImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImagesByGroup">
+      <wsdl:input message="tns:GetImagesByGroupSoapIn" />
+      <wsdl:output message="tns:GetImagesByGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGalleryGroups">
+      <wsdl:input message="tns:GetGalleryGroupsSoapIn" />
+      <wsdl:output message="tns:GetGalleryGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGalleryImage">
+      <wsdl:input message="tns:UpdateGalleryImageSoapIn" />
+      <wsdl:output message="tns:UpdateGalleryImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddImageView">
+      <wsdl:input message="tns:AddImageViewSoapIn" />
+      <wsdl:output message="tns:AddImageViewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGallreyImage">
+      <wsdl:input message="tns:DeleteGallreyImageSoapIn" />
+      <wsdl:output message="tns:DeleteGallreyImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleComments">
+      <wsdl:input message="tns:GetArticleCommentsSoapIn" />
+      <wsdl:output message="tns:GetArticleCommentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateArticleComment">
+      <wsdl:input message="tns:UpdateArticleCommentSoapIn" />
+      <wsdl:output message="tns:UpdateArticleCommentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingCompetitorsTeamsData">
+      <wsdl:input message="tns:GetPendingCompetitorsTeamsDataSoapIn" />
+      <wsdl:output message="tns:GetPendingCompetitorsTeamsDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingCompetitors">
+      <wsdl:input message="tns:GetPendingCompetitorsSoapIn" />
+      <wsdl:output message="tns:GetPendingCompetitorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPendingCompetitors">
+      <wsdl:input message="tns:AddPendingCompetitorsSoapIn" />
+      <wsdl:output message="tns:AddPendingCompetitorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingMatchScores">
+      <wsdl:input message="tns:GetPendingMatchScoresSoapIn" />
+      <wsdl:output message="tns:GetPendingMatchScoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePendingMatchScores">
+      <wsdl:input message="tns:UpdatePendingMatchScoresSoapIn" />
+      <wsdl:output message="tns:UpdatePendingMatchScoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitPendingMatchScores">
+      <wsdl:input message="tns:CommitPendingMatchScoresSoapIn" />
+      <wsdl:output message="tns:CommitPendingMatchScoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolMatches">
+      <wsdl:input message="tns:GetSchoolMatchesSoapIn" />
+      <wsdl:output message="tns:GetSchoolMatchesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSportDailyGames">
+      <wsdl:input message="tns:GetSportDailyGamesSoapIn" />
+      <wsdl:output message="tns:GetSportDailyGamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFacilityHostDays">
+      <wsdl:input message="tns:GetFacilityHostDaysSoapIn" />
+      <wsdl:output message="tns:GetFacilityHostDaysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamStudents">
+      <wsdl:input message="tns:GetTeamStudentsSoapIn" />
+      <wsdl:output message="tns:GetTeamStudentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFullTeamDetails">
+      <wsdl:input message="tns:GetFullTeamDetailsSoapIn" />
+      <wsdl:output message="tns:GetFullTeamDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipsBySeason">
+      <wsdl:input message="tns:GetChampionshipsBySeasonSoapIn" />
+      <wsdl:output message="tns:GetChampionshipsBySeasonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MapExternalStudent">
+      <wsdl:input message="tns:MapExternalStudentSoapIn" />
+      <wsdl:output message="tns:MapExternalStudentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExternallyAddedStudent">
+      <wsdl:input message="tns:IsExternallyAddedStudentSoapIn" />
+      <wsdl:output message="tns:IsExternallyAddedStudentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <wsdl:input message="tns:GetUserDataSoapIn" />
+      <wsdl:output message="tns:GetUserDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebsiteServiceSoap" type="tns:WebsiteServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCurrentNews">
+      <soap:operation soapAction="http://tempuri.org/GetCurrentNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewsInRange">
+      <soap:operation soapAction="http://tempuri.org/GetNewsInRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlashnewsData">
+      <soap:operation soapAction="http://tempuri.org/GetFlashnewsData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFlashNews">
+      <soap:operation soapAction="http://tempuri.org/UpdateFlashNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFlashNews">
+      <soap:operation soapAction="http://tempuri.org/DeleteFlashNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPoll">
+      <soap:operation soapAction="http://tempuri.org/getPoll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPollsByFilter">
+      <soap:operation soapAction="http://tempuri.org/getPollsByFilter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editAnswer">
+      <soap:operation soapAction="http://tempuri.org/editAnswer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPoll">
+      <soap:operation soapAction="http://tempuri.org/addPoll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addAnswerToPoll">
+      <soap:operation soapAction="http://tempuri.org/addAnswerToPoll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAnswer">
+      <soap:operation soapAction="http://tempuri.org/deleteAnswer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePoll">
+      <soap:operation soapAction="http://tempuri.org/deletePoll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vote">
+      <soap:operation soapAction="http://tempuri.org/vote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCurrentUserAuthorizedToUpdate">
+      <soap:operation soapAction="http://tempuri.org/isCurrentUserAuthorizedToUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticles">
+      <soap:operation soapAction="http://tempuri.org/GetArticles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrimaryArticle">
+      <soap:operation soapAction="http://tempuri.org/GetPrimaryArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubArticles">
+      <soap:operation soapAction="http://tempuri.org/GetSubArticles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticlesCount">
+      <soap:operation soapAction="http://tempuri.org/GetArticlesCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestNewsID">
+      <soap:operation soapAction="http://tempuri.org/GetLatestNewsID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestArticleID">
+      <soap:operation soapAction="http://tempuri.org/GetLatestArticleID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleData">
+      <soap:operation soapAction="http://tempuri.org/GetArticleData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHotArticle">
+      <soap:operation soapAction="http://tempuri.org/GetHotArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPrimaryAndSecondaryArticles">
+      <soap:operation soapAction="http://tempuri.org/SetPrimaryAndSecondaryArticles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateArticle">
+      <soap:operation soapAction="http://tempuri.org/UpdateArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteArticle">
+      <soap:operation soapAction="http://tempuri.org/DeleteArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Page_Hit">
+      <soap:operation soapAction="http://tempuri.org/Page_Hit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PurgeOldHitLogData">
+      <soap:operation soapAction="http://tempuri.org/PurgeOldHitLogData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAttachment">
+      <soap:operation soapAction="http://tempuri.org/FindAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentData">
+      <soap:operation soapAction="http://tempuri.org/GetAttachmentData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAttachment">
+      <soap:operation soapAction="http://tempuri.org/UpdateAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttachment">
+      <soap:operation soapAction="http://tempuri.org/DeleteAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindPageData">
+      <soap:operation soapAction="http://tempuri.org/FindPageData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageData">
+      <soap:operation soapAction="http://tempuri.org/GetPageData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePage">
+      <soap:operation soapAction="http://tempuri.org/UpdatePage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePage">
+      <soap:operation soapAction="http://tempuri.org/DeletePage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSendableRegions">
+      <soap:operation soapAction="http://tempuri.org/getSendableRegions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRegionById">
+      <soap:operation soapAction="http://tempuri.org/getRegionById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBanners">
+      <soap:operation soapAction="http://tempuri.org/GetBanners" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBannerData">
+      <soap:operation soapAction="http://tempuri.org/GetBannerData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBannerData">
+      <soap:operation soapAction="http://tempuri.org/UpdateBannerData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBannerData">
+      <soap:operation soapAction="http://tempuri.org/DeleteBannerData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEvents">
+      <soap:operation soapAction="http://tempuri.org/GetEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventData">
+      <soap:operation soapAction="http://tempuri.org/GetEventData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEventData">
+      <soap:operation soapAction="http://tempuri.org/UpdateEventData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEventData">
+      <soap:operation soapAction="http://tempuri.org/DeleteEventData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipAttachments">
+      <soap:operation soapAction="http://tempuri.org/GetChampionshipAttachments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddChampionshipAttachment">
+      <soap:operation soapAction="http://tempuri.org/AddChampionshipAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveChampionshipAttachment">
+      <soap:operation soapAction="http://tempuri.org/RemoveChampionshipAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionArticles">
+      <soap:operation soapAction="http://tempuri.org/GetRegionArticles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRegionArticle">
+      <soap:operation soapAction="http://tempuri.org/UpdateRegionArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRegionArticle">
+      <soap:operation soapAction="http://tempuri.org/RemoveRegionArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGalleryImages">
+      <soap:operation soapAction="http://tempuri.org/GetAllGalleryImages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGalleryImage">
+      <soap:operation soapAction="http://tempuri.org/GetGalleryImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImagesByGroup">
+      <soap:operation soapAction="http://tempuri.org/GetImagesByGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGalleryGroups">
+      <soap:operation soapAction="http://tempuri.org/GetGalleryGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGalleryImage">
+      <soap:operation soapAction="http://tempuri.org/UpdateGalleryImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddImageView">
+      <soap:operation soapAction="http://tempuri.org/AddImageView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGallreyImage">
+      <soap:operation soapAction="http://tempuri.org/DeleteGallreyImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleComments">
+      <soap:operation soapAction="http://tempuri.org/GetArticleComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateArticleComment">
+      <soap:operation soapAction="http://tempuri.org/UpdateArticleComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingCompetitorsTeamsData">
+      <soap:operation soapAction="http://tempuri.org/GetPendingCompetitorsTeamsData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingCompetitors">
+      <soap:operation soapAction="http://tempuri.org/GetPendingCompetitors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPendingCompetitors">
+      <soap:operation soapAction="http://tempuri.org/AddPendingCompetitors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingMatchScores">
+      <soap:operation soapAction="http://tempuri.org/GetPendingMatchScores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePendingMatchScores">
+      <soap:operation soapAction="http://tempuri.org/UpdatePendingMatchScores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitPendingMatchScores">
+      <soap:operation soapAction="http://tempuri.org/CommitPendingMatchScores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolMatches">
+      <soap:operation soapAction="http://tempuri.org/GetSchoolMatches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSportDailyGames">
+      <soap:operation soapAction="http://tempuri.org/GetSportDailyGames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFacilityHostDays">
+      <soap:operation soapAction="http://tempuri.org/GetFacilityHostDays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamStudents">
+      <soap:operation soapAction="http://tempuri.org/GetTeamStudents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFullTeamDetails">
+      <soap:operation soapAction="http://tempuri.org/GetFullTeamDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipsBySeason">
+      <soap:operation soapAction="http://tempuri.org/GetChampionshipsBySeason" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MapExternalStudent">
+      <soap:operation soapAction="http://tempuri.org/MapExternalStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExternallyAddedStudent">
+      <soap:operation soapAction="http://tempuri.org/IsExternallyAddedStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <soap:operation soapAction="http://tempuri.org/GetUserData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebsiteServiceSoap12" type="tns:WebsiteServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCurrentNews">
+      <soap12:operation soapAction="http://tempuri.org/GetCurrentNews" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewsInRange">
+      <soap12:operation soapAction="http://tempuri.org/GetNewsInRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlashnewsData">
+      <soap12:operation soapAction="http://tempuri.org/GetFlashnewsData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFlashNews">
+      <soap12:operation soapAction="http://tempuri.org/UpdateFlashNews" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFlashNews">
+      <soap12:operation soapAction="http://tempuri.org/DeleteFlashNews" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPoll">
+      <soap12:operation soapAction="http://tempuri.org/getPoll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPollsByFilter">
+      <soap12:operation soapAction="http://tempuri.org/getPollsByFilter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editAnswer">
+      <soap12:operation soapAction="http://tempuri.org/editAnswer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPoll">
+      <soap12:operation soapAction="http://tempuri.org/addPoll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addAnswerToPoll">
+      <soap12:operation soapAction="http://tempuri.org/addAnswerToPoll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAnswer">
+      <soap12:operation soapAction="http://tempuri.org/deleteAnswer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePoll">
+      <soap12:operation soapAction="http://tempuri.org/deletePoll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vote">
+      <soap12:operation soapAction="http://tempuri.org/vote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCurrentUserAuthorizedToUpdate">
+      <soap12:operation soapAction="http://tempuri.org/isCurrentUserAuthorizedToUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticles">
+      <soap12:operation soapAction="http://tempuri.org/GetArticles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrimaryArticle">
+      <soap12:operation soapAction="http://tempuri.org/GetPrimaryArticle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubArticles">
+      <soap12:operation soapAction="http://tempuri.org/GetSubArticles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticlesCount">
+      <soap12:operation soapAction="http://tempuri.org/GetArticlesCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestNewsID">
+      <soap12:operation soapAction="http://tempuri.org/GetLatestNewsID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestArticleID">
+      <soap12:operation soapAction="http://tempuri.org/GetLatestArticleID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleData">
+      <soap12:operation soapAction="http://tempuri.org/GetArticleData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHotArticle">
+      <soap12:operation soapAction="http://tempuri.org/GetHotArticle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPrimaryAndSecondaryArticles">
+      <soap12:operation soapAction="http://tempuri.org/SetPrimaryAndSecondaryArticles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateArticle">
+      <soap12:operation soapAction="http://tempuri.org/UpdateArticle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteArticle">
+      <soap12:operation soapAction="http://tempuri.org/DeleteArticle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Page_Hit">
+      <soap12:operation soapAction="http://tempuri.org/Page_Hit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PurgeOldHitLogData">
+      <soap12:operation soapAction="http://tempuri.org/PurgeOldHitLogData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAttachment">
+      <soap12:operation soapAction="http://tempuri.org/FindAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentData">
+      <soap12:operation soapAction="http://tempuri.org/GetAttachmentData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAttachment">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttachment">
+      <soap12:operation soapAction="http://tempuri.org/DeleteAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindPageData">
+      <soap12:operation soapAction="http://tempuri.org/FindPageData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageData">
+      <soap12:operation soapAction="http://tempuri.org/GetPageData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePage">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePage">
+      <soap12:operation soapAction="http://tempuri.org/DeletePage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSendableRegions">
+      <soap12:operation soapAction="http://tempuri.org/getSendableRegions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRegionById">
+      <soap12:operation soapAction="http://tempuri.org/getRegionById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBanners">
+      <soap12:operation soapAction="http://tempuri.org/GetBanners" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBannerData">
+      <soap12:operation soapAction="http://tempuri.org/GetBannerData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBannerData">
+      <soap12:operation soapAction="http://tempuri.org/UpdateBannerData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBannerData">
+      <soap12:operation soapAction="http://tempuri.org/DeleteBannerData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEvents">
+      <soap12:operation soapAction="http://tempuri.org/GetEvents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventData">
+      <soap12:operation soapAction="http://tempuri.org/GetEventData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEventData">
+      <soap12:operation soapAction="http://tempuri.org/UpdateEventData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEventData">
+      <soap12:operation soapAction="http://tempuri.org/DeleteEventData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipAttachments">
+      <soap12:operation soapAction="http://tempuri.org/GetChampionshipAttachments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddChampionshipAttachment">
+      <soap12:operation soapAction="http://tempuri.org/AddChampionshipAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveChampionshipAttachment">
+      <soap12:operation soapAction="http://tempuri.org/RemoveChampionshipAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionArticles">
+      <soap12:operation soapAction="http://tempuri.org/GetRegionArticles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRegionArticle">
+      <soap12:operation soapAction="http://tempuri.org/UpdateRegionArticle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRegionArticle">
+      <soap12:operation soapAction="http://tempuri.org/RemoveRegionArticle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGalleryImages">
+      <soap12:operation soapAction="http://tempuri.org/GetAllGalleryImages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGalleryImage">
+      <soap12:operation soapAction="http://tempuri.org/GetGalleryImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImagesByGroup">
+      <soap12:operation soapAction="http://tempuri.org/GetImagesByGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGalleryGroups">
+      <soap12:operation soapAction="http://tempuri.org/GetGalleryGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGalleryImage">
+      <soap12:operation soapAction="http://tempuri.org/UpdateGalleryImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddImageView">
+      <soap12:operation soapAction="http://tempuri.org/AddImageView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGallreyImage">
+      <soap12:operation soapAction="http://tempuri.org/DeleteGallreyImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleComments">
+      <soap12:operation soapAction="http://tempuri.org/GetArticleComments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateArticleComment">
+      <soap12:operation soapAction="http://tempuri.org/UpdateArticleComment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingCompetitorsTeamsData">
+      <soap12:operation soapAction="http://tempuri.org/GetPendingCompetitorsTeamsData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingCompetitors">
+      <soap12:operation soapAction="http://tempuri.org/GetPendingCompetitors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPendingCompetitors">
+      <soap12:operation soapAction="http://tempuri.org/AddPendingCompetitors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingMatchScores">
+      <soap12:operation soapAction="http://tempuri.org/GetPendingMatchScores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePendingMatchScores">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePendingMatchScores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitPendingMatchScores">
+      <soap12:operation soapAction="http://tempuri.org/CommitPendingMatchScores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolMatches">
+      <soap12:operation soapAction="http://tempuri.org/GetSchoolMatches" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSportDailyGames">
+      <soap12:operation soapAction="http://tempuri.org/GetSportDailyGames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFacilityHostDays">
+      <soap12:operation soapAction="http://tempuri.org/GetFacilityHostDays" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamStudents">
+      <soap12:operation soapAction="http://tempuri.org/GetTeamStudents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFullTeamDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetFullTeamDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChampionshipsBySeason">
+      <soap12:operation soapAction="http://tempuri.org/GetChampionshipsBySeason" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MapExternalStudent">
+      <soap12:operation soapAction="http://tempuri.org/MapExternalStudent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExternallyAddedStudent">
+      <soap12:operation soapAction="http://tempuri.org/IsExternallyAddedStudent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <soap12:operation soapAction="http://tempuri.org/GetUserData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebsiteService">
+    <wsdl:port name="WebsiteServiceSoap" binding="tns:WebsiteServiceSoap">
+      <soap:address location="http://213.8.193.150/ISF/SportServices/WebsiteService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebsiteServiceSoap12" binding="tns:WebsiteServiceSoap12">
+      <soap12:address location="http://213.8.193.150/ISF/SportServices/WebsiteService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

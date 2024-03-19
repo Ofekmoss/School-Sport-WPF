@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Sport.Championships.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Sport_Championships_SportServices_ChampionshipService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://schoolsport.org.il:8080/ISF/SportServices/ChampionshipService.asmx</Value>
+    </Setting>
+    <Setting Name="Sport_Championships_DataServices_DataService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://schoolsport.org.il:8080/ISF/SportServices/DataService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

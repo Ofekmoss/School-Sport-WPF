@@ -1,0 +1,340 @@
+#MainViewTable, #MainViewTable tr, #MainViewTable tr td {padding: 0; margin: 0; vertical-align: top;}
+
+#MainViewBody, #LeftTableCell, #CenterTableCell, #RightTableCell {position: relative;}
+#MainViewBody {width: 778px; background-image: url(Images/top_bg.gif); background-repeat: no-repeat;}
+.PageCaption, #PageCaptionWrapper2 {position: relative;}
+
+#FooterPanel, #DateTimePanel, #TopLogoPanel, #TopBannerPanel, #NavBarPanel, .PageCaptionWrapper, .PageContentsPanel, .ExtraContentsPanel, #MainArticlePanel, #SubArticlePanel, #MoreArticlesLinkPanel, #MiddleBannerPanel, #BottomBannerPanel {position: absolute;}
+
+#DateTimePanel {left: 15px; top: 0px; width: 420px; height: 40px; text-align: left; z-index: 1;}
+#TopLogoPanel {left: 442px; top: 0px; width: 327px; height: 96px; z-index: 2;}
+#TopBannerPanel {left: 25px; top: 40px; width: 437px; height: 74px; background-color: Transparent; z-index: 3;}
+.PageCaptionWrapper {left: 15px; top: 122px; width: 559px; height: 91px; z-index: 5;}
+#NavBarPanel {left: 586px; top: 96px; width: 171px; background-color: #F6F7F2; border-left: solid 1px #CCCCCC; border-right: solid 1px #CCCCCC; border-bottom: solid 1px #CCCCCC; z-index: 6;}
+#SmallBannerPanel {background-color: #f1f1f1; padding-bottom: 10px; padding-top: 10px; padding-right: 11px; border: solid 1px #cccccc;}
+.PageContentsPanel, .ExtraContentsPanel, #AlternativeContentsPanel {left: 0px; text-align: right; direction: rtl;}
+.PageContentsPanel, #AlternativeContentsPanel {top: 209px; width: 544px; background-color: White; border-right: solid 6px #1579c0; z-index: 7; padding-right: 9px;}
+.ExtraContentsPanel {width: 524px; z-index: 50;}
+
+.DashboardPanel .row {margin-bottom: 10px;}
+#ArticleSearchPanel {width: 100%; background-color: #f0f0f0; padding: 10; margin-top: 10px; display: none;}
+#ArticleSearchPanel .dismiss {font-size: 20px; width: 30px; height: 30px; line-height: 30px; color: white; vertical-align: middle; background-color: Black; text-align: center; border: 2px solid white; border-radius: 50%; margin-top: -25px; cursor: pointer;}
+
+#BottomBannerPanel, #MiddleBannerPanel, .ArticlePanel {left: 29px;}
+
+#MainArticlePanel {top: 185px; background-image: url(Images/hp_first_article_bg.gif); z-index: 8;}
+#SubArticlePanel {top: 311px; z-index: 9;}
+#MoreArticlesLinkPanel {left: 480px; top: 430px; width: 96px; height: 18px; z-index: 10;}
+#MiddleBannerPanel {top: 450px; width: 544px; height: 65px; background-color: Transparent; z-index: 11;}
+#SportFlowersPanel { position: absolute; left: 29px; top: 520px; z-index: 12; }
+#SportFlowersPanel, #SportFlowersPanel img { width: 540px; height: 202px; }
+
+.PageContentsPanel ul, .PageContentsPanel div, .PageContentsPanel span {text-align: right; padding-right: 10px;}
+
+#BottomBannerPanel, .BannerPanel {width: 526px; height: 62px; background-color: Transparent;}
+#BottomBannerPanel {top: 728px;  z-index: 19;}
+.BannerPanel {text-align: center; z-index: 31; position: relative;}
+
+.UserLoginPanel {position: relative; width: 100%; z-index: 20;}
+
+#FooterPanel {left: 0px; top: 100%; width: 778px; height: 38px; background-image: url(Images/footer_bg.gif); text-align: left; z-index: 21;}
+
+.GeneralPanelCaption, .GeneralPanelContents {position: relative;}
+
+.BottomInnerPanel {position: absolute; left: 15px; width: 544px; height: 20px; background-image: url(Images/buttom_inner.gif);}
+
+.PageCaption {right: 27px; top: 32px; width: 508px; height: 30px; text-align: right; color: White; font-size: 25px; vertical-align: middle;}
+
+.ArticlePicFlashSmall {position: absolute; right: 0px; margin-top: 2px;}
+
+#PageCaptionWrapper2 {left: 0px; top: 0px; width: 559px; height: 71px; background-image: url(Images/top_inner.gif);}
+#PageCaptionExtra {left: 0px; top: 71px; width: 559px; height: 20px; background-image: url(Images/top_inner2.gif);}
+
+.ArticlePanel, .OrdinaryArticlePanel {height: 121px;}
+.OrdinaryArticlePanel {left: 0px;}
+
+.ArticlePanel, #SubArticlePanel {width: 544px;}
+
+#SubArticlePanel, .OrdinaryArticlePanel { background-image: url(Images/hp_second_article_bg.gif);}
+.OrdinaryArticlePanel {width: 500px; z-index: 30;}
+
+body, div {margin: 0; font-size: 12px;}
+
+body,h1,h2,h3,h4,h5,h6,span,div,a,td,li,caption,fieldset,legened,input {font-family: Arial; color: #063869; font-size: 12px;}
+
+li {color: #CC0000;}
+
+body,li,a {font-size: 12px; font-weight: bold;}
+
+a:hover {color: #CC0000;}
+
+ul {direction: rtl; margin-top: 5px; padding-top: 5px; list-style-type: disc;}
+ol li {color: #063869; font-weight: normal;}
+
+img {border: none;}
+
+table, td, #RelevantLinks {direction: rtl;}
+
+table {margin: 0;}
+
+a {text-decoration: none;}
+
+a:hover {text-decoration: underline;}
+
+.PollQuestionBig {text-align: center; font-size: 20px; font-weight: bold;}
+.PollAnswerCell {width: 73px; text-align: center; font-weight: bold; color: #CC0000;}
+.PollBottomSeperator {width: 100%; height: 10px; text-align: center; border-top: solid 1px black;}
+
+.ChampTable, .GameFilters {border-style: none; width: 95%; text-align: center;} 
+.GameFilters {background-color: #DDEBF6;}
+.GameFilters td {font-weight: bold; text-align: right;}
+
+.ChampTable td {text-align: right; height: 20px;}
+.ChampTable td a {padding-top: 2px; padding-bottom: 2px;}
+.ChampTable th {color: White; font-weight: bold; text-align: center; vertical-align: middle;}
+.ChampTable td, .ChampTable td a {font-weight: normal;}
+.ChampTable th, .ChampTable td {border-right: solid 1px White; border-bottom: solid 1px White;}
+.ChampTableHeader, .ChampTableLeftHeader, .ChampTableRight Header {font-size: 12px; font-weight: bold; height: 25px; vertical-align: middle;}
+.ChampTableHeader {background-image: url(Images/table_title_bg.jpg);}
+.ChampTableLeftHeader {width: 2px; border-right: solid 2px Blue; background-image: url(Images/table_title_left.jpg); background-repeat: no-repeat; font-size: 0px;}
+.ChampTableRightHeader {width: 2px; background-image: url(Images/table_title_right.jpg); background-repeat: no-repeat;}
+
+.VisitorActionsPanel {width: 95%; text-align: right; border-top: solid 3px #0F3E6C;}
+.VisitorActionsPanel td {text-align: right;}
+
+.ButtonPanel, .ButtonPanelOver, .ButtonPanelMarked, .ButtonPanelSub, .ButtonPanelSubOver, .ButtonPanelActive, .ButtonPanelCaption {width: 171px; text-align: right; vertical-align: middle; height: 26px;}
+.ButtonPanelCaption {vertical-align: bottom; color: #CC0000; font-weight: bold; border-bottom: solid 1px white;}
+.ButtonPanelSub, .ButtonPanelSubOver {height: 19px;}
+
+ .ButtonPanel, .ButtonPanelActive {background-image: url(Images/btn_bg.jpg);}
+.ButtonPanelOver, .ButtonPanelSubOver {font-size: 12px; color: Navy; font-weight: normal;}
+.ButtonPanelOver {background-image: url(Images/btn_bg_over.jpg);}
+.ButtonPanelSubOver {background-image: url(Images/sub_btn_bg_over.jpg);}
+.ButtonPanelMarked {background-image: url(Images/btn_bg_marked.jpg);}
+.ButtonPanelMarked a:hover {color: White;}
+.ButtonPanelSub {background-image: url(Images/sub_btn_bg.jpg);}
+.ButtonPanelActive, .ButtonPanelActive a {color: #CC0000;}
+.ButtonPanelSubOver {}
+.ButtonPanel, .ButtonPanelLink, .ButtonPanelMarked, .ButtonPanelSub {font-size: 12px; color: Navy; font-weight: normal; vertical-align: middle;}
+
+.LinkIndicator {width: 7px; height: 15px; vertical-align: middle; margin-top: 5px;}
+.ButtonPanelSub .LinkIndicator, .ButtonPanelSubOver .LinkIndicator {margin-top: 2px;}
+
+.SponsorImage {border-right: solid 1px #f1f1f1; margin-left: 10px; height: 32px; margin-top: 3px;}
+
+.WriteToUsTable td, .WriteToUsTable td input, .WriteToUsTable td textarea, .WriteToUsTable td select {font-weight: bold; width: 300px;}
+.WriteToUsTable td input, .WriteToUsTable td textarea, .WriteToUsTable td select {border: solid 1px #CCCCCC;}
+
+.ArticleContents {height: 30px; display: block; overflow: hidden; line-height: 15px;}
+
+.ArticleCaptionLink, .ArticleCaptionLinkBlue {font-size: 20px; font-weight: bold;}
+.ArticleCaptionLink {color: #CC0000;}
+.ArticleCaptionLinkBlue, .ArticleContentsBlue  {color: #1E85C0;}
+.ArticleSubCaption {font-size: 20px; direction: rtl; text-align: right;}
+.ArticleDetails {font-size: 11px; color: #CC0000; margin-right: 10px; direction: rtl;}
+.ArticleMainTable {border-style: none; direction: rtl; width: 500px; height: 120px;}
+
+.PageCatLink {font-weight: normal;}
+.PageChampLink {font-weight: bold;}
+
+.OrdinaryList li, .OrdinaryList li a {font-weight: normal;}
+
+.PageSubCaption {width: 508px; height: 35px;}
+
+.BorderAble, .BorderAble th, .BorderAble td {border: solid 1px black; vertical-align: middle;}
+
+.HeaderLink, .HeaderLink:visited {color: white;}
+
+.LeftNavBarLink {color: white;}
+
+.NavBarLink,.NavBarLink:visited,.NavBarLink:hover {color: black;}
+
+.NavBarCaption, .NavBarLink,.LeftNavBarLink {font-weight: bold;}
+
+.LeftNavBarLink:visited {color: white;}
+
+.NavBarLink,.LeftNavBarLink {font-size: 12px;}
+
+.NavBarCaption {color: white;}
+
+#DateTimePanel, .makeHomePageLink
+{ font-size: 12px; font-family: Arial; color: black; }
+
+.makeHomePageLink {text-decoration: underline; font-weight: normal;}
+
+.makeHomePageLink:hover {color: #CC0000;}
+
+.ArticlePicFlash {font-size: 11px; color: #CC0000;}
+
+.VerticalGapPanel {position: absolute; left: 0px; top: 522px; width: 778px; background-image: url(Images/main_bg.gif);}
+
+.TableViewTable {width: 85%; border: solid 1px #000000; vertical-align: top; background-color: Transparent;}
+
+.TableViewCaption {font-weight: bold; font-size: 12px; }
+
+.TableViewHeader {background-color: #42A5EF; font-weight: bold; font-size: 15px;}
+
+.TableViewCell {font-size: 14px;}
+
+.ExtraDetailsTable {width: 95%; background-color: #D7E6EB; text-align: center;}
+.ExtraDetailsTable td {text-align: right;}
+
+.DetailsLink {font-size: 14px;}
+
+.DetailsLink:visited {color: White;}
+
+.PendingTeam {font-size: 15px; font-weight: bold; text-align: center;}
+
+.SubCaption {text-decoration: underline; vertical-align: text-top;}
+
+.HorizontalLine {border-bottom: solid 1px black; width: 100%;}
+
+.PlayersTable {direction: ltr; border: solid 1px black;}
+
+.PlayersTable td {border: solid 1px black; font-size: 12px; font-weight: bold; text-align: center;}
+
+.SportLinks {color: White;}
+
+.BoldWhiteText {font-weight: bold; color: White;}
+
+.BoldBlackText {font-weight: bold; color: Black;}
+
+.StdHeader, #TblFlashNews th, #TblArticles th {color: black; background-color: #42A5EF; font-weight: bold; font-size: 14px;}
+
+#TblArticles td {text-align: center;}
+ 
+#TblFlashNews a, #TblArticles a  {}
+
+.FlashNewsTime {font-family: Arial; font-size: 10px; color: #a0a0a0;}
+
+.FlashNewsContents {text-decoration: underline; font-weight: normal; text-align: right; direction: rtl;}
+	
+.OrangeCaption {font-size: 18px; font-weight: bold; background-image: url(Images/back-yellow.gif);}
+	
+.Arial12 {font-family: Arial; font-size: 12px;}
+
+#IsfInfoFiles {background-color: White;}
+
+#IsfInfoFiles td {text-align: right;}
+	
+.FlashNewsLink {text-decoration: underline; font-weight: bold;}
+
+#FlashNewsData {margin-left: 10px; margin-right: 10px; margin-top: 10px;}
+
+.ArialBold14 {font-family: Arial; font-size: 14px; font-weight: bold;}
+
+.ArialBold12 {font-family: Arial; font-size: 12px; font-weight: bold;}
+
+.AllRight td {text-align: right;}
+
+.HotLink, .HotLink:visited, .HotLink:hover, .HotLink:active {color: White; font-weight: bold; font-size: 14px;}
+
+#TblDynamicPages {font-weight: bold;}
+
+.MaxChars {color: Gray; text-align: left; font-size: 10px;}
+
+.DynamicPageAuthor {font-family: Arial; font-size: 14px; font-weight: bold; text-align: center;}
+
+.text_caption, .text_content {font-size: 12px;}
+
+.text_caption {font-weight: bold; text-decoration: underline;}
+
+.centered_table, .centered_table td .centered_table th {text-align: center;}
+
+#LeftTableCell, #RightTableCell {width: 33%;}
+#LeftTableCell {background-image: url(Images/bg_left.gif);}
+#RightTableCell {background-image: url(Images/bg_right.gif);}
+
+#CenterTableCell {width: 34%;}
+
+#AllRightsPanel {position: absolute; right: 15px; top: 3px; font-size: 10px; text-align: right; direction: rtl;}
+
+.DetailsTable {width: 95%; text-align: left; background-color: #C9E0EE; border-right: solid 6px #1579c0;}
+.DetailsTable td {text-align: right;}
+
+#CalendarHeader {width: 95%; text-align: center; background-color: #1479BF;}
+#CalendarHeader td, #CalendarHeader td a {color: White; font-size: 15px; font-weight: bold; text-align: center;}
+
+#EventCalendarTable {width: 500px; text-align: center;}
+#EventCalendarTable th, #EventCalendarTable td {border-bottom: solid 1px white; border-right: solid 1px white; width: 14%;}
+#EventCalendarTable th {height: 30px; color: White; font-weight: bold; font-size: 12px; text-align: center; vertical-align: middle; background-color: 2B89C9;}
+#EventCalendarTable td {vertical-align: top; direction: rtl; color: #CC0000; background-color: #F0F0F0; text-align: right;}
+#EventCalendarTable td.calendar_shabat_day {background-color: #E9E9E9;}
+#EventCalendarTable td.calendar_highlight {background-color: #FBEAA4; font-weight: bold;}
+.calendar_has_events {font-weight: bold; color: #08376B;}
+.EventCellText {font-weight: normal;}
+
+#DynamicPageBody {direction: rtl;}
+
+.AttachmentsTable {width: 95%; text-align: center;}
+.AttachmentsTable ul {margin-right: 10px;}
+.AttachmentsTable td {border-bottom: solid 1px white;}
+.AttachmentsTable a {font-weight: normal;}
+.AttachmentIcon {vertical-align: middle;}
+
+#RelevantLinks a {font-weight: normal;}
+
+.GalleryPicturePanel {width: 158px; height: 114px; text-align: center; vertical-align: middle; background-image: url(Images/gallery_pic_bg.gif);}
+.GalleryPicturePanel img {margin-top: 7px;}
+
+#ChampionshipMainPanel {text-align: right;}
+#ChampionshipDetails {width: 512px; height: 92px; direction: rtl; text-align: center; background-image: url(Images/background_champ_logo.JPG);}
+
+.LinkLogoContainer {width: 106px; height: 70px; background-image: url(Images/link_icon_placeholder.bmp); background-repeat: no-repeat;}
+.LinkLogoImage {width: 102px; height: 66px; margin-left: 2px; margin-top: 2px; margin-bottom: 2px; margin-right: 2px;}
+
+#ArticleCommentsPanel td, #ArticleCommentsPanel td a, #ArticleCommentsPanel td div {color: Black; font-weight: normal;}
+
+#MirLogoPanel, #MirLogoPanel a {font-size: 10px; color: Black;}
+#MirLogoPanel {text-align: center; direction: ltr;}
+
+#lbShowError, #ErrorPanel {display: none; font-weight: bold; font-size: 15px; color: red;}
+
+#ChampSectionName {font-weight: bold; height: 50px; vertical-align: top; text-align: center; font-size: 21px;}
+
+#DeleteLinkFrame {width: 0px; height: 0px;}
+
+.poll_result {padding: 0;}
+
+.SmallBorderedText {font-size: 10px; font-weight: normal; text-decoration: none; border: solid 1px black; height: 10px; background-color: White; padding: 0; text-align: center;}
+.SmallBorderedText:hover {text-decoration: none;}
+
+#EventReportsPanel table td {margin: 2px; padding: 2px;}
+
+#CompetitionCompetitors, #CompetitionCompetitors th, #CompetitionCompetitors td {border: solid 1px black; text-align: center; margin: 0;}
+#CompetitionCompetitors th {font-size: 12px;}
+
+.tc_table_full, .tc_table_small {border: none; margin-bottom: 10px;}
+.tc_table_full td, .tc_table_small td {text-align: center; border: solid 1px black;}
+/* .tc_table_full {width: 500px;} */
+/* .tc_table_small {width: 450px;} */
+.tc_text_big {width: 121px;}
+.tc_text_id {width: 15px;}
+.tc_text_bigger {width: 150px;}
+.tc_text_small {width: 75px;}
+.tc_text_medium {width: 110px;}
+.tc_text_special {width: 32px; text-align: right; padding: 0; margin: 0;}
+.tc_text_huge {width: 187px;}
+.tc_expertise {width: 75px; margin: 0; padding: 0;}
+
+.big_menu_link_container {position: absolute; width: 505px; text-align: right; height: 92px; right: 10px;}
+.big_menu_link_parent {position: absolute; top: 0px; width: 156px; height: 86px; background-image: url(images/big_menu_link.png); background-repeat: no-repeat;}
+.big_menu_link_data {position: absolute; right: 15px; top: 15px; width: 120px; height: 52px; text-align: center; vertical-align: middle; overflow: hidden;}
+.big_menu_link_data, .big_menu_link_parent a, .big_menu_link_parent a:hover {font-size: 18px; color: #063869;}
+.big_menu_link_parent a {text-decoration: none;}
+.big_menu_link_parent a:hover {text-decoration: underline;}
+
+.generic_list li {padding-top: 5px;}
+
+.TeacherCourseCaption { width: 350px; padding: 5px; border-top: 1px dashed black; }
+
+#ZooZooPollEditPanel p { margin-top: 5px; margin-bottom: 5px; }
+#ZooZooPollEditPanel ol { margin-top: 0px; margin-bottom: 0px; }
+#ZooZooPollEditPanel li { margin-top: 5px; }
+
+.StudentPictureTable td { text-align: center; }
+
+.RegisterActionButton { font-weight: bold; border-radius: 3px; }
+
+#pnlAddNewStudent { background-color: #a5d8ff; border-radius: 5px; margin-bottom: 5px; padding: 5px; line-height: 50px; width: 85%; }
+#pnlAddNewStudent, #pnlAddNewStudent span, #pnlAddNewStudent div, #pnlAddNewStudent button, #pnlAddNewStudent select, #pnlAddNewStudent input { font-size: 120%; }

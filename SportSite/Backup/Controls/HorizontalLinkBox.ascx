@@ -1,0 +1,1 @@
+<%@ Control Language="c#" AutoEventWireup="false" Codebehind="HorizontalLinkBox.ascx.cs" Inherits="SportSite.Controls.HorizontalLinkBox" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>

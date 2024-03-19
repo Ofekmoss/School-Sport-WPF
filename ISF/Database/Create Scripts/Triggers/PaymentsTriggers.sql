@@ -1,0 +1,262 @@
+
+-- Deleting existing triggers
+-- ============================================
+IF EXISTS(SELECT * FROM sysobjects WHERE name = 'T_CHARGE_CHANGED' AND type = 'TR')
+	DROP TRIGGER T_CHARGE_CHANGED
+GO
+IF EXISTS(SELECT * FROM sysobjects WHERE name = 'T_CREDIT_CHANGED' AND type = 'TR')
+	DROP TRIGGER T_CREDIT_CHANGED
+GO
+IF EXISTS(SELECT * FROM sysobjects WHERE name = 'SP_UPDATE_ACCOUNT_BALANCE' AND type = 'P')
+	DROP PROCEDURE SP_UPDATE_ACCOUNT_BALANCE
+GO
+IF EXISTS(SELECT * FROM sysobjects WHERE name = 'SP_CREATE_SCHOOL_ACCOUNT' AND type = 'P')
+	DROP PROCEDURE SP_CREATE_SCHOOL_ACCOUNT
+GO
+IF EXISTS(SELECT * FROM sysobjects WHERE name = 'SP_INSERT_SCHOOL_CHARGE' AND type = 'P')
+	DROP PROCEDURE SP_INSERT_SCHOOL_CHARGE
+GO
+IF EXISTS(SELECT * FROM sysobjects WHERE name = 'T_RECEIPT_INSERTED' AND type = 'TR')
+	DROP TRIGGER T_RECEIPT_INSERTED
+GO
+IF EXISTS(SELECT * FROM sysobjects WHERE name = 'T_ACCOUNT_INSERTED' AND type = 'TR')
+	DROP TRIGGER T_ACCOUNT_INSERTED
+GO
+IF EXISTS(SELECT * FROM sysobjects WHERE name = 'T_ACCOUNT_UPDATED' AND type = 'TR')
+	DROP TRIGGER T_ACCOUNT_UPDATED
+GO
+
+-- =======    SP_UPDATE_ACCOUNT_BALANCE  =======
+CREATE PROCEDURE SP_UPDATE_ACCOUNT_BALANCE
+	@account int
+AS
+BEGIN
+  UPDATE ACCOUNTS
+  SET BALANCE = (SELECT ISNULL(SUM(CREDIT), 0)
+				FROM CREDITS
+				WHERE ACCOUNT_ID = @account AND DATE_DELETED IS NULL) -
+				(SELECT ISNULL(SUM(PRICE*AMOUNT), 0)
+				FROM CHARGES 
+				WHERE ACCOUNT_ID = @account AND DATE_DELETED IS NULL)
+				
+  WHERE ACCOUNT_ID = @account
+END
+GO
+
+-- ======	SP_CREATE_SCHOOL_ACCOUNT	======
+CREATE PROCEDURE SP_CREATE_SCHOOL_ACCOUNT
+	(@school int, @account int OUTPUT)
+AS
+BEGIN
+	SELECT @account = NULL
+	
+	SELECT @account = ACCOUNT_ID
+	FROM ACCOUNTS
+	WHERE SCHOOL_ID = @school AND
+		DATE_DELETED IS NULL
+		
+	IF (@@ROWCOUNT = 0)
+	BEGIN
+		INSERT INTO ACCOUNTS(REGION_ID, ACCOUNT_NAME, SCHOOL_ID)
+		SELECT REGION_ID, SCHOOL_NAME+' (בית ספר)', SCHOOL_ID
+		FROM SCHOOLS
+		WHERE SCHOOL_ID = @school AND
+			SCHOOL_ID NOT IN (SELECT SCHOOL_ID FROM ACCOUNTS WHERE DATE_DELETED IS NULL AND SCHOOL_ID IS NOT NULL)
+		
+		SELECT @account = IDENT_CURRENT('ACCOUNTS')
+	END
+END
+GO
+
+-- ======	SP_INSERT_SCHOOL_CHARGE	======
+CREATE PROCEDURE SP_INSERT_SCHOOL_CHARGE
+	(@school int, @product int, @price float, @championship int, @charge int OUTPUT)
+AS
+BEGIN
+	DECLARE @account int
+	
+	SELECT @charge = NULL
+	
+	EXEC SP_CREATE_SCHOOL_ACCOUNT @school, @account OUTPUT
+	
+	If Exists(Select * From CHAMPIONSHIP_CATEGORIES Where CHAMPIONSHIP_CATEGORY_ID=@championship) Begin
+		INSERT INTO CHARGES(REGION_ID, ACCOUNT_ID, PRODUCT_ID, AMOUNT, PRICE, CHARGE_DATE, STATUS, CHAMPIONSHIP_CATEGORY)
+			SELECT REGION_ID, @account, @product, 1, @price, GETDATE(), 1, @championship
+			FROM SCHOOLS
+			WHERE SCHOOL_ID = @school AND DATE_DELETED IS NULL
+		SELECT @charge = IDENT_CURRENT('CHARGES')
+	End Else Begin
+		INSERT INTO CHARGES(REGION_ID, ACCOUNT_ID, PRODUCT_ID, AMOUNT, PRICE, CHARGE_DATE, STATUS, ADDITIONAL)
+			SELECT REGION_ID, @account, @product, 1, @price, GETDATE(), 1, @championship
+			FROM SCHOOLS
+			WHERE SCHOOL_ID = @school AND DATE_DELETED IS NULL
+		SELECT @charge = IDENT_CURRENT('CHARGES')
+	End
+END
+GO
+
+
+-- =======    T_CHARGE_CHANGED TRIGGER   ======
+-- Updates account balance
+CREATE TRIGGER T_CHARGE_CHANGED
+ON CHARGES
+AFTER INSERT, UPDATE, DELETE AS
+BEGIN
+  DECLARE @account int
+  
+  DECLARE account_cursor CURSOR FOR
+  SELECT DISTINCT ACCOUNT_ID
+  FROM inserted
+  UNION
+  SELECT DISTINCT ACCOUNT_ID
+  FROM deleted
+  
+  OPEN account_cursor
+  
+  FETCH NEXT FROM account_cursor
+  INTO @account
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+    EXECUTE SP_UPDATE_ACCOUNT_BALANCE @account  
+
+    FETCH NEXT FROM account_cursor
+    INTO @account
+  END
+
+  CLOSE account_cursor
+  DEALLOCATE account_cursor
+ 
+END
+GO
+
+-- =======    T_CREDIT_CHANGED TRIGGER   ======
+-- Updates account balance
+CREATE TRIGGER T_CREDIT_CHANGED
+ON CREDITS
+AFTER INSERT, UPDATE, DELETE AS
+BEGIN
+  DECLARE @account int
+  
+  DECLARE account_cursor CURSOR FOR
+  SELECT DISTINCT ACCOUNT_ID
+  FROM inserted
+  UNION
+  SELECT DISTINCT ACCOUNT_ID
+  FROM deleted
+  
+  OPEN account_cursor
+  
+  FETCH NEXT FROM account_cursor
+  INTO @account
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+    EXECUTE SP_UPDATE_ACCOUNT_BALANCE @account  
+
+    FETCH NEXT FROM account_cursor
+    INTO @account
+  END
+
+  CLOSE account_cursor
+  DEALLOCATE account_cursor
+ 
+END
+GO
+
+-- =======    T_RECEIPT_INSERTED TRIGGER   ======
+-- Sets the receipt number
+CREATE TRIGGER T_RECEIPT_INSERTED
+ON RECEIPTS
+AFTER INSERT AS
+BEGIN
+  DECLARE @receipt int
+  DECLARE @region int
+  
+  DECLARE receipts_cursor CURSOR FOR
+  SELECT RECEIPT_ID, REGION_ID
+  FROM inserted
+  
+  OPEN receipts_cursor
+  
+  FETCH NEXT FROM receipts_cursor
+  INTO @receipt, @region
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+    UPDATE RECEIPTS
+    SET NUMBER = CAST(@receipt % 10000 AS nvarchar(4)) + '-' +
+				(SELECT CAST(NUMBER AS nvarchar(2))
+				FROM REGIONS
+				WHERE REGION_ID = @region)
+	WHERE RECEIPT_ID = @receipt
+
+    FETCH NEXT FROM receipts_cursor
+    INTO @receipt, @region
+  END
+
+  CLOSE receipts_cursor
+  DEALLOCATE receipts_cursor
+END
+GO
+
+/*
+-- =======    ACCOUNT_INSERTED TRIGGER   ======
+CREATE TRIGGER T_ACCOUNT_INSERTED
+ON ACCOUNTS
+AFTER INSERT AS
+BEGIN
+	DECLARE @account int
+	DECLARE @school int
+	
+	DECLARE account_cursor CURSOR FOR	
+	SELECT ACCOUNT_ID, SCHOOL_ID FROM inserted
+	WHERE SCHOOL_ID IS NOT NULL
+	
+	OPEN account_cursor
+	FETCH NEXT FROM account_cursor
+	INTO @account, @school
+	
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+		UPDATE ACCOUNTS SET ADDRESS=(SELECT ADDRESS FROM SCHOOLS WHERE SCHOOL_ID=@school)
+		WHERE ACCOUNT_ID=@account
+		
+		FETCH NEXT FROM account_cursor
+		INTO @account, @school
+	END
+	
+	CLOSE account_cursor
+	DEALLOCATE account_cursor
+END
+
+-- =======    ACCOUNT_UPDATED TRIGGER   ======
+CREATE TRIGGER T_ACCOUNT_UPDATED
+ON ACCOUNTS
+AFTER UPDATE AS
+BEGIN
+	DECLARE @account int
+	DECLARE @school int
+	
+	DECLARE account_cursor CURSOR FOR	
+	SELECT ins.ACCOUNT_ID, ins.SCHOOL_ID FROM deleted del, inserted ins
+	WHERE del.ACCOUNT_ID=ins.ACCOUNT_ID AND del.SCHOOL_ID IS NULL AND ins.SCHOOL_ID IS NOT NULL
+	AND ins.DATE_DELETED IS NULL
+	
+	OPEN account_cursor
+	FETCH NEXT FROM account_cursor
+	INTO @account, @school
+	
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+		UPDATE ACCOUNTS SET ADDRESS=(SELECT ADDRESS FROM SCHOOLS WHERE SCHOOL_ID=@school)
+		WHERE ACCOUNT_ID=@account
+		
+		FETCH NEXT FROM account_cursor
+		INTO @account, @school
+	END
+	
+	CLOSE account_cursor
+	DEALLOCATE account_cursor
+END
+*/

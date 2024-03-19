@@ -1,0 +1,1178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E411DB6F-DE4C-4CAA-8F40-12844E07FE86}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>logo_64.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Sportsman</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Sportsman</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <WebReference_EnableProperties>true</WebReference_EnableProperties>
+    <WebReference_EnableSQLTypes>false</WebReference_EnableSQLTypes>
+    <WebReference_EnableLegacyEventingModel>true</WebReference_EnableLegacyEventingModel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\Bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\Bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\..\Mir\Mir.Common.csproj">
+      <Project>{40a5ff1c-6c41-4650-a736-8245ecf66a04}</Project>
+      <Name>Mir.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resource\Resource.csproj">
+      <Name>Resource</Name>
+      <Project>{B4996132-2AFA-4D76-9036-0826F56AF584}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Championships\Sport.Championships.csproj">
+      <Name>Sport.Championships</Name>
+      <Project>{573D453C-1066-4645-9454-EB85D4E13341}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Common\Sport.Common.csproj">
+      <Name>Sport.Common</Name>
+      <Project>{3154D160-E176-4C5A-A37D-B7700AC5ED48}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Core\Sport.Core.csproj">
+      <Name>Sport.Core</Name>
+      <Project>{CBEF2D44-E51E-4388-B0C5-D95490D9EE35}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Data\Sport.Data.csproj">
+      <Name>Sport.Data</Name>
+      <Project>{9E5716D4-7EE1-402B-9B17-A63DA336FB2F}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Documents\Sport.Documents.csproj">
+      <Name>Sport.Documents</Name>
+      <Project>{35009617-4AD3-4E46-94AF-8DD12B5812C5}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Entities\Sport.Entities.csproj">
+      <Name>Sport.Entities</Name>
+      <Project>{BD6A1B0E-EDDD-4CC1-B97B-DB5BEB63FF37}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Producer.UI\Sport.Producer.UI.csproj">
+      <Name>Sport.Producer.UI</Name>
+      <Project>{9E5FB2D9-DC17-4DF5-A9B9-AF7FDD2BA12A}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Producer\Sport.Producer.csproj">
+      <Name>Sport.Producer</Name>
+      <Project>{D9C0685D-4D0D-47BB-8C92-43B5FC9D1041}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Rulesets\Sport.Rulesets.csproj">
+      <Name>Sport.Rulesets</Name>
+      <Project>{ED50D5E5-2F21-429A-A352-B6EE7475BA12}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Synchronization\Sport.Synchronization.csproj">
+      <Project>{1C23302D-99B6-4399-91FE-338287B73A0B}</Project>
+      <Name>Sport.Synchronization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.Types\Sport.Types.csproj">
+      <Name>Sport.Types</Name>
+      <Project>{052417D1-9263-494E-975E-71DD92C96C9C}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sport.UI\Sport.UI.csproj">
+      <Name>Sport.UI</Name>
+      <Project>{9CB03EAE-FEF5-4F9B-B8D7-E3EC0B9CC487}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <Content Include="app_config_backup.txt" />
+    <Content Include="favicon.ico" />
+    <Content Include="logo_64.ico" />
+    <Content Include="logo_color-t %281%29.ico" />
+    <Content Include="Queries.txt" />
+    <None Include="Web References\DataServices\CategoryData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\ChampionshipData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\Competition.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\CompetitionData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\DataService.disco" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProdConfigs\Sportsman.exe.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProdConfigs\SportVersionUpdate.exe.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AdvancedServices\AdvancedService.disco" />
+    <None Include="Web References\AdvancedServices\AdvancedService.wsdl" />
+    <None Include="Web References\AdvancedServices\GradeData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AdvancedServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ChampionshipServices\ChampionshipService.disco" />
+    <None Include="Web References\ChampionshipServices\ChampionshipService.wsdl" />
+    <None Include="Web References\ChampionshipServices\DateChampionship.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ChampionshipServices\Group.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ChampionshipServices\Phase.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ChampionshipServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\DataServices\DataService.wsdl" />
+    <None Include="Web References\DataServices\Entity.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\FilterField.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\FunctionaryMatchData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\MatchData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\PlayerCardData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\PlayerCountData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\ReceiptData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\ReceiptData_Basic.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\DataServices\RegionData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\RuleData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\SchoolData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\SeasonData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\SimpleData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\SimplePlayerData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\StudentData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\TeamPlayerNumbers.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DataServices\WebsitePermanentChampionship.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PermissionServices\PermissionService.disco" />
+    <None Include="Web References\PermissionServices\PermissionService.wsdl" />
+    <None Include="Web References\PermissionServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PlayerCardServices\PlayerCardService.disco" />
+    <None Include="Web References\PlayerCardServices\PlayerCardService.wsdl" />
+    <None Include="Web References\PlayerCardServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SessionServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SessionServices\SessionService.disco" />
+    <None Include="Web References\SessionServices\SessionService.wsdl" />
+    <None Include="Web References\SessionServices\TeamData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SessionServices\UserData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SessionServices\VersionInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\AboutCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\CloseCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\DeleteDatFilesCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\NewWindowCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Config\Handlers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ChangeUserCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Tools.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\UserManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Details\ChampionshipDetailsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details\SchoolDetailsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details\StudentDetailsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details\TeamDetailsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\BaseDocumentBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Documents\ChampionshipDocuments.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Documents\CompetitionReports.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Documents\Data.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Documents\MatchesSectionObject.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Documents\PaymentDocuments.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Documents\RankingSectionObject.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Entities\AccountEntryView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\AccountView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ChampionshipCategoryView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ChampionshipView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ChargeView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\InstantMessageView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\PaymentView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\PlayerView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\PracticeCampView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ProductAreaView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ProductView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\ReceiptView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\SchoolView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\StudentView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\TeamView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\UserView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\AddStudentDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdvancedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CalendarBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\CategorySelectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChooseAdminReportType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChooseAdminReportType.Designer.cs">
+      <DependentUpon>ChooseAdminReportType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChooseChampionshipsReportDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChooseChampionshipsReportDialog.Designer.cs">
+      <DependentUpon>ChooseChampionshipsReportDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChooseCompetitionReportDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfirmTeamsImportDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfirmTeamsImportDialog.Designer.cs">
+      <DependentUpon>ConfirmTeamsImportDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateChargesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FixTeamRegionsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FixTeamRegionsDialog.Designer.cs">
+      <DependentUpon>FixTeamRegionsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GeneralSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImportOfflineEntities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InputMarginsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InstantMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KeyboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MessageBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\OfflineEntitiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PermissionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PermissionsSelectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImportStudentsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImportStudentsDialog.Designer.cs">
+      <DependentUpon>ImportStudentsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WebsitePermanentChampionshipsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\ChampionshipEditorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\CompetitionChampionshipEditorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\CompetitionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\CompetitionResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\CompetitionsGridPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Producer\CompetitionsGridSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Producer\CompetitorResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\CompetitorsDivisionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\CompetitorsGridPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Producer\CompetitorsGridSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Producer\EventsGridSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Producer\GameBoardCopyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\GameBoardEditorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\GamesReportView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\InputResultsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\MatchChampionshipEditorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\MatchesDocument.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Producer\MatchesGridCustomizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\MatchesGridPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Producer\MatchesTimeFacilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\MatchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\MatchGroupResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\MatchPartsResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\MatchTeamsSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\MatchVisualizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Producer\OpenChampionshipCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Producer\OpenGameBoardCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Producer\OpenPhasePatternCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Producer\OpenRulesetCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Producer\PhaseBuildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\PhaseDefinitionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\PhaseGroupGridPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Producer\PhaseGroupsGridSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Producer\PhasePatternEditorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\PlayerCardBuildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\PlayerCards.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Producer\PlayerStickers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Producer\RankingGridPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Producer\RankingGridSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Producer\RankingVisualizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Producer\RegisteredTeamsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\RulesetEditorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\TeamsDivisionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producer\Tools.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Producer\TournamentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Sportsman.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SportsmanContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AccountEntriesTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AccountsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BugsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CalendarView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ChampionshipCategoryTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ChampionshipsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ChargesTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CitiesTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CourtTypesTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DayEventsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EquipmentTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EquipmentTypesTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FacilitiesTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FunctionariesTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\GameBoardsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InstantMessagesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\IsfPaymentsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LogTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MessagesTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PaymentsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PhasePatternsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PlayersTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PracticeCampParticipantsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PracticeCampsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProductAreasTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProductsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ReceiptsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RefereesTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RegionsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RuleSetsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SchoolsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SchoolTeamsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SeasonsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SportFieldsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SportsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StandardChampionshipsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StudentsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TeacherCourseView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TeamsTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UserSelectionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UsersTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Web References\AdvancedServices\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Web References\ChampionshipServices\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Web References\DataServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PermissionServices\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Web References\PlayerCardServices\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Web References\SessionServices\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Content Include="ChangeServer.vbs" />
+    <EmbeddedResource Include="Documents\MatchesSectionObject.resx">
+      <DependentUpon>MatchesSectionObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddStudentDialog.resx">
+      <DependentUpon>AddStudentDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdvancedForm.resx">
+      <DependentUpon>AdvancedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CalendarBar.resx">
+      <DependentUpon>CalendarBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CategorySelectionDialog.resx">
+      <DependentUpon>CategorySelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChooseAdminReportType.resx">
+      <DependentUpon>ChooseAdminReportType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChooseChampionshipsReportDialog.resx">
+      <DependentUpon>ChooseChampionshipsReportDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChooseCompetitionReportDialog.resx">
+      <DependentUpon>ChooseCompetitionReportDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConfirmTeamsImportDialog.resx">
+      <DependentUpon>ConfirmTeamsImportDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateAccountForm.resx">
+      <DependentUpon>CreateAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateChargesForm.resx">
+      <DependentUpon>CreateChargesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FixTeamRegionsDialog.resx">
+      <DependentUpon>FixTeamRegionsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GeneralSettingsForm.resx">
+      <DependentUpon>GeneralSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImportOfflineEntities.resx">
+      <DependentUpon>ImportOfflineEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImportStudentsDialog.resx">
+      <DependentUpon>ImportStudentsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputMarginsForm.resx">
+      <DependentUpon>InputMarginsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InstantMessageForm.resx">
+      <DependentUpon>InstantMessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KeyboardForm.resx">
+      <DependentUpon>KeyboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MessageBar.resx">
+      <DependentUpon>MessageBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OfflineEntitiesForm.resx">
+      <DependentUpon>OfflineEntitiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PermissionsForm.resx">
+      <DependentUpon>PermissionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PermissionsSelectionDialog.resx">
+      <DependentUpon>PermissionsSelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReceiptForm.resx">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserLogin.resx">
+      <DependentUpon>UserLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebsitePermanentChampionshipsDialog.resx">
+      <DependentUpon>WebsitePermanentChampionshipsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\ChampionshipEditorView.resx">
+      <DependentUpon>ChampionshipEditorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\CompetitionChampionshipEditorView.resx">
+      <DependentUpon>CompetitionChampionshipEditorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\CompetitionForm.resx">
+      <DependentUpon>CompetitionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\CompetitionResultForm.resx">
+      <DependentUpon>CompetitionResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\CompetitorResultForm.resx">
+      <DependentUpon>CompetitorResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\CompetitorsDivisionForm.resx">
+      <DependentUpon>CompetitorsDivisionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\GameBoardCopyForm.resx">
+      <DependentUpon>GameBoardCopyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\GameBoardEditorView.resx">
+      <DependentUpon>GameBoardEditorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\GamesReportView.resx">
+      <DependentUpon>GamesReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\InputResultsForm.resx">
+      <DependentUpon>InputResultsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\MatchChampionshipEditorView.resx">
+      <DependentUpon>MatchChampionshipEditorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\MatchesGridCustomizeForm.resx">
+      <DependentUpon>MatchesGridCustomizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\MatchesGridPanel.resx">
+      <DependentUpon>MatchesGridPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\MatchesTimeFacilityForm.resx">
+      <DependentUpon>MatchesTimeFacilityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\MatchForm.resx">
+      <DependentUpon>MatchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\MatchGroupResultForm.resx">
+      <DependentUpon>MatchGroupResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\MatchPartsResultForm.resx">
+      <DependentUpon>MatchPartsResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\MatchTeamsSelectionForm.resx">
+      <DependentUpon>MatchTeamsSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\PhaseBuildForm.resx">
+      <DependentUpon>PhaseBuildForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\PhasePatternEditorView.resx">
+      <DependentUpon>PhasePatternEditorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\PlayerCardBuildForm.resx">
+      <DependentUpon>PlayerCardBuildForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\RegisteredTeamsForm.resx">
+      <DependentUpon>RegisteredTeamsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\RulesetEditorView.resx">
+      <DependentUpon>RulesetEditorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\TeamsDivisionForm.resx">
+      <DependentUpon>TeamsDivisionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producer\TournamentForm.resx">
+      <DependentUpon>TournamentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestUI.resx">
+      <DependentUpon>TestUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BugsTableView.resx">
+      <DependentUpon>BugsTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CalendarView.resx">
+      <DependentUpon>CalendarView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ChampionshipsTableView.resx">
+      <DependentUpon>ChampionshipsTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ChargesTableView.resx">
+      <DependentUpon>ChargesTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DayEventsView.resx">
+      <DependentUpon>DayEventsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EquipmentTableView.resx">
+      <DependentUpon>EquipmentTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EquipmentTypesTableView.resx">
+      <DependentUpon>EquipmentTypesTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InstantMessagesView.resx">
+      <DependentUpon>InstantMessagesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\IsfPaymentsTableView.resx">
+      <DependentUpon>IsfPaymentsTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LogTableView.resx">
+      <DependentUpon>LogTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MessagesTableView.resx">
+      <DependentUpon>MessagesTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PaymentsTableView.resx">
+      <DependentUpon>PaymentsTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PlayersTableView.resx">
+      <DependentUpon>PlayersTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PracticeCampParticipantsView.resx">
+      <DependentUpon>PracticeCampParticipantsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PracticeCampsView.resx">
+      <DependentUpon>PracticeCampsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductsTableView.resx">
+      <DependentUpon>ProductsTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RefereesTableView.resx">
+      <DependentUpon>RefereesTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RegionsTableView.resx">
+      <DependentUpon>RegionsTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SchoolsTableView.resx">
+      <DependentUpon>SchoolsTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SeasonsTableView.resx">
+      <DependentUpon>SeasonsTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SportsTableView.resx">
+      <DependentUpon>SportsTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StudentsTableView.resx">
+      <DependentUpon>StudentsTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TeacherCourseView.resx">
+      <DependentUpon>TeacherCourseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TeamsTableView.resx">
+      <DependentUpon>TeamsTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <WebReferenceUrl Include="http://www.schoolsport.co.il:8080/ISF/SportServices/ChampionshipService.asmx">
+      <RelPath>Web References\ChampionshipServices\</RelPath>
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <UpdateFromURL>http://www.schoolsport.co.il:8080/ISF/SportServices/ChampionshipService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Sportsman_ChampionshipServices_ChampionshipService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.schoolsport.co.il:8080/ISF/SportServices/AdvancedService.asmx">
+      <RelPath>Web References\AdvancedServices\</RelPath>
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <UpdateFromURL>http://www.schoolsport.co.il:8080/ISF/SportServices/AdvancedService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Sportsman_AdvancedServices_AdvancedService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.schoolsport.co.il:8080/ISF/SportServices/PermissionService.asmx">
+      <RelPath>Web References\PermissionServices\</RelPath>
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <UpdateFromURL>http://www.schoolsport.co.il:8080/ISF/SportServices/PermissionService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Sportsman_PermissionServices_PermissionService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.schoolsport.co.il:8080/ISF/SportServices/PlayerCardService.asmx">
+      <RelPath>Web References\PlayerCardServices\</RelPath>
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <UpdateFromURL>http://www.schoolsport.co.il:8080/ISF/SportServices/PlayerCardService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Sportsman_PlayerCardServices_PlayerCardService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.schoolsport.co.il:8080/ISF/SportServices/SessionService.asmx">
+      <RelPath>Web References\SessionServices\</RelPath>
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <UpdateFromURL>http://www.schoolsport.co.il:8080/ISF/SportServices/SessionService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Sportsman_SessionServices_SessionService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferences Include="Web References\" />
+    <WebReferenceUrl Include="http://www.schoolsport.co.il:8080/ISF/SportServices/DataService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\DataServices\</RelPath>
+      <UpdateFromURL>http://www.schoolsport.co.il:8080/ISF/SportServices/DataService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Sportsman_DataServices_DataService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

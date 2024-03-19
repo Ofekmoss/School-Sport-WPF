@@ -1,0 +1,7 @@
+﻿<div dir="rtl" align="right">
+	<p>טופס יצירת קשר נשלח מאתר זוזו בתאריך $date בשעה $time</p>
+	<p>הטופס נשלח על ידי: <font color="blue">$name</font></p>
+	<p>אימייל שולח ההודעה: <font color="blue">$email</font></p>
+	<p>נושא: <font color="blue">$subject</font></p>
+	<p>תוכן ההודעה:<br />$message</p>
+</div>

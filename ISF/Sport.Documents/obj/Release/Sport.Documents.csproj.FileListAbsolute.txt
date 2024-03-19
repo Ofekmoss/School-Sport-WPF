@@ -1,0 +1,7 @@
+D:\BitBucket\schoolsport\ISF\Sport.Documents\obj\Release\Sport.Documents.csproj.AssemblyReference.cache
+D:\BitBucket\schoolsport\ISF\Sport.Documents\obj\Release\Sport.Documents.csproj.ResolveComReference.cache
+D:\BitBucket\schoolsport\ISF\Sport.Documents\obj\Release\Sport.Documents.TestDocument.resources
+D:\BitBucket\schoolsport\ISF\Sport.Documents\obj\Release\Sport.Documents.DocumentDesignerView.resources
+D:\BitBucket\schoolsport\ISF\Sport.Documents\obj\Release\Sport.Documents.TextItem.resources
+D:\BitBucket\schoolsport\ISF\Sport.Documents\obj\Release\Sport.Documents.csproj.GenerateResource.cache
+D:\BitBucket\schoolsport\ISF\Sport.Documents\obj\Release\Sport.Documents.csproj.CoreCompileInputs.cache

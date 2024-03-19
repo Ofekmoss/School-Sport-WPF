@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" CodeBehind="UploadFile.aspx.cs" Inherits="SportSite.NewRegister.UploadFile" %>

@@ -1,0 +1,25 @@
+-- Deleting existing triggers
+-- ============================================
+IF EXISTS(SELECT * FROM sysobjects WHERE name = 'T_PAYMENT_CHANGED' AND type = 'TR')
+	DROP TRIGGER T_PAYMENT_CHANGED
+GO
+
+CREATE TRIGGER T_PAYMENT_CHANGED
+ON PAYMENTS
+AFTER INSERT, UPDATE AS
+BEGIN
+	DECLARE @payment int
+	DECLARE @number int
+	
+	SELECT @payment = PAYMENT_ID, @number = PAYMENT_NUMBER
+	FROM inserted
+	
+	IF (@number IS NULL)
+	BEGIN
+		UPDATE PAYMENTS
+		SET PAYMENT_NUMBER = (SELECT MAX(PAYMENT_NUMBER) + 1 FROM PAYMENTS WHERE DATE_DELETED IS NULL)
+		WHERE PAYMENT_ID = @payment
+	END
+END
+GO
+

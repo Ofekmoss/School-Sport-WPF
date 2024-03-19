@@ -1,0 +1,177 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Register.master.cs" Inherits="SportSite.NewRegister.Register" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>כלי ניהול - התאחדות הספורט לבתי ספר בישראל</title>
+
+    <!--[if lte IE 7]>
+    <script src="js/json3.min.js"></script>
+    <![endif]-->
+
+    <script src="js/jquery.min.js"></script>
+
+    <!-- jQuery UI-->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <script src="js/jquery-ui.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+
+    <!-- Charts morris -->
+    <link rel="stylesheet" href="css/morris.css">
+    <script src="js/raphael-min.js"></script>
+    <script src="js/morris.min.js"></script>
+
+    <!-- sub menu -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <script src="js/navbar.js" defer=""></script>
+
+    <!-- flaticon css -->
+    <link rel="stylesheet" type="text/css" href="css/flaticon/flaticon.css">
+
+	<!-- custom -->
+	<link rel="stylesheet" type="text/css" href="Register.css">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/table-view.css" rel="stylesheet">
+	<link href="css/frame.css" rel="stylesheet">
+	<link href="css/icons.css" rel="stylesheet">
+
+    <style type="text/css">
+        #toTop{
+            position: fixed;
+            bottom: 55px;
+            left: 40px;
+            cursor: pointer;
+            display: none;
+        }
+        #toTop .fa {margin-right: 5px;}
+        .fixed-table-toolbar .dropdown-menu li { text-align: right; }
+    </style>
+	<script type="text/javascript">
+		function logout() {
+			window.location.href = "../Register.aspx?action=Logout";
+		}
+
+		$(document).ready(function () {
+			ApplyServerTime();
+		});
+
+		function ApplyServerTime() {
+			var timeSpan = $("#lbServerTime");
+			if (timeSpan.length == 1) {
+				$.get("Time.aspx", function (response) {
+					timeSpan.html(response);
+				});
+			}
+		}
+
+		window.setInterval(ApplyServerTime, 60000);
+	</script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+	<asp:ContentPlaceHolder ID="OutsideForm" runat="server" Visible="false">
+    </asp:ContentPlaceHolder>
+
+    <form id="form1" runat="server">
+    <div dir="rtl">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="flaticon-menu48"></span>
+                        </button>
+                        <a class="navbar-brand" href="../Main.aspx"><img src="images/logo.png" style="height: 50px; margin-top: -15px;" alt="logo" /></a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-left" style="margin-right: 20px">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle selectable non-selectable" data-toggle="dropdown" role="button2" aria-expanded="false">
+                                    <span class="flaticon-user168"></span> <asp:Literal ID="litUserName" runat="server"></asp:Literal>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" style="text-align: right; width: 200px;">
+                                    <li><div style="padding-right: 12px;" id="lbSchoolName" runat="server"></div>
+                                        <hr style="margin-top: 6px; margin-bottom: 10px;"/>
+                                    </li>
+                                    <li style="padding-bottom: 6px;">
+                                        <a href="../Register.aspx?interface=old" class="menu-link" style="padding-right: 14px;" id="btnLogout">
+											<img src="images/exitIsf.svg" class="menu-icon" alt="logout" /> יציאה
+										</a>
+                                    </li>
+                                </ul>
+                            </li>
+						    <!-- li ui-sref-active="active">
+								<a href="../Register.aspx?interface=old" class="logo" style="color: Red;">
+									<span class="glyphicon glyphicon-remove-sign"></span>חזרה לממשק ישן
+								</a>
+							</li -->
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right" style="margin-right: 20px">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" role="button2" aria-expanded="false">
+                                    <span class="flaticon-two293"></span>פעולות<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu" style="text-align: right; width: 200px;">
+                                    <li ui-sref-active="active">
+										<a href="Articles.aspx" class="logo">
+											<span class="flaticon-document240"></span> ניהול כתבות
+										</a>
+									</li>
+                                </ul>
+                            </li>
+
+                            <li ui-sref-active="active">
+								<a href="Default.aspx" class="logo">
+									<span class="flaticon-transport10"></span>לוח בקרה
+								</a>
+							</li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div id="page-wrapper">
+            <br/>
+            <div autoscroll>
+				<asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+				
+		        </asp:ContentPlaceHolder>
+				<asp:Panel ID="pnlNotAuthorized" style="color:Red; font-weight: bold;" runat="server" Visible="false">
+				עמוד זה דורש הרשאות מנהל מערכת
+				</asp:Panel>
+			</div>
+        </div>
+
+
+        <div id="page-footer">
+            <div class="row">
+                <div class="col-md-2" dir="ltr">
+                    <p>&copy; MIR 2016</p>
+                </div>
+                <div class="col-md-10">
+					<span id="lbServerTime"></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    	$('.btn').button();
+    </script>
+	<asp:ContentPlaceHolder ID="AfterContents" runat="server">
+    </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

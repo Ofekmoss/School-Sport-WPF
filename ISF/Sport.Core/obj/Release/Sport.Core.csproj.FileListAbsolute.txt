@@ -1,0 +1,7 @@
+D:\BitBucket\schoolsport\ISF\Sport.Core\bin\Release\Sport.Core.dll
+D:\BitBucket\schoolsport\ISF\Sport.Core\bin\Release\Mir.Common.dll
+D:\BitBucket\schoolsport\ISF\Sport.Core\bin\Release\Mir.Common.pdb
+D:\BitBucket\schoolsport\ISF\Sport.Core\obj\Release\Sport.Core.csproj.AssemblyReference.cache
+D:\BitBucket\schoolsport\ISF\Sport.Core\obj\Release\Sport.Core.csproj.CoreCompileInputs.cache
+D:\BitBucket\schoolsport\ISF\Sport.Core\obj\Release\Sport.Core.csproj.CopyComplete
+D:\BitBucket\schoolsport\ISF\Sport.Core\obj\Release\Sport.Core.dll

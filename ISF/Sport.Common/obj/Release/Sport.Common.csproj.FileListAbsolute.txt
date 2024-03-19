@@ -1,0 +1,3 @@
+D:\BitBucket\schoolsport\ISF\Sport.Common\obj\Release\Sport.Common.csproj.AssemblyReference.cache
+D:\BitBucket\schoolsport\ISF\Sport.Common\obj\Release\Sport.Common.csproj.ResolveComReference.cache
+D:\BitBucket\schoolsport\ISF\Sport.Common\obj\Release\Sport.Common.csproj.CoreCompileInputs.cache

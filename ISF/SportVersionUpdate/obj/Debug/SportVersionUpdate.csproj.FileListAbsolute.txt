@@ -1,0 +1,17 @@
+D:\BitBucket\schoolsport\Bin\Debug\SportVersionUpdate.exe.config
+D:\BitBucket\schoolsport\Bin\Debug\SportVersionUpdate.exe
+D:\BitBucket\schoolsport\Bin\Debug\SportVersionUpdate.pdb
+D:\BitBucket\schoolsport\ISF\SportVersionUpdate\obj\Debug\SportVersionUpdate.SportVersionUpdate.resources
+D:\BitBucket\schoolsport\ISF\SportVersionUpdate\obj\Debug\SportVersionUpdate.csproj.GenerateResource.cache
+D:\BitBucket\schoolsport\ISF\SportVersionUpdate\obj\Debug\SportVersionUpdate.csproj.CoreCompileInputs.cache
+D:\BitBucket\schoolsport\ISF\SportVersionUpdate\obj\Debug\SportVersionUpdate.exe
+D:\BitBucket\schoolsport\ISF\SportVersionUpdate\obj\Debug\SportVersionUpdate.pdb
+C:\SchoolSport\schoolsport\Bin\Debug\SportVersionUpdate.exe.config
+C:\SchoolSport\schoolsport\Bin\Debug\SportVersionUpdate.exe
+C:\SchoolSport\schoolsport\Bin\Debug\SportVersionUpdate.pdb
+C:\SchoolSport\schoolsport\ISF\SportVersionUpdate\obj\Debug\SportVersionUpdate.csproj.AssemblyReference.cache
+C:\SchoolSport\schoolsport\ISF\SportVersionUpdate\obj\Debug\SportVersionUpdate.SportVersionUpdate.resources
+C:\SchoolSport\schoolsport\ISF\SportVersionUpdate\obj\Debug\SportVersionUpdate.csproj.GenerateResource.cache
+C:\SchoolSport\schoolsport\ISF\SportVersionUpdate\obj\Debug\SportVersionUpdate.csproj.CoreCompileInputs.cache
+C:\SchoolSport\schoolsport\ISF\SportVersionUpdate\obj\Debug\SportVersionUpdate.exe
+C:\SchoolSport\schoolsport\ISF\SportVersionUpdate\obj\Debug\SportVersionUpdate.pdb

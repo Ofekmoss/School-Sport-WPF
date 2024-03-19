@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.mir.co.il/PlayerCard" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.mir.co.il/PlayerCard" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.mir.co.il/PlayerCard">
+      <s:element name="IssuePlayerCards">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="students" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="sportID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IssuePlayerCardsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssuePlayerCardsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CardIssueDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="studentID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sportID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CardIssueDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CardIssueDateResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePlayerCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="studentID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sportID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePlayerCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemovePlayerCardResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateIssueDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="studentID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sportID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateIssueDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateIssueDateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveIssueDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="studentID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sportID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveIssueDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveIssueDateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IssuePlayerCardsSoapIn">
+    <wsdl:part name="parameters" element="tns:IssuePlayerCards" />
+  </wsdl:message>
+  <wsdl:message name="IssuePlayerCardsSoapOut">
+    <wsdl:part name="parameters" element="tns:IssuePlayerCardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CardIssueDateSoapIn">
+    <wsdl:part name="parameters" element="tns:CardIssueDate" />
+  </wsdl:message>
+  <wsdl:message name="CardIssueDateSoapOut">
+    <wsdl:part name="parameters" element="tns:CardIssueDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemovePlayerCardSoapIn">
+    <wsdl:part name="parameters" element="tns:RemovePlayerCard" />
+  </wsdl:message>
+  <wsdl:message name="RemovePlayerCardSoapOut">
+    <wsdl:part name="parameters" element="tns:RemovePlayerCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIssueDateSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateIssueDate" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIssueDateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateIssueDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveIssueDateSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveIssueDate" />
+  </wsdl:message>
+  <wsdl:message name="RemoveIssueDateSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveIssueDateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PlayerCardServiceSoap">
+    <wsdl:operation name="IssuePlayerCards">
+      <wsdl:input message="tns:IssuePlayerCardsSoapIn" />
+      <wsdl:output message="tns:IssuePlayerCardsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CardIssueDate">
+      <wsdl:input message="tns:CardIssueDateSoapIn" />
+      <wsdl:output message="tns:CardIssueDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePlayerCard">
+      <wsdl:input message="tns:RemovePlayerCardSoapIn" />
+      <wsdl:output message="tns:RemovePlayerCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIssueDate">
+      <wsdl:input message="tns:UpdateIssueDateSoapIn" />
+      <wsdl:output message="tns:UpdateIssueDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveIssueDate">
+      <wsdl:input message="tns:RemoveIssueDateSoapIn" />
+      <wsdl:output message="tns:RemoveIssueDateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PlayerCardServiceSoap" type="tns:PlayerCardServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IssuePlayerCards">
+      <soap:operation soapAction="http://www.mir.co.il/PlayerCard/IssuePlayerCards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardIssueDate">
+      <soap:operation soapAction="http://www.mir.co.il/PlayerCard/CardIssueDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePlayerCard">
+      <soap:operation soapAction="http://www.mir.co.il/PlayerCard/RemovePlayerCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIssueDate">
+      <soap:operation soapAction="http://www.mir.co.il/PlayerCard/UpdateIssueDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveIssueDate">
+      <soap:operation soapAction="http://www.mir.co.il/PlayerCard/RemoveIssueDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PlayerCardServiceSoap12" type="tns:PlayerCardServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IssuePlayerCards">
+      <soap12:operation soapAction="http://www.mir.co.il/PlayerCard/IssuePlayerCards" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardIssueDate">
+      <soap12:operation soapAction="http://www.mir.co.il/PlayerCard/CardIssueDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePlayerCard">
+      <soap12:operation soapAction="http://www.mir.co.il/PlayerCard/RemovePlayerCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIssueDate">
+      <soap12:operation soapAction="http://www.mir.co.il/PlayerCard/UpdateIssueDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveIssueDate">
+      <soap12:operation soapAction="http://www.mir.co.il/PlayerCard/RemoveIssueDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PlayerCardService">
+    <wsdl:port name="PlayerCardServiceSoap" binding="tns:PlayerCardServiceSoap">
+      <soap:address location="http://213.8.193.150/ISF/SportServices/PlayerCardService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PlayerCardServiceSoap12" binding="tns:PlayerCardServiceSoap12">
+      <soap12:address location="http://213.8.193.150/ISF/SportServices/PlayerCardService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

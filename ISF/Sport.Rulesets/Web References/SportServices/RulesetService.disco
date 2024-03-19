@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://schoolsport.org.il:8080/ISF/SportServices/RulesetService.asmx?wsdl" docRef="https://schoolsport.org.il:8080/ISF/SportServices/RulesetService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://schoolsport.org.il:8080/ISF/SportServices/RulesetService.asmx" xmlns:q1="http://www.mir.co.il/" binding="q1:RulesetServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://schoolsport.org.il:8080/ISF/SportServices/RulesetService.asmx" xmlns:q2="http://www.mir.co.il/" binding="q2:RulesetServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

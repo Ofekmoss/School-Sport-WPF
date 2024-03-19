@@ -1,0 +1,40 @@
+Hi Haim
+
+The below query running pretty often and consumes the (CPU/RAM) resources on the DBS4. If I modify a WHERE condition to restrict the search for two months or so, it completes much faster. The question is  can you talk to Koby to look into the matter? Or if you provide me with the Koby's email I will send him directly…
+
+And ( o.InsertTime>DateAdd(mi, -80000, GetDate())
+
+  o.InsertTime<DateAdd(mi, -5, GetDate()))
+ 
+
+Select Top 100 o.MachineOperationId, o.InsertTime, m.MachineId, v1.[Value] As OrderNumber, IsNull(v2.[Value], 1) 
+ As MachineMode From MachineOperations o Inner Join Machines m
+  On o.MachineSeq=m.MachineSeq Left Join MachineOperationValues 
+  v On o.MachineOperationId=v.MachineOperationId And v.OperationValueId=7
+  Inner Join MachineOperationValues v1 On o.MachineOperationId=
+  v1.MachineOperationId And v1.OperationValueId=1 
+  Left Join MachineOperationValues v2 On o.MachineOperationId=
+  v2.MachineOperationId And v2.OperationValueId=3 
+  Where o.OperationId In (1, 2) And v.[Value] Is Null  And 
+  o.InsertTime<DateAdd(mi, -5, GetDate())
+  Order By o.InsertTime Desc
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Best Regards
+
+Uri Dimant

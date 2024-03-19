@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getOverallSize">
+        <s:complexType />
+      </s:element>
+      <s:element name="getOverallSizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getOverallSizeResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNumOfFiles">
+        <s:complexType />
+      </s:element>
+      <s:element name="getNumOfFilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getNumOfFilesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fileNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getFileResult" type="tns:FileData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FileData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="displayname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="index" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="size" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="file" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getOverallSizeSoapIn">
+    <wsdl:part name="parameters" element="tns:getOverallSize" />
+  </wsdl:message>
+  <wsdl:message name="getOverallSizeSoapOut">
+    <wsdl:part name="parameters" element="tns:getOverallSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNumOfFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:getNumOfFiles" />
+  </wsdl:message>
+  <wsdl:message name="getNumOfFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:getNumOfFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFileSoapIn">
+    <wsdl:part name="parameters" element="tns:getFile" />
+  </wsdl:message>
+  <wsdl:message name="getFileSoapOut">
+    <wsdl:part name="parameters" element="tns:getFileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AutoUpdateServiceSoap">
+    <wsdl:operation name="getOverallSize">
+      <wsdl:input message="tns:getOverallSizeSoapIn" />
+      <wsdl:output message="tns:getOverallSizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNumOfFiles">
+      <wsdl:input message="tns:getNumOfFilesSoapIn" />
+      <wsdl:output message="tns:getNumOfFilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getFile">
+      <wsdl:input message="tns:getFileSoapIn" />
+      <wsdl:output message="tns:getFileSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AutoUpdateServiceSoap" type="tns:AutoUpdateServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="getOverallSize">
+      <soap:operation soapAction="http://tempuri.org/getOverallSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumOfFiles">
+      <soap:operation soapAction="http://tempuri.org/getNumOfFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFile">
+      <soap:operation soapAction="http://tempuri.org/getFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AutoUpdateService">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/" />
+    <wsdl:port name="AutoUpdateServiceSoap" binding="tns:AutoUpdateServiceSoap">
+      <soap:address location="http://213.8.193.147/ISF/SportServices/AutoUpdateService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,8 @@
+﻿<p>מועד $title:<br />
+<input type="text" name="ZooZooEvent_$id_Year" size="4" maxlength="4" value="$ZooZooEvent_$id_Year" /> / 
+<input type="text" name="ZooZooEvent_$id_Month" size="2" maxlength="2" value="$ZooZooEvent_$id_Month" /> / 
+<input type="text" name="ZooZooEvent_$id_Day" size="2" maxlength="2" value="$ZooZooEvent_$id_Day" /></p>
+<p>כותרת: <input type="text" name="ZooZooEvent_$id_Title" size="30" maxlength="255" value="$ZooZooEvent_$id_Title" /> (לא חובה)</p>
+<p>תיאור $title<br />
+<textarea name="ZooZooEvent_$id_Description" cols="50" rows="3">$ZooZooEvent_$id_Description</textarea></p>
+<p $HideWhenNew><input type="checkbox" name="ZooZooEvent_$id_Delete" value="1" $ZooZooEvent_$id_Deleted />הסתר $title זה</p>

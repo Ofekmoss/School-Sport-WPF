@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.mir.co.il/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.mir.co.il/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.mir.co.il/">
+      <s:element name="GetScoreTablesByFormat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="format" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoreTablesByFormatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScoreTablesByFormatResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPointsName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sportID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPointsNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPointsNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRuleTypes">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="RuleType">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Class" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRuleType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RuleType" nillable="true" type="tns:RuleType" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRuleTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRuleTypesResult" type="tns:ArrayOfRuleType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadRuleset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rulesetId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Ruleset">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sport" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SportType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SportRuleset" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rules" type="tns:ArrayOfRule" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRule">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Rule" nillable="true" type="tns:Rule" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Rule">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RuleType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SportFieldType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SportField" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Category" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoadRulesetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadRulesetResult" type="tns:Ruleset" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveRuleset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ruleset" type="tns:Ruleset" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveRulesetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveRulesetResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetScoreTablesByFormatSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScoreTablesByFormat" />
+  </wsdl:message>
+  <wsdl:message name="GetScoreTablesByFormatSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScoreTablesByFormatResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPointsNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPointsName" />
+  </wsdl:message>
+  <wsdl:message name="GetPointsNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPointsNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRuleTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRuleTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetRuleTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRuleTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadRulesetSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadRuleset" />
+  </wsdl:message>
+  <wsdl:message name="LoadRulesetSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadRulesetResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveRulesetSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveRuleset" />
+  </wsdl:message>
+  <wsdl:message name="SaveRulesetSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveRulesetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RulesetServiceSoap">
+    <wsdl:operation name="GetScoreTablesByFormat">
+      <wsdl:input message="tns:GetScoreTablesByFormatSoapIn" />
+      <wsdl:output message="tns:GetScoreTablesByFormatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointsName">
+      <wsdl:input message="tns:GetPointsNameSoapIn" />
+      <wsdl:output message="tns:GetPointsNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleTypes">
+      <wsdl:input message="tns:GetRuleTypesSoapIn" />
+      <wsdl:output message="tns:GetRuleTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadRuleset">
+      <wsdl:input message="tns:LoadRulesetSoapIn" />
+      <wsdl:output message="tns:LoadRulesetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveRuleset">
+      <wsdl:input message="tns:SaveRulesetSoapIn" />
+      <wsdl:output message="tns:SaveRulesetSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RulesetServiceSoap" type="tns:RulesetServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetScoreTablesByFormat">
+      <soap:operation soapAction="http://www.mir.co.il/GetScoreTablesByFormat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointsName">
+      <soap:operation soapAction="http://www.mir.co.il/GetPointsName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleTypes">
+      <soap:operation soapAction="http://www.mir.co.il/GetRuleTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadRuleset">
+      <soap:operation soapAction="http://www.mir.co.il/LoadRuleset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRuleset">
+      <soap:operation soapAction="http://www.mir.co.il/SaveRuleset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RulesetServiceSoap12" type="tns:RulesetServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetScoreTablesByFormat">
+      <soap12:operation soapAction="http://www.mir.co.il/GetScoreTablesByFormat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointsName">
+      <soap12:operation soapAction="http://www.mir.co.il/GetPointsName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleTypes">
+      <soap12:operation soapAction="http://www.mir.co.il/GetRuleTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadRuleset">
+      <soap12:operation soapAction="http://www.mir.co.il/LoadRuleset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRuleset">
+      <soap12:operation soapAction="http://www.mir.co.il/SaveRuleset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RulesetService">
+    <wsdl:port name="RulesetServiceSoap" binding="tns:RulesetServiceSoap">
+      <soap:address location="https://schoolsport.org.il:8080/ISF/SportServices/RulesetService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RulesetServiceSoap12" binding="tns:RulesetServiceSoap12">
+      <soap12:address location="https://schoolsport.org.il:8080/ISF/SportServices/RulesetService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

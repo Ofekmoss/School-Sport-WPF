@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1255" />
+	<title>הודעה מיידית</title>
+	<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+	<meta name=ProgId content=VisualStudio.HTML>
+	<meta name=Originator content="Microsoft Visual Studio .NET 7.1">
+	<meta name="Author" content="Yahav Braverman M.I.R" />
+	<script type="text/javascript" src="%server_url/Common/Shadow_AJAX.js"></script>
+	<script type="text/javascript">
+		function CloseWindow() {
+			/*
+			if (document.getElementById("message_read").checked) {
+				var messageID=document.getElementById("message_id").innerHTML;
+				SendAjaxRequest("%server_url/Register.aspx?ajax=1&"+
+					"action=mark_message_read&id="+messageID, "AfterMarkedRead");
+			}
+			*/
+			if (!window.showModalDialog) {			
+				window.close();
+			}
+			else {
+				window.parent.CloseDialog();
+			}
+		}
+		
+		function AfterMarkedRead(strResponse) {
+			//alert(strResponse);
+		}
+	</script>	
+	<style type="text/css">
+		body {background-color: white;}
+		body, div, span, input, button {font-family: Arial; font-size: 14px;}
+	</style>
+</head>
+<body>
+<div align="right" dir="rtl">
+	<h1>התקבלה הודעה מיידית!</h1>
+	<p>
+		<b><u>שולח ההודעה:</u></b>&nbsp;%sender
+	</p>
+	<p>
+		<b><u>תאריך שליחה:</u></b>&nbsp;%datesent
+	</p>
+	<p>
+		תוכן ההודעה:<br />%contents
+	</p><hr />
+	<div id="message_id" style="display: none;">%id</div>
+	<!-- <input type="checkbox" id="message_read" name="message_read" value="1" />&nbsp;קראתי הודעה זו<br /> -->
+	<div style="text-align: center;">
+		<button type="button" onclick="CloseWindow();" style="font-weight: bold;">סגור חלון זה</button>
+	</div>
+</div>
+</body>
+</html>

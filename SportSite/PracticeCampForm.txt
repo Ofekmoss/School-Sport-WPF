@@ -1,0 +1,29 @@
+<center>
+<div style="width: 455px;">
+    <img src="images/practice_camp_header2.PNG" border="0" /><br />
+    <div style="text-align: center;"><h1>טופס הרשמה למחנה אימון</h1></div>
+    <div style="text-align: right;">
+		<p>ענף: <b>@Sport</b></p>
+		<p>שם: <b>@Name</b></p>
+		<p>כתובת: <b>@Address</b></p>
+		<p>טלפון בית: <b>@HomePhone</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;טלפון נייד: <b>@CellPhone</b></p>
+		<p>תאריך לידה: <b>@BirthDay</b></p>
+		<p>דואר אלקטרוני: <b>@Email</b></p>
+		<p>שם בית ספר: <b>@School</b></p>
+		<p>שם המאמן/ת: <b>@Coach</b></p>
+		<p>שם קופת חולים: <b>@HMO</b></p>
+		<p style="margin-bottom: 10px; border-bottom: 2px dashed black;">
+			<b>ידוע לי כי במקרה של ביטול / אי השתתפות יקוזז מההחזר הכספי סכום על פי נוהלי ההחזר הכספי של התאחדות הספורט לבתי הספר בישראל	.</b><br /><br />
+		</p>
+		<p><u><b>ספח לחתימת הורים</b></u></p>
+		<p>
+			אני מאשר/ת השתתפות בני/בתי במחנה אימונים ב<b>@Sport</b>  שיתקיים בין התאריכים <b>@CampDates</b><br />
+			כמו כן, ידוע לי כי הגעתו/תה אל המחנה וחזרתו/ה לביתו/ה באחריות המועדון הבית ספרי ו/או ההורים.
+		</p>
+		<p style="text-align: center;">
+			_______________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;________________<br />
+			<b>&nbsp;שם הורה&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;תאריך&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;חתימה</b>
+		</p>
+    </div>
+</div>
+</center>

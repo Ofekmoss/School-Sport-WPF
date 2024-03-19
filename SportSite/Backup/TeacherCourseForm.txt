@@ -1,0 +1,243 @@
+<script type="text/javascript">
+function id_key_up(oTextBox) {
+	if (oTextBox.value.length > 0) {
+		var a = oTextBox.name.split("_");
+		var n = parseInt(a[1]);
+		var m = n + 1;
+		if (m > 9)
+			m = 1;
+		oTextBox.form.elements[a[0] + "_" + m].focus();
+	}
+}
+
+function FillValues() {
+	if (typeof _arrValues == "undefined")
+		return;
+	
+	var objForm = document.forms[0];
+	for (var i = 0; i < objForm.elements.length; i++) {
+		var element = objForm.elements[i];
+		if (!element.name)
+			continue;
+		var strValue = _arrValues[element.name];
+		var strType = GetElementType(element);
+		if (strValue) {
+			switch (strType) {
+				case "text":
+				case "hidden":
+				case "textarea":
+					element.value = strValue;
+					break;
+				case "radio":
+				case "checkbox":
+					if (element.value == strValue)
+						element.checked = true;
+					break;
+				case "select":
+					for (var j = 0; j < element.options.length; j++) {
+						if (element.options[j].value == strValue) {
+							element.selectedIndex = j;
+							break;
+						}
+					}
+					break;
+					
+			}
+		}
+	}
+}
+
+function GetElementType(element) {
+	if (element.nodeName.toLowerCase() == "select")
+		return "select";
+	
+	if (element.nodeName.toLowerCase() == "textarea")
+		return "textarea";
+	
+	return element.type.toLowerCase();
+}
+
+function MarkInvalidValue(strElementName) {
+	if (strElementName == "id") {
+		for (var i = 1; i <= 9; i++)
+			MarkInvalidValue("id_" + i);
+		return;
+	}
+		
+	if (strElementName.indexOf("course_") >= 0 && strElementName.indexOf("sport") < 0)
+		strElementName = "course";
+	var element = 0;
+	for (var i = 0; i < document.forms[0].elements.length; i++) {
+		if (strElementName == document.forms[0].elements[i].name) {
+			element = document.forms[0].elements[i];
+			break;
+		}
+	}
+	if (element) {
+		var strType = GetElementType(element);
+		switch (strType) {
+			case "text":
+			case "hidden":
+			case "textarea":
+			case "select":
+				element.style.backgroundColor = "#cc0000";
+				break;
+			case "radio":
+			case "checkbox":
+				var oTable = FindParentNode(element, "table");
+				if (oTable.rows[0].cells.length == 1)
+					oTable.rows[0].cells[0].style.backgroundColor = "#cc0000";
+				else
+					FindParentNode(element, "div").style.backgroundColor = "#cc0000";
+				break;
+				
+		}
+	}
+}
+
+function FindParentNode(node, parentName) {
+	if (!node)
+		return 0;
+	
+	if (node.nodeName.toLowerCase() == parentName.toLowerCase())
+		return node;
+	
+	return FindParentNode(node.parentNode, parentName);
+}
+</script>
+<table class="tc_table_full" cellpadding="0" cellspacing="0">
+	<caption style="text-decoration: underline; font-weight: bold; text-align: right;">פרטים אישיים:</caption>
+	<tr>
+		<td@lname_display>@lname_show<input type="text" name="lname" class="tc_text_big"@lname_style /></td>
+		<td@fname_display>@fname_show<input type="text" name="fname" class="tc_text_big"@fname_style /></td>@id_show
+		<td@id_display@id_style><input type="text" name="id_9" class="tc_text_id" maxlength="1" onkeyup="id_key_up(this);" /></td>
+		<td@id_display@id_style><input type="text" name="id_8" class="tc_text_id" maxlength="1" onkeyup="id_key_up(this);" /></td>
+		<td@id_display@id_style><input type="text" name="id_7" class="tc_text_id" maxlength="1" onkeyup="id_key_up(this);" /></td>
+		<td@id_display@id_style><input type="text" name="id_6" class="tc_text_id" maxlength="1" onkeyup="id_key_up(this);" /></td>
+		<td@id_display@id_style><input type="text" name="id_5" class="tc_text_id" maxlength="1" onkeyup="id_key_up(this);" /></td>
+		<td@id_display@id_style><input type="text" name="id_4" class="tc_text_id" maxlength="1" onkeyup="id_key_up(this);" /></td>
+		<td@id_display@id_style><input type="text" name="id_3" class="tc_text_id" maxlength="1" onkeyup="id_key_up(this);" /></td>
+		<td@id_display@id_style><input type="text" name="id_2" class="tc_text_id" maxlength="1" onkeyup="id_key_up(this);" /></td>
+		<td@id_display@id_style><input type="text" name="id_1" class="tc_text_id" maxlength="1" onkeyup="id_key_up(this);" /></td>
+		<td@b_day_display>@bday_show<input type="text" name="b_day" class="tc_text_big"@bday_style /></td>
+	</tr>
+	<tr>
+		<td@lname_display>@lname_caption</td>
+		<td@fname_display>@fname_caption</td>
+		<td@id_display colspan="9">@id_caption</td>
+		<td@b_day_display>@b_day_caption</td>
+	</tr>
+</table>
+<table class="tc_table_small" cellpadding="0" cellspacing="0">
+	<tr>
+		<td@address_display>@address_show<input type="text" name="address" class="tc_text_bigger"@address_style /></td>
+		<td@city_display>@city_show<input type="text" name="city" class="tc_text_small"@city_style /></td>
+		<td@zip_code_display>@zip_show<input type="text" name="zip_code" class="tc_text_small"@zip_style /></td>
+		<td@email_display>@email_show<input type="text" name="email" class="tc_text_bigger"@email_style /></td>
+	</tr>
+	<tr>
+		<td@address_display>@address_caption</td>
+		<td@city_display>@city_caption</td>
+		<td@zip_code_display>@zip_code_caption</td>
+		<td@email_display>@email_caption</td>
+	</tr>
+</table>
+<table class="tc_table_small" cellpadding="0" cellspacing="0">
+	<tr>
+		<td@home_phone_display>@home_phone_show<input type="text" name="home_phone" class="tc_text_medium"@home_phone_style /></td>
+		<td@fax_number_display>@fax_show<input type="text" name="fax_number" class="tc_text_medium"@fax_style /></td>
+		<td@cell_phone_display>@cell_phone_show<input type="text" name="cell_phone" class="tc_text_medium"@cell_phone_style /></td>
+		<td@gender_display nowrap="nowrap">
+			@gender_show
+			<div@gender_style>
+				<input type="radio" name="gender" value="M" class="tc_text_special" />@man_caption&nbsp;
+				<input type="radio" name="gender" value="F" class="tc_text_special" />@woman_caption
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td@home_phone_display>@home_phone_caption</td>
+		<td@fax_number_display>@fax_number_caption</td>
+		<td@cell_phone_display>@cell_phone_caption</td>
+		<td@gender_display>@gender_caption</td>
+	</tr>
+</table>
+<table class="tc_table_small" cellpadding="0" cellspacing="0">
+	<caption style="text-decoration: underline; font-weight: bold; text-align: right;">פרטים מקצועיים:</caption>
+	<tr>
+		<td@school_name_display>@school_name_show<input type="text" name="school_name" class="tc_text_huge"@school_name_style /></td>
+		<td@school_city_display>@school_city_show<input type="text" name="school_city" class="tc_text_small"@school_city_style /></td>
+		<td@school_address_display>@school_address_show<input type="text" name="school_address" class="tc_text_huge"@school_address_style /></td>
+	</tr>
+	<tr>
+		<td@school_name_display>@school_name_caption</td>
+		<td@school_city_display>@school_city_caption</td>
+		<td@school_address_display>@school_address_caption</td>
+	</tr>
+</table>
+<table class="tc_table_small" cellpadding="0" cellspacing="0">
+	<tr>
+		<td@sport_1_display>@sport_1_show<select name="sport_1" class="tc_text_bigger"@sport_1_style>@sport1</select></td>
+		<td@sport_2_display>@sport_2_show<select name="sport_2" class="tc_text_bigger"@sport_2_style>@sport2</select></td>
+		<td@veteranship_display>@veteranship_show<input type="text" name="veteranship" class="tc_text_bigger"@veteranship_style/></td>
+	</tr>
+	<tr>
+		<td@sport_1_display>@sport_1_caption</td>
+		<td@sport_2_display>@sport_2_caption</td>
+		<td@veteranship_display>@veteranship_caption</td>
+	</tr>
+</table>
+<table class="tc_table_full" cellpadding="0" cellspacing="0"@expertise_display>
+	<tr>
+		<td colspan="6">@expertise_caption</td>
+	</tr>
+	<tr>@expertise_show
+		<td@expertise_1_display@expertise_style><div class="tc_expertise"><input type="radio" name="expertise" value="@ev1" />@expertise_1_caption</div></td>
+		<td@expertise_2_display@expertise_style><div class="tc_expertise"><input type="radio" name="expertise" value="@ev2" />@expertise_2_caption</div></td>
+		<td@expertise_3_display@expertise_style><div class="tc_expertise"><input type="radio" name="expertise" value="@ev3" />@expertise_3_caption</div></td>
+		<td@expertise_4_display@expertise_style><div class="tc_expertise"><input type="radio" name="expertise" value="@ev4" />@expertise_4_caption</div></td>
+		<td@expertise_5_display@expertise_style><div class="tc_expertise"><input type="radio" name="expertise" value="@ev5" />@expertise_5_caption</div></td>
+		<td@expertise_6_display@expertise_style><div class="tc_expertise"><input type="radio" name="expertise" value="@ev6" />@expertise_6_caption</div></td>
+	</tr>
+</table>
+<table class="tc_table_small" cellpadding="0" cellspacing="0"@age_range_display>
+	<tr>
+		<td colspan="4">@age_range_caption</td>
+	</tr>@age_range_show
+	<tr@age_range_style>
+		<td@age_range_1_display nowrap="nowrap"><div class="tc_expertise"><input type="radio" name="age_range" value="@arv1" />@age_range_1_caption</div></td>
+		<td@age_range_2_display nowrap="nowrap"><div class="tc_expertise"><input type="radio" name="age_range" value="@arv2" />@age_range_2_caption</div></td>
+		<td@age_range_3_display nowrap="nowrap"><div class="tc_expertise"><input type="radio" name="age_range" value="@arv3" />@age_range_3_caption</div></td>
+		<td@age_range_4_display nowrap="nowrap"><div class="tc_expertise"><input type="radio" name="age_range" value="@arv4" />@age_range_4_caption</div></td>
+	</tr>
+	<tr@age_range_style>
+		<td@age_range_5_display nowrap="nowrap"><div class="tc_expertise"><input type="radio" name="age_range" value="@arv5" />@age_range_5_caption</div></td>
+		<td@age_range_6_display nowrap="nowrap"><div class="tc_expertise"><input type="radio" name="age_range" value="@arv6" />@age_range_6_caption</div></td>
+		<td@age_range_7_display nowrap="nowrap"><div class="tc_expertise"><input type="radio" name="age_range" value="@arv7" />@age_range_7_caption</div></td>
+		<td@age_range_8_display nowrap="nowrap"><div class="tc_expertise"><input type="radio" name="age_range" value="@arv8" />@age_range_8_caption</div></td>
+	</tr>
+</table>
+<table class="tc_table_full" cellpadding="0" cellspacing="0"@course_display>
+	<caption style="text-decoration: underline; font-weight: bold; text-align: right;">@course_caption</caption>
+	<tr>
+		<td colspan="6">@exp_title</td>
+	</tr>
+	<tr>@course_show
+		<td@course_style><div class="tc_expertise"><input type="radio" id="course1" name="course" value="@cv1" /><label for="course1">@ct1</label></div></td>
+		<td@course_style><div class="tc_expertise"><input type="radio" id="course2" name="course" value="@cv2" /><label for="course2">@ct2</label></div></td>
+		<td@course_style><div class="tc_expertise"><input type="radio" id="course3" name="course" value="@cv3" /><label for="course3">@ct3</label></div></td>
+		<td@course_style><div class="tc_expertise"><input type="radio" id="course4" name="course" value="@cv4" /><label for="course4">@ct4</label></div></td>
+		<td@course_style><div class="tc_expertise"><input type="radio" id="course5" name="course" value="@cv5" /><label for="course5">@ct5</label></div></td>
+		<td@course_style><div class="tc_expertise"><input type="radio" id="course6" name="course" value="@cv6" /><label for="course6">@ct6</label></div></td>
+	</tr>
+</table>
+<p>
+	<b>ברצוני להשתתף בהשתלמות הענפית בענף :</b><br />
+	@course_sport_show
+	<div@course_sport_style>@course_sport_selection</div>
+</p>
+<p class="printable">
+	<br /><br />
+	תאריך: _________________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	חתימה: _________________________
+</p>

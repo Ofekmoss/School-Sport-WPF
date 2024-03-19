@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.mir.co.il/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://www.mir.co.il/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.mir.co.il/">
+      <s:element name="GetSportFieldCompetitions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sportFieldID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSportFieldCompetitionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSportFieldCompetitionsResult" type="tns:ArrayOfCompetition" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCompetition">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Competition" nillable="true" type="tns:Competition" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Competition">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SportField" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Facility" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Court" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Competitors" type="tns:ArrayOfCompetitor" />
+          <s:element minOccurs="0" maxOccurs="1" name="Heats" type="tns:ArrayOfHeat" />
+          <s:element minOccurs="1" maxOccurs="1" name="championshipCategory" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCompetitor">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Competitor" nillable="true" type="tns:Competitor" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Competitor">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Heat" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Position" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultPosition" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Score" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfHeat">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Heat" nillable="true" type="tns:Heat" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Heat">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Facility" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Court" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCourtCompetitions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="courtID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCourtCompetitionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCourtCompetitionsResult" type="tns:ArrayOfCompetition" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadChampionship">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="championshipCategoryId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadChampionshipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadChampionshipResult" type="tns:ArrayOfPhase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPhase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Phase" nillable="true" type="tns:Phase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Phase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Groups" type="tns:ArrayOfGroup" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfGroup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Group" nillable="true" type="tns:Group" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Group">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Teams" type="tns:ArrayOfTeam" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rounds" type="tns:ArrayOfRound" />
+          <s:element minOccurs="0" maxOccurs="1" name="Competitions" type="tns:ArrayOfCompetition" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTeam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Team" nillable="true" type="tns:Team" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Team">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PreviousGroup" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PreviousPosition" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Games" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Points" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PointsAgainst" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="SmallPoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SmallPointsAgainst" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Wins" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Loses" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ties" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TechnicalWins" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TechnicalLoses" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Score" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultPosition" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRound">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Round" nillable="true" type="tns:Round" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Round">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Matches" type="tns:ArrayOfMatch" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMatch">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Match" nillable="true" type="tns:Match" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Match">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TeamAPos" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamBPos" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Facility" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Court" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamAScore" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamBScore" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartsResult" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cycle" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveChampionship">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="championshipCategoryId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="phases" type="tns:ArrayOfPhase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveChampionshipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveChampionshipResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="phases" type="tns:ArrayOfPhase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMatch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="championshipCategoryId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="phase" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="round" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="match" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="time" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="facility" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="court" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMatchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveMatchResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveCompetition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="championshipCategoryId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="phase" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sportField" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="competition" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="time" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="facility" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="court" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveCompetitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveCompetitionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveHeat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="championshipCategoryId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="phase" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="competition" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="heat" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="time" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="facility" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="court" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveHeatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveHeatResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCompetitorResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="champCategory" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="phase" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="competition" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="competitorIndex" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="score" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCompetitorResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetCompetitorResultResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTeamsResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="championshipCategoryId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="phase" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="group" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="teamsResult" type="tns:ArrayOfTeamResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTeamResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TeamResult" nillable="true" type="tns:TeamResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TeamResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Games" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Points" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PointsAgainst" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="SmallPoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SmallPointsAgainst" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Score" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Wins" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Loses" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ties" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TechnicalWins" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TechnicalLoses" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Position" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetTeamsResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetTeamsResultResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ChampionshipCategoryId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Phase" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Group" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TeamsResult" type="tns:ArrayOfTeamResult" />
+          <s:element minOccurs="1" maxOccurs="1" name="Round" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Match" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamAScore" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamBScore" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="MatchResult" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartsResult" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetResultResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDateChampionships">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDateChampionshipsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDateChampionshipsResult" type="tns:ArrayOfDateChampionship" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDateChampionship">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DateChampionship" nillable="true" type="tns:DateChampionship" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DateChampionship">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Day" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChampionshipCategory" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Games" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetSportFieldCompetitionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSportFieldCompetitions" />
+  </wsdl:message>
+  <wsdl:message name="GetSportFieldCompetitionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSportFieldCompetitionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCourtCompetitionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCourtCompetitions" />
+  </wsdl:message>
+  <wsdl:message name="GetCourtCompetitionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCourtCompetitionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadChampionshipSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadChampionship" />
+  </wsdl:message>
+  <wsdl:message name="LoadChampionshipSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadChampionshipResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveChampionshipSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveChampionship" />
+  </wsdl:message>
+  <wsdl:message name="SaveChampionshipSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveChampionshipResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveMatchSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveMatch" />
+  </wsdl:message>
+  <wsdl:message name="SaveMatchSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveMatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveCompetitionSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveCompetition" />
+  </wsdl:message>
+  <wsdl:message name="SaveCompetitionSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveCompetitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveHeatSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveHeat" />
+  </wsdl:message>
+  <wsdl:message name="SaveHeatSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveHeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCompetitorResultSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCompetitorResult" />
+  </wsdl:message>
+  <wsdl:message name="SetCompetitorResultSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCompetitorResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTeamsResultSoapIn">
+    <wsdl:part name="parameters" element="tns:SetTeamsResult" />
+  </wsdl:message>
+  <wsdl:message name="SetTeamsResultSoapOut">
+    <wsdl:part name="parameters" element="tns:SetTeamsResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetResultSoapIn">
+    <wsdl:part name="parameters" element="tns:SetResult" />
+  </wsdl:message>
+  <wsdl:message name="SetResultSoapOut">
+    <wsdl:part name="parameters" element="tns:SetResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDateChampionshipsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDateChampionships" />
+  </wsdl:message>
+  <wsdl:message name="GetDateChampionshipsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDateChampionshipsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ChampionshipServiceSoap">
+    <wsdl:operation name="GetSportFieldCompetitions">
+      <wsdl:input message="tns:GetSportFieldCompetitionsSoapIn" />
+      <wsdl:output message="tns:GetSportFieldCompetitionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCourtCompetitions">
+      <wsdl:input message="tns:GetCourtCompetitionsSoapIn" />
+      <wsdl:output message="tns:GetCourtCompetitionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadChampionship">
+      <wsdl:input message="tns:LoadChampionshipSoapIn" />
+      <wsdl:output message="tns:LoadChampionshipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveChampionship">
+      <wsdl:input message="tns:SaveChampionshipSoapIn" />
+      <wsdl:output message="tns:SaveChampionshipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMatch">
+      <wsdl:input message="tns:SaveMatchSoapIn" />
+      <wsdl:output message="tns:SaveMatchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCompetition">
+      <wsdl:input message="tns:SaveCompetitionSoapIn" />
+      <wsdl:output message="tns:SaveCompetitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveHeat">
+      <wsdl:input message="tns:SaveHeatSoapIn" />
+      <wsdl:output message="tns:SaveHeatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCompetitorResult">
+      <wsdl:input message="tns:SetCompetitorResultSoapIn" />
+      <wsdl:output message="tns:SetCompetitorResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTeamsResult">
+      <wsdl:input message="tns:SetTeamsResultSoapIn" />
+      <wsdl:output message="tns:SetTeamsResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetResult">
+      <wsdl:input message="tns:SetResultSoapIn" />
+      <wsdl:output message="tns:SetResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDateChampionships">
+      <wsdl:input message="tns:GetDateChampionshipsSoapIn" />
+      <wsdl:output message="tns:GetDateChampionshipsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ChampionshipServiceSoap" type="tns:ChampionshipServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="GetSportFieldCompetitions">
+      <soap:operation soapAction="http://www.mir.co.il/GetSportFieldCompetitions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourtCompetitions">
+      <soap:operation soapAction="http://www.mir.co.il/GetCourtCompetitions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadChampionship">
+      <soap:operation soapAction="http://www.mir.co.il/LoadChampionship" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChampionship">
+      <soap:operation soapAction="http://www.mir.co.il/SaveChampionship" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMatch">
+      <soap:operation soapAction="http://www.mir.co.il/SaveMatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCompetition">
+      <soap:operation soapAction="http://www.mir.co.il/SaveCompetition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveHeat">
+      <soap:operation soapAction="http://www.mir.co.il/SaveHeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCompetitorResult">
+      <soap:operation soapAction="http://www.mir.co.il/SetCompetitorResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTeamsResult">
+      <soap:operation soapAction="http://www.mir.co.il/SetTeamsResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetResult">
+      <soap:operation soapAction="http://www.mir.co.il/SetResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDateChampionships">
+      <soap:operation soapAction="http://www.mir.co.il/GetDateChampionships" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ChampionshipService">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/" />
+    <wsdl:port name="ChampionshipServiceSoap" binding="tns:ChampionshipServiceSoap">
+      <soap:address location="http://localhost/ISF/SportServices/ChampionshipService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

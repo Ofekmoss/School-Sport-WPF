@@ -1,0 +1,2 @@
+D:\BitBucket\schoolsport\ISF\Sport.Synchronization\obj\Release\Sport.Synchronization.csproj.AssemblyReference.cache
+D:\BitBucket\schoolsport\ISF\Sport.Synchronization\obj\Release\Sport.Synchronization.csproj.CoreCompileInputs.cache

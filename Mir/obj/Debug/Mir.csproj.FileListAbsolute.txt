@@ -1,0 +1,12 @@
+D:\BitBucket\schoolsport\Mir\bin\Debug\Mir.dll
+D:\BitBucket\schoolsport\Mir\bin\Debug\Mir.pdb
+D:\BitBucket\schoolsport\Mir\obj\Debug\Mir.csprojAssemblyReference.cache
+D:\BitBucket\schoolsport\Mir\obj\Debug\Mir.dll
+D:\BitBucket\schoolsport\Mir\obj\Debug\Mir.pdb
+D:\BitBucket\schoolsport\Mir\obj\Debug\Mir.csproj.CoreCompileInputs.cache
+C:\SchoolSport\schoolsport\Mir\bin\Debug\Mir.dll
+C:\SchoolSport\schoolsport\Mir\bin\Debug\Mir.pdb
+C:\SchoolSport\schoolsport\Mir\obj\Debug\Mir.csproj.AssemblyReference.cache
+C:\SchoolSport\schoolsport\Mir\obj\Debug\Mir.csproj.CoreCompileInputs.cache
+C:\SchoolSport\schoolsport\Mir\obj\Debug\Mir.dll
+C:\SchoolSport\schoolsport\Mir\obj\Debug\Mir.pdb
